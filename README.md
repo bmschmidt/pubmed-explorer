@@ -1,5 +1,6 @@
-# Scrollershots
+# Pubmed Explorer
 
-Pandoc-svelte-component driven narration.
 
-Written with some local co-dependencies on Ben's hard drive, so shared mostly to allow people to edit the Markdown files.
+
+Building requires pandoc and may be finicky. The core narrative lives at [`/src/scrollership/pubmed.md`](https://github.com/bmschmidt/pubmed-explorer/blob/main/src/scrollership/pubmed.md) and can be edited--later builds will be pushed.
+
