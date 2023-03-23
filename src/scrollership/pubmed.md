@@ -585,7 +585,7 @@ encoding:
   color:
     field: GenderFirstAuthor
     domain: ['unknown', 'male', 'female']
-    range: ["#f5f5f5", "#1fc3aa", "#8624f5", ]
+    range: ["#f5f5f5", "#1f77b4", "#ff7f0e", ]
 
 ```
 
