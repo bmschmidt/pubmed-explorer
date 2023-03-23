@@ -436,6 +436,7 @@ The COVID cluster is
 duration: 4000
 alpha: 80
 encoding:
+  filter: null
   x:
     field: x
     transform: literal
@@ -477,9 +478,12 @@ api:
   encoding:
     filter: null
     color: null
-    foreground:
+    filter:
       field: covid_label
       lambda: d => d !== 'unlabeled'
+    foreground:
+      field: covid_label
+      lambda: d => d !== 'Covid unlabeled'
 pattern: 'd => d == "${value}"'
 values: ["Antibody", "Anxiety", "Cancer", "Children", "Clinical", "Epidemic", "Healthcare", "Immune", "Implications", "Mental", "Mortality", "Outbreak", "Pediatric", "Pneumonia", "Population", "Psychological", "Respiratory", "Social", "Strategies", "Students","Surgery", "Symptoms", "Therapy", "Transmission", "Treatment", "Vaccine", "Workers"]
 ```
@@ -500,13 +504,17 @@ labels:
   label_field: covid_label
   size_field: undefined
 encoding:
+  filter:
+    field: covid_label
+    lambda: d => d !== ''
   foreground:
     field: covid_label
     lambda: |
-      d => d !== 'unlabeled' && d !== ''
+      d => d !== 'Covid unlabeled'
   color:
     field: covid_label
-    range: dark2
+    domain: ["Covid unlabeled", "Antibody", "Anxiety", "Cancer", "Children", "Clinical", "Epidemic", "Healthcare", "Immune", "Implications", "Mental", "Mortality", "Outbreak", "Pediatric", "Pneumonia", "Population", "Psychological", "Respiratory", "Social", "Strategies", "Students","Surgery", "Symptoms", "Therapy", "Transmission", "Treatment", "Vaccine", "Workers"]
+    range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
 
 ```
 
