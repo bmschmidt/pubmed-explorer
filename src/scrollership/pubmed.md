@@ -26,11 +26,11 @@ background_color: "#EFEFEF"
 tooltip_html: |
   return `<div style="min-width: 240px">${datum.title} <em>${datum.journal}</em> (${datum.year})</div>`
 encoding:
-#  jitter_radius:
-#    method: circle
-#    constant: 0.4
-#  jitter_speed:
-#    constant: .01
+  jitter_radius:
+    method: time
+    constant: 0.2
+  jitter_speed:
+    constant: 0.22
   foreground:
     field: labels
     lambda: d => d !== 'unlabeled'
@@ -58,12 +58,7 @@ adopted in different fields. What is needed to answer such questions, is a bird'
 ```api
 
 duration: 2000
-encoding:
-  jitter_radius:
-    method: circle
-    constant: 0.2
-  jitter_speed:
-    constant: 0.22
+
 ```
 :::
 
