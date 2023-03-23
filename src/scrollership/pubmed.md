@@ -23,6 +23,10 @@ point_size: 1
 alpha: 25
 source_url: "https://static.nomic.ai/tiles/pubmed"
 background_color: "#EFEFEF"
+background_options:
+  size: 1
+  mouseover: true
+  opacity: 0.8
 tooltip_html: |
   return `<div style="min-width: 240px">${datum.title} <em>${datum.journal}</em> (${datum.year})</div>`
 encoding:
