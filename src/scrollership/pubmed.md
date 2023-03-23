@@ -149,6 +149,7 @@ eras in fairly close proximity; only at the highest levels of magnification are 
 periods well segregated.
 
 ```api
+encoding:
   x: 
     field: x
     transform: literal
