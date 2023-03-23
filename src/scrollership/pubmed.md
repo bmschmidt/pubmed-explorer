@@ -142,6 +142,23 @@ encoding:
 
 :::
 
+:::chunk
+
+Our map, however, is not predominantly organized by time. Returning points to their 
+original positions, it is clear that most regions contain articles from multiple different 
+eras in fairly close proximity; only at the highest levels of magnification are temporal
+periods well segregated.
+
+```api
+  x: 
+    field: x
+    transform: literal
+  y: 
+    field: y
+    transform: literal
+```
+
+:::
 
 
 :::chunk
