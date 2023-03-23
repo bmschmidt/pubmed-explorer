@@ -17,9 +17,9 @@ Prep goes here to pre-allocate some deepscatter data.
 :::
 
 ```api
-max_points: 200_000
+max_points: 750_000
 zoom_balance: .38
-point_size: 1
+point_size: 1.2
 alpha: 25
 source_url: "https://static.nomic.ai/tiles/pubmed"
 background_color: "#EFEFEF"
