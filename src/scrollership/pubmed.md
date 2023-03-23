@@ -20,7 +20,7 @@ Prep goes here to pre-allocate some deepscatter data.
 max_points: 750_000
 zoom_balance: .38
 point_size: 1.2
-alpha: 25
+alpha: 45
 source_url: "https://static.nomic.ai/tiles/pubmed"
 background_color: "#EFEFEF"
 background_options:
@@ -30,11 +30,6 @@ background_options:
 tooltip_html: |
   return `<div style="min-width: 240px">${datum.title} <em>${datum.journal}</em> (${datum.year})</div>`
 encoding:
-  jitter_radius:
-    method: time
-    constant: 0.2
-  jitter_speed:
-    constant: 0.22
   foreground:
     field: labels
     lambda: d => d !== 'unlabeled'
