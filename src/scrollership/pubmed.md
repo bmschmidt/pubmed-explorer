@@ -374,37 +374,6 @@ encoding:
 
 :::chunk
 
-Plotting title length against word count, shows no strong trend.
-
-:::TODO
-cut this.
-:::
-
-```api
-point_size: 3
-alpha: 2
-encoding:
-  foreground: null
-  filter: null
-  jitter_radius:
-    constant: 0.02
-    method: 'normal'
-  x:
-    field: title_length
-    domain: [0, 200]
-    range: [-200, 200]
-    transform: linear
-  y: 
-    field: words
-    domain: [0, 500]
-    range: [200, -200]
-    transform: linear
-
-```
-:::
-
-:::chunk
-
 In most of these fields, the temporal division is extremely strong: science progresses within immunology and virology in such a way that recent articles have abstracts much more similar to each other than to articles from the 1970s and 1980s in the same fields.
 
 ```api
