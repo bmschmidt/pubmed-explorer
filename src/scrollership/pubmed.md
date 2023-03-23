@@ -322,10 +322,6 @@ Looking at abstracts, we can also start to tell things about the types of work d
 Here, for instance, we've parsed out every place in the abstracts where the sample size for a project is indicated (`n = 300`, `n = 100`, etc.). Darker colors, representing smaller sample sizes, are clustered in specific areas of the map.
 
 
-:::TODO
-in the part where the embedding is colored by n_samples, either the colormap or the text are wrong. I think the darker points correspond to the larger n_samples.
-:::
-
 ```api
 point_size: 3
 encoding:
@@ -340,7 +336,7 @@ encoding:
     a: 0
   color:
     field: sample_size
-    domain: [10000, 1]
+    domain: [1, 10000]
     range: magma
     transform: log
   
