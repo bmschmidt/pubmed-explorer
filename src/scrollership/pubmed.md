@@ -237,34 +237,13 @@ zoom:
 :::chunk
 
 We used PubMedBERT [@pubmedbert] to obtain a numerical representation of
-each abstract. Specifically, we used the HuggingFace's `transformers`
-library and the publicly released PubMedBERT model. PubMedBERT is a
-Transformer-based language model trained in 2020 on PubMed abstracts and
-full-text articles from PubMed Central.
+each abstract. Specifically, we used the [HuggingFace's `transformers`](/)
+library and the publicly released [PubMedBERT model.](/)
 
-In pilot experiments, we compared performance of eight BERT variantss.
-
-::: {#tab:bert-models-knn-accuracy}
-                Average   `[CLS]`    `[SEP]`
-  ------------ --------- --------- -----------
-  BERT           57.4%     50.7%      52.8%
-  SBERT         64.8%\*     ---        ---
-  SciBERT        62.1%     57.0%      60.9%
-  BioBERT        64.0%     62.7%      65.0%
-  PubMedBERT     64.0%     60.0%    **67.0%**
-  SPECTER        64.6%     63.9%      64.7%
-  SciNCL         65.4%     65.3%      63.3%
-  SimCSE         57.0%     53.2%      52.1%
-
-  : $k$NN accuracy of different BERT-based models. This comparison used
-  a subset of the data (training set size: 990,000 labeled papers; test
-  set size: 10,000 labeled papers). Unlike other models, SBERT generates
-  a single representation vector for each abstract.
+:::TODO
+Pubmed BERT link.
+Transformers link
 :::
-
-:::
-
-:::chunk
 
 In our prior work[^Gonzalez2022], we used the
 bag-of-words representation of PubMed abstracts and found we obstained the the highest $k$NN accuracy using the TF-IDF (term frequency inverse document frequency) representation with log-scaling. For computational
