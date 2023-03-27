@@ -6,8 +6,7 @@ title: The shape of biomedical research
 
 :::chunk
 
-Over one million articles being currently published every year in biomedicine and life sciences alone. Information about academic publications in these fields is collected in the PubMed database, maintained by the United States National Library of Medicine
-([pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov){.uri}). It now
+Over one million articles being currently published every year in biomedicine and life sciences alone. Information about academic publications in these fields is collected in the [PubMed database](https://pubmed.ncbi.nlm.nih.gov), maintained by the United States National Library of Medicine. It now
 contains over 33 million scientific papers from the last 50 years.
 
 This interactive presents a new approach to exploring this massive corpus by situating it spatially, and by making the entire corpus interactive and and self-contained in a browser.
