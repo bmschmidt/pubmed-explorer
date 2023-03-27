@@ -6,10 +6,13 @@ title: The shape of biomedical research
 
 :::chunk
 
-Over one million articles being currently published every year in biomedicine and life sciences alone. Information about academic publications in these fields is collected in the [PubMed database](https://pubmed.ncbi.nlm.nih.gov), maintained by the United States National Library of Medicine. It now
-contains over 33 million scientific papers from the last 50 years.
+# The shape of biomedical research
 
-This interactive presents a new approach to exploring this massive corpus by situating it spatially, and by making the entire corpus interactive and and self-contained in a browser.
+This interactive visualization displays 21 million scientific papers collected in the [PubMed database](https://pubmed.ncbi.nlm.nih.gov), maintained by the United States National Library of Medicine and encompassing all biomedical and life science fields of research.
+
+You can scroll the narration in the left part of the screen, and interact with the visualization in the right part of the screen. Zooming in loads additional papers. Information about each individual paper appears on mouse-over. Search over titles is available in the upper-right corner.
+
+Please see [our paper](https://www.biorxiv.org/content/10.1101/xxx) for more details.
 
 :::barchartprep
 Prep goes here to pre-allocate some deepscatter data.
@@ -50,15 +53,20 @@ encoding:
 
 :::chunk
 
-This rapid growth of the biomedical literature makes it difficult to
-track the evolution of biomedical publishing as a whole. For instance,
-search engines like PubMed and Google Scholar allow to find specific
+## Introduction
+
+Over one million articles are being currently published every year in biomedicine and life sciences.
+The sheer amount of publications makes it difficult to
+track the evolution of biomedical publishing as a whole. 
+Search engines like PubMed and Google Scholar allow to find specific
 papers given suitable keywords and follow the citation networks that
 these papers are embedded in, yet none of them allows to explore the
 biomedical literature 'landscape' from a global perspective. This makes
 it hard to see how research topics evolve over time, how different
 fields are related to each other, or how new methods and techniques are
-adopted in different fields. To answer such questions,
+adopted in different fields.
+
+To answer such questions,
 we provide a bird's-eye view on the biomedical literature.
 
 ```api
@@ -70,17 +78,16 @@ duration: 2000
 
 :::chunk
 
-In this site we develop an approach that enables all of the above: a
+Here we offer an approach that enables all of the above: a
 global two-dimensional atlas of the biomedical and life science
 literature which is based on the abstracts of all 21 million English
 language articles contained in the PubMed database. To create the map,
 we embedded the abstracts into two dimensions using the
-transformer-based large language model PubMedBERT [@pubmedbert] combined
-with the neighbor embedding method $t$-SNE [@tsneoriginal]. Adapting
-this pipeline to handle sample sizes on the scale of this entire corpus
-of biomedical literature, our approach allows us to create a map with
-the level of detail exceeding previous work by three orders of magnitude
-[@Boyack2020; @borner2012design].
+transformer-based large language model [PubMedBERT](https://dl.acm.org/doi/10.1145/3458754) combined
+with the neighbor embedding method [t-SNE](https://www.jmlr.org/papers/v9/vandermaaten08a.html).
+All our
+embeddings were based on the abstract texts alone, and did not use any
+further metadata or information on citations or references.
 
 :::TODO
 Improving these cites is easy, if we have them.
@@ -104,12 +111,13 @@ biomedical literature and can reveal aspects of the data that would not
 be easily noticed with other analysis methods. We showcase the power of
 our approach in four examples: 
 
-1. [The emergence of the Covid-19 literature.](#covid-19)
+1. [The emergence of the Covid-19 literature.](#covid)
 2. [The evolution of different subfields of neuroscience](#neuroscience)
+3. [The uptake of machine learning](#ml)
 4. [The distribution of gender imbalance across biomedical fields.](#gender)
 
 The shared strategy in all of these is to formulate specific hypotheses
-about the data, and then to confirm them by a dedicated statistical
+about the data based on the visual exploration, and then to confirm them by a dedicated statistical
 analysis of the original high-dimensional dataset.
 
 :::
@@ -118,19 +126,7 @@ analysis of the original high-dimensional dataset.
 
 :::chunk
 
-# Overview
-
-Each point here an interactive element of its own. The darkest articles are the oldest ones (from the 1980s or earlier), and the lightest ones are from the last few years.
-
-We downloaded the complete PubMed database and, after initial filtering, were left with 20,687,150 papers with valid English abstracts, the majority of which (99.8%) were published between 1970 and 2021. For more details, see [the full paper](http://example.com).
-
-Our goal was to generate a 2D embedding
-of the abstract texts to facilitate exploration of the data. All our
-embeddings were based on the abstract texts alone, and did not use any
-further metadata or information on citations or references.[^1]
-
-[^1]: Filtering included non-English papers, removing papers with unfinished abstracts, etc.
-
+The majority of the displayed paper were published between 1970 and 2021. Here darker colors correspond to earlier publication years and lighter colors correspond to more recent papers.
 
 ```api
 encoding:
@@ -151,10 +147,9 @@ encoding:
 
 :::chunk
 
-Our map, however, is not predominantly organized by time. Returning points to their 
-original positions, it is clear that most regions contain articles from multiple different 
-eras in fairly close proximity; only at the highest levels of magnification are temporal
-periods well segregated.
+Our map, however, is not predominantly organized by time. Most regions contain articles from multiple different 
+eras in fairly close proximity; but when zooming in closer, temporal
+periods often become well segregated.
 
 ```api
 encoding:
