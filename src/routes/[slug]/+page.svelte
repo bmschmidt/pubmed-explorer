@@ -4,6 +4,7 @@
 	import API from '$lib/deepscatter.js';
 	import Scrollership from 'pandoc-svelte-components/custom/ScrollershipWrapper.svelte';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	// Can return a promise for a constructor to avoid
 	// browser-only problems.
 	import CallMethod from '$lib/components/CallMethod.svelte';
@@ -33,45 +34,60 @@
 	const scatterpromise = new Promise((resolve) => {
 		promiser = resolve;
 	});
+	let about_modal = false;
 </script>
 
-<Scrollership {controls} {API} ast={document} position={'left'} {promiser}>
-	<div slot="custom-navbar" class="header">
-		<div class="shrink" />
-		<div class="title">
-			{document.meta.title.c.map((d) => d.c).join(' ')}
-		</div>
-		<div class="logos">
-			<div class="logo">
-				<a href="http://nomic.ai/"
-					><img
-						src="https://static.nomic.ai/assets/nomic_with_transparent.png"
-						alt="Nomic logo"
-					/></a
+<div id="scrollershipwrapper" class="-mt-4">
+	<Scrollership {controls} {API} ast={document} position={'left'} {promiser}>
+		<div slot="custom-navbar" class="header">
+			<div id="about">
+				<!--Toggle for the about modal-->
+				<button
+					class="btn btn-primary"
+					data-bs-toggle="modal"
+					data-bs-target="#aboutModal"
+					on:click={() => {
+						about_modal = !about_modal;
+					}}
 				>
+					About
+				</button>
 			</div>
-			{#if slug === 'pubmed'}
+
+			<div class="shrink" />
+			<div class="title">
+				{document.meta.title.c.map((d) => d.c).join(' ')}
+			</div>
+			<div class="logos">
 				<div class="logo">
 					<a href="https://www.eye-tuebingen.de/berenslab/">
 						<img
-							alt="Tübingen University Data Science for Vision Research logo"
-							src="https://www.eye-tuebingen.de/fileadmin/templates/fia2012/img/fia2021/fia-ukt_fia_sublogo_ci2019-300-flach.gif"
+							alt="Tübingen University logo"
+							src="//static.nomic.ai/journeys/pubmed/UniversitaetTuebingen_WortBildMarke.png"
 						/>
 					</a>
 				</div>
-			{/if}
+				<div class="logo mx-8">
+					<a href="http://nomic.ai/"
+						><img
+							src="//static.nomic.ai/journeys/pubmed/nomic_with_transparent.png"
+							alt="Nomic logo"
+						/></a
+					>
+				</div>
+			</div>
 		</div>
-	</div>
 
-	<div slot="control-items" id="controls">
-		<Controls {scatterpromise} />
-	</div>
-</Scrollership>
+		<div id="aboutModal">
+			<div class="modal-dialog modal-dialog-centered" />
+		</div>
+		<div slot="control-items" id="controls" class="pointer-events-none">
+			<Controls {scatterpromise} />
+		</div>
+	</Scrollership>
+</div>
 
 <style>
-	#controls {
-		pointer-events: auto;
-	}
 	.shrink {
 		flex-grow: 2;
 	}

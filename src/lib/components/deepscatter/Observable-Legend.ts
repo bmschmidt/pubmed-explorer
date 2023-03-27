@@ -1,16 +1,15 @@
-  // Copyright 2021, Observable Inc.
-  // Released under the ISC license.
-  // https://observablehq.com/@d3/color-legend
-  import { browser } from '$app/environment';
-	import { select } from 'd3-selection';
-	import { interpolate, quantize, interpolateRound } from 'd3-interpolate';
-	import { scaleLinear, scaleBand } from 'd3-scale';
-	import { range, quantile } from 'd3-array';
-	import { axisBottom } from 'd3-axis';
-	import { format as d3format } from 'd3-format';
+// Copyright 2021, Observable Inc.
+// Released under the ISC license.
+// https://observablehq.com/@d3/color-legend
+import { browser } from '$app/environment';
+import { select } from 'd3-selection';
+import { interpolate, quantize, interpolateRound } from 'd3-interpolate';
+import { scaleLinear, scaleBand } from 'd3-scale';
+import { range, quantile } from 'd3-array';
+import { axisBottom } from 'd3-axis';
+import { format as d3format } from 'd3-format';
 
-
-export default  function Legend(
+export default function Legend(
   color,
   node,
   {
@@ -130,6 +129,7 @@ export default  function Legend(
     tickValues = range(thresholds.length);
     tickFormat = (i) => thresholdFormat(thresholds[i], i);
   }
+  if (!x) return;
 
   svg
   .append('g')

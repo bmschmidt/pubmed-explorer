@@ -5583,9 +5583,20 @@ class Zoom {
     });
   }
   zoom_to_bbox(corners, duration = 4e3, buffer = 1.111) {
+    console.log("ZOOOOM");
     const scales2 = this.scales();
-    const [x02, x12] = corners.x.map(scales2.x);
-    const [y02, y12] = corners.y.map(scales2.y);
+    let [x02, x12] = corners.x.map(scales2.x);
+    let [y02, y12] = corners.y.map(scales2.y);
+    console.log(this.scatterplot.prefs.zoom_align, "AAH");
+    if (this.scatterplot.prefs.zoom_align === "right") {
+      const aspect_ratio = this.width / this.height;
+      const data_aspect_ratio = (x12 - x02) / (y12 - y02);
+      if (data_aspect_ratio < aspect_ratio) {
+        const extension = data_aspect_ratio / aspect_ratio;
+        console.log(extension, { x0: x02 });
+        x02 = x02 - (x12 - x02) * extension;
+      }
+    }
     const { svg_element_selection: canvas, zoomer, width, height } = this;
     const t = identity$3.translate(width / 2, height / 2).scale(1 / buffer / Math.max((x12 - x02) / width, (y12 - y02) / height)).translate(-(x02 + x12) / 2, -(y02 + y12) / 2);
     canvas.transition().duration(duration).call(zoomer.transform, t);
@@ -34055,18 +34066,15 @@ class Tile {
   }
 }
 class QuadTile extends Tile {
-  constructor(base_url, key, parent, dataset, prefs) {
-    var _a2;
+  constructor(base_url, key, parent, dataset) {
     super(dataset);
     __publicField(this, "url");
-    __publicField(this, "bearer_token", "");
     __publicField(this, "key");
     __publicField(this, "_children", []);
     __publicField(this, "codes");
     __publicField(this, "_already_called", false);
     __publicField(this, "child_locations", []);
     this.url = base_url;
-    this.bearer_token = (_a2 = prefs == null ? void 0 : prefs.bearer_token) != null ? _a2 : "";
     this.parent = parent;
     this.key = key;
     const [z, x, y] = key.split("/").map((d) => Number.parseInt(d));
@@ -34096,13 +34104,12 @@ class QuadTile extends Tile {
     this._already_called = true;
     let url = `${this.url}/${this.key}.feather`;
     this.download_state = "In progress";
-    if (this.bearer_token) {
+    if (window.localStorage.getItem("isLoggedIn") === "true") {
       url = url.replace("/public", "");
     }
-    const request = this.bearer_token ? {
-      method: "GET",
-      headers: { Authorization: "Bearer " + this.bearer_token }
-    } : void 0;
+    const request = {
+      method: "GET"
+    };
     this._download = fetch(url, request).then(async (response) => {
       const buffer = await response.arrayBuffer();
       this.download_state = "Complete";
@@ -34150,9 +34157,7 @@ class QuadTile extends Tile {
     const constructor = this.constructor;
     if (this._children.length < this.child_locations.length) {
       for (const key of this.child_locations) {
-        const child = new constructor(this.url, key, this, this.dataset, {
-          bearer_token: this.bearer_token
-        });
+        const child = new constructor(this.url, key, this, this.dataset);
         this._children.push(child);
       }
     }
@@ -35665,7 +35670,8 @@ const default_API_call = {
   encoding: {},
   point_size: 1,
   alpha: 40,
-  background_options: default_background_options
+  background_options: default_background_options,
+  zoom_align: "center"
 };
 const base_elements = [
   {
@@ -36019,6 +36025,7 @@ class Scatterplot {
     });
   }
   async unsafe_plotAPI(prefs) {
+    var _a2;
     if (prefs === null) {
       return;
     }
@@ -36064,7 +36071,7 @@ class Scatterplot {
       if (prefs.zoom === null) {
         this._zoom.zoom_to(1, width / 2, height / 2);
         prefs.zoom = void 0;
-      } else if (prefs.zoom.bbox) {
+      } else if ((_a2 = prefs.zoom) == null ? void 0 : _a2.bbox) {
         this._zoom.zoom_to_bbox(prefs.zoom.bbox, prefs.duration);
       }
     }

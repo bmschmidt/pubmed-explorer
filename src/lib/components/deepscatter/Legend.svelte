@@ -23,20 +23,22 @@
 	deepscatter.add_hook('sidecolor', update, true);
 </script>
 
-<div id="quantlegend" bind:this={nodeholder}>
-	<svg id="quantlegend-svg" />
-</div>
-
-{#if scale}
-	<div class="legend">
-		{#each scale.domain() as d}
-			<div class="legend-item">
-				<div class="legend-color" style="background-color: {scale(d)}" />
-				<div class="legend-label">{d}</div>
-			</div>
-		{/each}
+<div class="flex flex-col-reverse items-end">
+	<div class="m-3 bg-gray-100 p-5 rounded" id="quantlegend" bind:this={nodeholder}>
+		<svg id="quantlegend-svg" />
 	</div>
-{/if}
+
+	{#if scale && scale.range && scale.range().length > 2}
+		<div class="legend grid-cols-2 gap-2 m-2 items-end">
+			{#each scale.domain() as d}
+				<div class="legend-item">
+					<div class="legend-color" style="background-color: {scale(d)}" />
+					<div class="legend-label">{d}</div>
+				</div>
+			{/each}
+		</div>
+	{/if}
+</div>
 
 <style>
 	.quantlegend {
@@ -44,12 +46,10 @@
 		@apply bg-blue-100 bg-opacity-50 rounded grid grid-cols-1 gap-1 p-1;
 	}
 	.legend {
-		display: grid;
-		grid-gap: 0.5rem;
-		margin: 0.5rem;
 		overflow-y: scroll;
 		max-height: 80vh;
-		@apply bg-blue-100 bg-opacity-50 rounded grid grid-cols-1 gap-1 p-1;
+		pointer-events: auto;
+		@apply bg-gray-100 bg-opacity-50 rounded grid grid-cols-1 md:grid-cols-2 gap-1 p-1;
 	}
 	.legend-item {
 		display: flex;

@@ -60,8 +60,8 @@
 				'2022.0': 16856.0
 			};
 
-			const scalex = scaleLinear().domain([1970, 2022]).range([-50, 400]);
-			const scaley = scaleLinear().domain([0, 1264918]).range([0, 300]);
+			const scalex = scaleLinear().domain([1970, 2022]).range([-250, 250]);
+			const scaley = scaleLinear().domain([0, 1264918]).range([-150, 150]);
 			scalex.clamp(true);
 			scatterplot._root.transformations['time.x'] = function (tile) {
 				const vals = new Float32Array(tile.record_batch.numRows);
@@ -76,8 +76,8 @@
 				const years = tile.record_batch.getChild('year');
 				[...years].map((year, i) => {
 					const y = `${year}.0`;
-					const height = scaley(codes[y]) + Math.random() * 5;
-					vals[i] = -height * Math.random() + 200;
+					const height = scaley(codes[y] * Math.random());
+					vals[i] = -height;
 				});
 				return vals;
 			};

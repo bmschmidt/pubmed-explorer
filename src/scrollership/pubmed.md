@@ -21,12 +21,19 @@ max_points: 750_000
 zoom_balance: .38
 point_size: 1.2
 alpha: 45
+zoom_align: right
 source_url: "https://static.nomic.ai/tiles/pubmed"
 background_color: "#EFEFEF"
+click_function: |
+   window.open(`https://pubmed.ncbi.nlm.nih.gov/${datum.pmid}/`, '_blank')
 background_options:
   size: 1
   mouseover: true
   opacity: 0.8
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-250, 250]
 tooltip_html: |
   return `<div style="min-width: 240px">${datum.title} <em>${datum.journal}</em> (${datum.year})</div>`
 encoding:
@@ -52,7 +59,8 @@ these papers are embedded in, yet none of them allows to explore the
 biomedical literature 'landscape' from a global perspective. This makes
 it hard to see how research topics evolve over time, how different
 fields are related to each other, or how new methods and techniques are
-adopted in different fields. What is needed to answer such questions, is a bird's-eye view on the biomedical literature.
+adopted in different fields. To answer such questions,
+we provide a bird's-eye view on the biomedical literature.
 
 ```api
 
@@ -133,6 +141,7 @@ encoding:
   y: 
     field: time.y
     transform: literal
+  foreground: null
   color:
     field: year
     domain: [1970, 2022]
@@ -150,6 +159,7 @@ periods well segregated.
 
 ```api
 encoding:
+  foreground: null
   x: 
     field: x
     transform: literal

@@ -14,7 +14,7 @@
 	const attrs = Object.fromEntries(kv);
 	console.log({ yaml });
 	// Are we currently running a search?
-	$: previous_searches = ['brain', 'COVID', 'Coronavirus|ovid-19', '[Vv]isualization'];
+	$: previous_searches = ['brain', 'COVID', 'Coronavirus', 'visualization'];
 	$: searching = false;
 	$: isValid = true;
 
@@ -29,13 +29,19 @@
 			duration,
 			alpha: 50,
 			encoding: {
-				size: {
-					field: query,
+				filter: null,
+				color: {
+					field: 'search: ' + query,
 					domain: [0, 1],
-					range: [1, 3]
+					range: ['gray', 'orange']
+				},
+				size: {
+					field: 'search: ' + query,
+					domain: [0, 1],
+					range: [1, 2]
 				},
 				foreground: {
-					field: query,
+					field: 'search: ' + query,
 					op: 'eq',
 					a: 1
 				}
@@ -43,7 +49,58 @@
 		});
 	}
 
+	function encode_string(searchterm) {
+		const arr = new Uint8Array(128);
+		const encoder = new TextEncoder();
+		encoder.encodeInto(searchterm, arr);
+		return arr;
+	}
+
 	async function run_search(query) {
+		const plot = settings.controls._plot;
+		plot._root.transformations['search: ' + query] = async function (tile) {
+			// First ensure it exists in duckdb.
+			const encoded = encode_string(query);
+			const key = tile.key;
+			await tile.promise;
+			const data = tile.record_batch.getChild('title').data[0];
+			let match_start = 0;
+			let match_length = 0;
+			// The first zero in the buffer
+			let target_length = encoded.findIndex((d) => d === 0);
+			const matches = [];
+			for (let i = 0; i < data.values.length; i++) {
+				if (data.values[i] === encoded[match_length]) {
+					match_length += 1;
+					if (match_length === 1) {
+						match_start = i;
+					}
+					if (match_length === target_length) {
+						matches.push(match_start);
+						match_length = 0;
+					}
+				} else {
+					if (match_length > 0) {
+						match_length = 0;
+					}
+				}
+			}
+			const output = new Float32Array(tile.record_batch.numRows);
+			let offsets_index = 0;
+			while (matches.length > 0) {
+				const searching = matches.shift();
+				while (data.valueOffsets[offsets_index + 1] < searching) {
+					offsets_index += 1;
+				}
+				output[offsets_index] = 1;
+			}
+			return output;
+		};
+		searching = false;
+		previous_searches = [...new Set([...previous_searches, query])];
+	}
+
+	async function run_serverside_search(query) {
 		const plot = settings.controls._plot;
 		searching = true;
 
