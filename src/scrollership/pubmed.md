@@ -6,7 +6,7 @@ title: The shape of biomedical research
 
 :::chunk
 
-# The shape of biomedical research
+## The shape of biomedical research
 
 This interactive visualization displays 21 million scientific papers collected in the [PubMed database](https://pubmed.ncbi.nlm.nih.gov), maintained by the United States National Library of Medicine and encompassing all biomedical and life science fields of research.
 
@@ -85,13 +85,9 @@ language articles contained in the PubMed database. To create the map,
 we embedded the abstracts into two dimensions using the
 transformer-based large language model [PubMedBERT](https://dl.acm.org/doi/10.1145/3458754) combined
 with the neighbor embedding method [t-SNE](https://www.jmlr.org/papers/v9/vandermaaten08a.html).
-All our
-embeddings were based on the abstract texts alone, and did not use any
-further metadata or information on citations or references.
 
-:::TODO
-Improving these cites is easy, if we have them.
-:::
+Our embedding is based on the abstract texts alone, and did not use any
+further metadata or information on citations or references.
 
 
 ```api
