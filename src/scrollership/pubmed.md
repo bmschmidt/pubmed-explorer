@@ -142,10 +142,19 @@ encoding:
   foreground:
     field: labels
     lambda: d => d !== 'unlabeled'
-  color: null
+  color: 
+      field: labels
+      range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
+      "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
+duration: 1000
 background_options:
   opacity: [.2, 1]
   size: [.5, 1]
+labels:
+  url: "https://static.nomic.ai/tiles/pubmed/labels.geojson"
+  name: labels
+  label_field: labels
+  size_field: undefined
 ```
 
 ```buttonset
@@ -157,7 +166,6 @@ api:
   background_options:
     opacity: [.05, 2]
     size: [.1, 2]
-
   duration: 450
   alpha: 100
   encoding:
@@ -171,48 +179,10 @@ values: ["unlabeled", "dermatology", "physiology", "genetics", "gynecology", "su
 
 :::
 
-:::chunk
-
-Our journal-based labels do not constitute the ground truth for the
-topic of each paper, and so the highest possible classification accuracy
-is likely well below 100%. Nevertheless, we reasoned that the higher the
-classification accuracy, the better the embedding, and found this metric
-to be useful to compare different representations.
-
-```api
-background_options:
-  opacity: [.2, 1]
-  size: [.5, 1]
-duration: 1450
-alpha: 100
-labels:
-  url: "https://static.nomic.ai/tiles/pubmed/labels.geojson"
-  name: labels
-  label_field: labels
-  size_field: undefined
-encoding:
-  x: 
-    field: x
-  y: 
-    field: y
-  foreground:
-    field: labels
-    lambda: d => d !== 'unlabeled'
-  color:
-    field: labels
-    range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
-    "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
-zoom:
-  bbox: {"x":[-200.191034848208633,200.45313346069492],"y":[-191.55286840817564,191.544651330406]}
-```
-
-
-
-:::
-
 
 :::chunk
 
+REMOVE THIS SLIDE?
 Looking at abstracts, we can also start to tell things about the types of work done.
 Here, for instance, we've parsed out every place in the abstracts where the sample size for a project is indicated (`n = 300`, `n = 100`, etc.). Darker colors, representing smaller sample sizes, are clustered in specific areas of the map.
 
@@ -242,6 +212,7 @@ encoding:
 
 :::chunk
 
+KEEP THIS AND ADD HISTOGRAM THAT BEN LIKED? OTHERWISE THIS CAN GO AS WELL.
 Articles also have lengths of various sorts. Some areas have substantially smaller abstracts than others.
 
 ```api
@@ -260,7 +231,8 @@ encoding:
 
 :::chunk
 
-Title lengths, too, cluster by topical area.
+REMOVE THIS SLIDE?
+Title lengths, too, cluster by topical area. 
 
 ```api
 point_size: 3
@@ -329,7 +301,7 @@ encoding:
 
 :::chunk
 
-In most of these fields, the temporal division is extremely strong: science progresses within immunology and virology in such a way that recent articles have abstracts much more similar to each other than to articles from the 1970s and 1980s in the same fields.
+In most individual fields, the temporal division is very strong: for example, here we see that science progresses within immunology and virology in such a way that recent articles have abstracts much more similar to each other than to articles from the 1970s and 1980s in the same fields.
 
 ```api
 point_size: 1.2
@@ -360,16 +332,12 @@ encoding:
 
 ## COVID-19
 
-But one area contains only papers from 2020-21. This is the 
-COVID-19 island.
+Strikingly, one area of the map contains only papers from 2020&ndash;21. 
+It turns out that these are papers on Covid-19.
 
-We considered a paper Covid-related if it contained at least one of the
-following terms in its abstract: 'covid-19', 'COVID-19', 'Covid-19',
-'CoViD-19', '2019-nCoV', 'SARS-CoV-2', 'coronavirus disease 2019',
-'Coronavirus disease 2019'. Our dataset includes 132,802 Covid-related
-papers.
-
-The COVID cluster is 
+We considered a paper Covid-related if it contained phrases like "Covid-19" or "SARS-CoV-2"
+in the abstract text. Our dataset includes 132 thousand Covid-related papers, most 
+of which are concentrated in this area.
 
 ```api
 duration: 4000
@@ -873,7 +841,13 @@ zoom:
 
 In our prior work[^Gonzalez2022], we used the
 bag-of-words representation of PubMed abstracts and found we obstained the the highest $k$NN accuracy using the TF-IDF (term frequency inverse document frequency) representation with log-scaling. For computational
-convenience we used truncated SVD to reduce dimensionality to 300, the largest dimensionality we could obtain given our RAM resources. (Note that we did not use SVD when using the BERT representation and worked directly with the 768-dimensional representation.) 
+convenience we used truncated SVD to reduce dimensionality to 300, the largest dimensionality we could obtain given our RAM resources. (Note that we did not use SVD when using the BERT representation and worked directly with the 768-dimensional representation.)
+
+Our journal-based labels do not constitute the ground truth for the
+topic of each paper, and so the highest possible classification accuracy
+is likely well below 100%. Nevertheless, we reasoned that the higher the
+classification accuracy, the better the embedding, and found this metric
+to be useful to compare different representations.
 
 [^Gonzalez2022]: TODO, Full cite
 
