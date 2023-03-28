@@ -67,7 +67,7 @@
 				const vals = new Float32Array(tile.record_batch.numRows);
 				const years = tile.record_batch.getChild('year');
 				[...years].map((year, i) => {
-					vals[i] = scalex(year) + Math.random() * 5;
+					const gap = (vals[i] = scalex(year) + Math.random() * 5);
 				});
 				return vals;
 			};
