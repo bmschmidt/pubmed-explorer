@@ -420,7 +420,7 @@ encoding:
 
 :::{.chunk #covid-19}
 
-# COVID-19
+## COVID-19
 
 But one area contains only papers from 2020-21. This is the 
 COVID-19 island.

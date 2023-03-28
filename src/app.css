@@ -31,7 +31,7 @@ ol {
 }
 
 h2 {
-  @apply text-3xl font-semibold text-gray-800 mb-4 mt-8;
+  @apply text-xl font-semibold text-gray-800 mb-4 mt-8;
 }
 
 h3 {
