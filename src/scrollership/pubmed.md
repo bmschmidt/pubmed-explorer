@@ -111,9 +111,9 @@ biomedical literature and can reveal aspects of the data that would not
 be easily noticed with other analysis methods. We showcase the power of
 our approach in four examples: 
 
-1. [The emergence of the Covid-19 literature.](#covid)
+1. [The emergence of the Covid-19 literature.](#covid-19)
 2. [The evolution of different subfields of neuroscience](#neuroscience)
-3. [The uptake of machine learning](#ml)
+3. The uptake of machine learning (???)
 4. [The distribution of gender imbalance across biomedical fields.](#gender)
 
 The shared strategy in all of these is to formulate specific hypotheses
@@ -421,6 +421,7 @@ encoding:
 :::{.chunk #covid-19}
 
 # COVID-19
+
 But one area contains only papers from 2020-21. This is the 
 COVID-19 island.
 
