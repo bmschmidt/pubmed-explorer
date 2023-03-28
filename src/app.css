@@ -30,6 +30,10 @@ ol {
   @apply list-decimal pl-4;
 }
 
+p {
+  @apply mb-2
+}
+
 h2 {
   @apply text-xl font-semibold text-gray-800 mb-4 mt-8;
 }
