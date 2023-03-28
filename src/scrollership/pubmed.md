@@ -118,55 +118,20 @@ analysis of the original high-dimensional dataset.
 
 :::
 
-
-
-:::chunk
-
-The majority of the displayed paper were published between 1970 and 2021. Here darker colors correspond to earlier publication years and lighter colors correspond to more recent papers.
-
-```api
-encoding:
-  x: 
-    field: time.x
-    transform: literal
-  y: 
-    field: time.y
-    transform: literal
-  foreground: null
-  color:
-    field: year
-    domain: [1970, 2022]
-    range: viridis
-```
-
-:::
-
-:::chunk
-
-Our map, however, is not predominantly organized by time. Most regions contain articles from multiple different 
-eras in fairly close proximity; but when zooming in closer, temporal
-periods often become well segregated.
-
-```api
-encoding:
-  foreground: null
-  x: 
-    field: x
-    transform: literal
-  y: 
-    field: y
-    transform: literal
-```
-
-:::
-
-
 :::chunk
 
 We labeled the dataset by selecting 38 keywords contained in journal
 titles that reflected the general topic of the paper. We based our
 choice of keywords on lists of medical specialties and life science
 branches that appeared frequently in the journal titles in our dataset.
+
+Papers were assigned a label if their journal title contained that term. 
+As a result, about a third of the papers in the dataset received labels.
+
+The labels demonstrate that our map has sensible global organization:
+_psychology_ papers are next to _psychiatry_ papers, _optics_ is next to 
+_physics_, and so on. Overall, the left part of the map corresponds to life
+sciences, while the right part corresponds to medicine.
 
 ```api
 encoding:
@@ -203,12 +168,6 @@ api:
 pattern: 'd => d == "${value}"'
 values: ["unlabeled", "dermatology", "physiology", "genetics", "gynecology", "surgery", "neurology", "ophthalmology", "material", "radiology", "veterinary", "physics", "biochemistry", "cardiology", "nursing", "engineering", "chemistry", "psychiatry", "neuroscience", "virology", "environment", "cancer", "pediatric", "pathology", "nutrition", "microbiology", "education", "bioinformatics", "ecology", "rehabilitation", "optics", "immunology", "pharmacology", "psychology"]
 ```
-
-
-Papers were assigned a label if their journal title contained that term,
-either capitalized or not, and were left unlabeled otherwise. Journal
-titles containing more than one term were assigned randomly to one of
-them. About a third of the papers in the dataset have labels.
 
 :::
 
@@ -251,66 +210,6 @@ zoom:
 
 :::
 
-:::chunk
-
-We used PubMedBERT [@pubmedbert] to obtain a numerical representation of
-each abstract. Specifically, we used the [HuggingFace's `transformers`](/)
-library and the publicly released [PubMedBERT model.](/)
-
-:::TODO
-Pubmed BERT link.
-Transformers link
-:::
-
-In our prior work[^Gonzalez2022], we used the
-bag-of-words representation of PubMed abstracts and found we obstained the the highest $k$NN accuracy using the TF-IDF (term frequency inverse document frequency) representation with log-scaling. For computational
-convenience we used truncated SVD to reduce dimensionality to 300, the largest dimensionality we could obtain given our RAM resources. (Note that we did not use SVD when using the BERT representation and worked directly with the 768-dimensional representation.) 
-
-[^Gonzalez2022]: TODO, Full cite
-
-```api
-encoding:
-  x:
-    field: tfidf.x
-    transform: literal
-  y:
-    field: tfidf.y
-    transform: literal
-```
-
-```button
-label: "TF-IDF"
-api:
-  duration: 4000
-  encoding:
-    x:
-      field: tfidf.x
-      transform: literal
-    y:
-      field: tfidf.y
-      transform: literal
-```
-
-```button
-label: "PubMedBERT"
-api:
-  duration: 4000
-  encoding:
-    filter: null
-    x:
-      field: x
-      transform: literal
-    y:
-      field: y
-      transform: literal
-```
-
-As you can see, the embeddings based on the TF-IDF and PubMedBERT representation showed
-similar large-scale organization.
-
-For a comprehensive statistical comparison, see the full paper.
-
-:::
 
 :::chunk
 
@@ -384,6 +283,49 @@ encoding:
   
 ```
 :::
+
+
+
+:::chunk
+
+The majority of the displayed paper were published between 1970 and 2021. Here darker colors correspond to earlier publication years and lighter colors correspond to more recent papers.
+
+```api
+encoding:
+  x: 
+    field: time.x
+    transform: literal
+  y: 
+    field: time.y
+    transform: literal
+  foreground: null
+  color:
+    field: year
+    domain: [1970, 2022]
+    range: viridis
+```
+
+:::
+
+:::chunk
+
+Our map, however, is not predominantly organized by time. Most regions contain articles from multiple different 
+eras in fairly close proximity; but when zooming in closer, temporal
+periods often become well segregated.
+
+```api
+encoding:
+  foreground: null
+  x: 
+    field: x
+    transform: literal
+  y: 
+    field: y
+    transform: literal
+```
+
+:::
+
 
 :::chunk
 
@@ -922,6 +864,58 @@ zoom:
   bbox:
     {"x":[-498.47709386009717,515.5673050798857],"y":[-263.16976179251145,235.80446625732142]}
 ```
+
+:::
+
+:::chunk
+
+
+
+In our prior work[^Gonzalez2022], we used the
+bag-of-words representation of PubMed abstracts and found we obstained the the highest $k$NN accuracy using the TF-IDF (term frequency inverse document frequency) representation with log-scaling. For computational
+convenience we used truncated SVD to reduce dimensionality to 300, the largest dimensionality we could obtain given our RAM resources. (Note that we did not use SVD when using the BERT representation and worked directly with the 768-dimensional representation.) 
+
+[^Gonzalez2022]: TODO, Full cite
+
+```api
+encoding:
+  x:
+    field: tfidf.x
+    transform: literal
+  y:
+    field: tfidf.y
+    transform: literal
+```
+
+```button
+label: "TF-IDF"
+api:
+  duration: 4000
+  encoding:
+    x:
+      field: tfidf.x
+      transform: literal
+    y:
+      field: tfidf.y
+      transform: literal
+```
+
+```button
+label: "PubMedBERT"
+api:
+  duration: 4000
+  encoding:
+    filter: null
+    x:
+      field: x
+      transform: literal
+    y:
+      field: y
+      transform: literal
+```
+
+As you can see, the embeddings based on the TF-IDF and PubMedBERT representation showed
+similar large-scale organization.
 
 :::
 
