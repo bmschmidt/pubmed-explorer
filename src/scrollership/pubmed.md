@@ -69,11 +69,6 @@ adopted in different fields.
 To answer such questions,
 we provide a bird's-eye view on the biomedical literature.
 
-```api
-
-duration: 2000
-
-```
 :::
 
 :::chunk
@@ -88,15 +83,6 @@ with the neighbor embedding method [t-SNE](https://www.jmlr.org/papers/v9/vander
 
 Our embedding is based on the abstract texts alone, and did not use any
 further metadata or information on citations or references.
-
-
-```api
-max_points: 750_000
-duration: 2000
-encoding:
-  jitter_radius: null
-  jitter_speed: null
-```
 
 :::
 
