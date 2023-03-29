@@ -5,7 +5,7 @@ import { exec as raw_exec } from 'child_process';
 const exec = promisify(raw_exec);
 
 async function parse(slug) {
-	const command = `pandoc -t json src/scrollership/${slug}.md`;
+	const command = `pandoc -t json src/scrollership/pubmed.md`;
 	const { stdout } = await exec(command);
 	return stdout;
 }

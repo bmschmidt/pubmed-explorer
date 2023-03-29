@@ -155,7 +155,10 @@ api:
   duration: 450
   alpha: 100
   encoding:
-    color: null
+    color: 
+        field: labels
+        range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
+        "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
     foreground:
       field: labels
       lambda: d => d !== 'unlabeled'
@@ -168,81 +171,50 @@ values: ["unlabeled", "dermatology", "physiology", "genetics", "gynecology", "su
 
 :::chunk
 
-REMOVE THIS SLIDE?
-Looking at abstracts, we can also start to tell things about the types of work done.
-Here, for instance, we've parsed out every place in the abstracts where the sample size for a project is indicated (`n = 300`, `n = 100`, etc.). Darker colors, representing smaller sample sizes, are clustered in specific areas of the map.
-
-
+While we use journal titles to assign labels, the actual text underlying these representations are **abstracts**.
+These, too, show regional patterns;: 
 ```api
-point_size: 3
-encoding:
-  x: 
-    field: x
-  y: 
-    field: y
-  foreground: null
-  filter:
-    field: sample_size
-    op: gt
-    a: 0
-  color:
-    field: sample_size
-    domain: [1, 10000]
-    range: magma
-    transform: log
-  
-```
-
-:::
-
-
-:::chunk
-
-KEEP THIS AND ADD HISTOGRAM THAT BEN LIKED? OTHERWISE THIS CAN GO AS WELL.
-Articles also have lengths of various sorts. Some areas have substantially smaller abstracts than others.
-
-```api
-point_size: 3
+labels:
+  url: null
 encoding:
   foreground: null
   filter: null
+  x:
+    field: x
+    transform: literal
+  y: 
+    field: y
+    transform: literal
   color:
     field: words
     domain: [0, 500]
     range: magma
-    transform: sqrt
 ```
 :::
 
 
 :::chunk
 
-REMOVE THIS SLIDE?
-Title lengths, too, cluster by topical area. 
+Abstract do not obey a smooth distribution: instead, they cluster at 150, 200, and 250 words,
+because authors are constrained in their lengths by journals' submission guidelines. 
 
 ```api
-point_size: 3
-alpha: 80
+labels:
+  url: null
 encoding:
-  foreground: null
-  filter: null
-  jitter_radius: null
   x: 
-    field: x
+    field: abstract_length.x
     transform: literal
-  y:
-    field: y
+  y: 
+    field: abstract_length.y
     transform: literal
+  foreground: null
   color:
-    field: title_length
-    domain: [0, 200]
+    field: words
+    domain: [0, 500]
     range: magma
-    transform: linear
-  
 ```
 :::
-
-
 
 :::chunk
 
@@ -356,31 +328,6 @@ labeled Covid-related papers: 27.0% from the total amount of
 Covid-related papers and 45.6% of the Covid-related papers from the main
 Covid cluster in the embedding.
 
-```buttonset
-label: Filter to title keyword.
-target: "encoding.foreground.lambda"
-mouseover: true
-clone:
-  - "encoding.foreground.lambda"
-api:
-  background_options:
-    opacity: [.05, 2]
-    size: [.1, 2]
-  duration: 450
-  alpha: 100
-  encoding:
-    filter: null
-    color: null
-    filter:
-      field: covid_label
-      lambda: d => d !== 'unlabeled'
-    foreground:
-      field: covid_label
-      lambda: d => d !== 'Covid unlabeled'
-pattern: 'd => d == "${value}"'
-values: ["Antibody", "Anxiety", "Cancer", "Children", "Clinical", "Epidemic", "Healthcare", "Immune", "Implications", "Mental", "Mortality", "Outbreak", "Pediatric", "Pneumonia", "Population", "Psychological", "Respiratory", "Social", "Strategies", "Students","Surgery", "Symptoms", "Therapy", "Transmission", "Treatment", "Vaccine", "Workers"]
-```
-
 :::
 
 :::chunk
@@ -411,13 +358,54 @@ encoding:
 
 ```
 
+
+```buttonset
+label: Filter to title keyword.
+target: "encoding.foreground.lambda"
+mouseover: true
+clone:
+  - "encoding.foreground.lambda"
+api:
+  background_options:
+    opacity: [.05, 2]
+    size: [.1, 2]
+  duration: 450
+  alpha: 100
+  encoding:
+    filter:
+      field: covid_label
+      lambda: |
+        d => d !== ''
+    foreground:
+      field: covid_label
+      lambda: |
+        d => d !== 'Covid unlabeled'
+pattern: 'd => d == "${value}"'
+
+values: ["Antibody", "Anxiety", "Cancer", "Children", "Clinical", "Epidemic", "Healthcare", "Immune", "Implications", "Mental", "Mortality", "Outbreak", "Pediatric", "Pneumonia", "Population", "Psychological", "Respiratory", "Social", "Strategies", "Students","Surgery", "Symptoms", "Therapy", "Transmission", "Treatment", "Vaccine", "Workers"]
+
+```
+
+```button
+label: clear
+api:
+  encoding :
+    filter:
+      field: covid_label
+      lambda: |
+        d => d !== ''
+    foreground: null
+```
+
 :::
 
 :::chunk
 
 At a much smaller temporal dimension, we can see the differences in COVID papers in the 2020-2021 period.
 
-
+:::TODO
+Make the COVID slider work.
+:::
 
 ```api
 
@@ -444,8 +432,10 @@ encoding:
   filter:
     field: date
     op: within
-    a: 10000000000000
+    a: 10000000000
     b: 1572566400000
+zoom:
+  bbox: {"x":[-26.113317446654943,16.705487505186465],"y":[47.62328228197863,84.66201097142243]}    
 
 ```
 
@@ -454,7 +444,7 @@ clone:
   - encoding.filter
 min: 1572566400000
 max: 1654041600000
-step: 100000000000
+step: 10000000000
 label: date
 target: "encoding.filter.b"
 ```
@@ -466,14 +456,18 @@ target: "encoding.filter.b"
 
 ## Gender
 
-By parsing out author names (especially for after 2000) we can get a sense
-of which areas of publication have more male or female authors.
+By parsing out author names (especially for after 2000) we can see
+which areas of publication have more male or female authors.
 
 ```api
 duration: 1000
 point_size: 1.4
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-250, 250]
 encoding:
-  filter:
+  filter: null
   foreground: null
   color:
     field: GenderFirstAuthor
@@ -740,56 +734,6 @@ max: 2020
 step: 1
 label: Year
 target: "encoding.filter.b"
-```
-
-:::
-
-:::chunk
-
-While we prepopulate a few fields to color by, you can search for _any
-regular expression_ across 20 million points. Enter any regular expression
-into the searchbox below to filter based on titles.
-
-
-```api
-labels:
-  url: null
-```
-
-```search
-endpoint: "https://movies.benschmidt.org/project/search_regex"
-field: "title"
-```
-
-:::
-
-:::chunk
-
-But clustering based on journal articles is
-
-For example, here are articles about virology...
-
-```api
-encoding:
-  filter: null
-zoom:
-  bbox: {"x":[-96.05127079631455,-59.63183562059765],"y":[-57.043643810838745,-25.54043908540754]}
-labels:
-  url: "https://static.nomic.ai/tiles/pubmed/labels.geojson"
-  name: labels
-  label_field: labels
-  size_field: undefined
-```
-
-:::
-
-:::chunk
-
-And just below are a constellation of articles about the related field of immunology.
-
-```api
-zoom:
-  bbox: {"x":[-82.05020739813041,-60.42508126020219],"y":[-29.027217800039722,-10.321250158052152]}
 ```
 
 :::
