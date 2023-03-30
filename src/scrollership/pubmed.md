@@ -1,18 +1,20 @@
 ---
-title: The shape of biomedical research
+title: The landscape of biomedical research
 ---
 
 :::{.scrollership scroller-type="deepscatter"}
 
 :::chunk
 
-## The shape of biomedical research
+## The landscape of biomedical research
 
 This interactive visualization displays 21 million scientific papers collected in the [PubMed database](https://pubmed.ncbi.nlm.nih.gov), maintained by the United States National Library of Medicine and encompassing all biomedical and life science fields of research.
 
 You can scroll the narration in the left part of the screen, and interact with the visualization in the right part of the screen. Zooming in loads additional papers. Information about each individual paper appears on mouse-over, and clicking on a paper opens its PubMed page in a separate window. Search over titles is available in the upper-right corner.
 
-Scroll down to read more! And see [our paper](https://www.biorxiv.org/content/10.1101/xxx) for more details.
+Scroll down to read more!
+
+And see [our paper](https://www.biorxiv.org/content/10.1101/xxx) for more details.
 
 :::barchartprep
 Prep goes here to pre-allocate some deepscatter data.
@@ -144,7 +146,6 @@ labels:
 ```
 
 ```buttonset
-label: Subjects
 target: "encoding.foreground.lambda"
 clone:
   - "encoding.foreground.lambda"
@@ -175,6 +176,7 @@ While we use journal titles to assign labels, the actual data underlying this re
 Here we color the map by length of each abstract (darker color: shorter abstracts; lighter color: longer abstracts). This, too, shows regional patterns, with some disciplines preferring longer abstracts than others.
 
 ```api
+point_size: 1.2
 labels:
   url: null
 encoding:
@@ -219,7 +221,7 @@ encoding:
 
 :::chunk
 
-The majority of the displayed paper were published between 1970 and 2021. Here darker colors correspond to earlier publication years and lighter colors correspond to more recent papers.
+The majority of the displayed papers were published between 1970 and 2021. Here darker colors correspond to earlier publication years and lighter colors correspond to more recent papers.
 
 ```api
 encoding:
@@ -348,7 +350,6 @@ encoding:
 
 
 ```buttonset
-label: Filter to title keyword.
 target: "encoding.foreground.lambda"
 mouseover: true
 clone:
@@ -430,15 +431,17 @@ label: date
 
 :::chunk
 
-## Gender
+## Gender bias
 
-By parsing out author names (especially for after 2000) we can see
-which areas of publication have more male or female authors.
+Using the first name of the first author of each paper, we could infer their gender. 
+Coloring the map with the inferred gender, we can see
+which research fields have more male or female authors.
 
 ```api
 duration: 1000
 point_size: 1.4
-
+labels:
+  url: null
 zoom:
   bbox:
     x: [-250, 250]
@@ -451,7 +454,6 @@ encoding:
     field: GenderFirstAuthor
     domain: ['unknown', 'male', 'female']
     range: ["#f5f5f5", "#1f77b4", "#ff7f0e", ]
-
 ```
 
 ```button
@@ -503,61 +505,33 @@ api:
 
 :::chunk
 
-## Female areas
-
-A few areas are dominated by female first authors. Here one would need to select only radiology papers.
+Some areas are dominated by either female or male first authors. Here are some examples:
 
 ```button
-label: breast cancer
-api: {"zoom": {"bbox": {"x": [105.0, 125.0], "y": [-125.0, -105.0]}}}
+label: female-dominated area -- contraceptive use
+api: {"zoom": {"bbox": {"x":[53.256,68.275],"y":[86.965,94.832]}}}
 ```
 
-
-    
-
 ```button
-label: breast cancer in pregnancy
-api: {"zoom": {"bbox": {"x": [80.0, 100.0], "y": [40.0, 50.0]}}}
-```
-
-
-:::
-
-
-:::chunk
-
-## Male areas
-
-Male issue: The second button should be showing only nutrition papers.
-
-```button
-label: Shoulder Arthoscopy
+label: male-dominated area -- shoulder arthoscopy
 api: {"zoom": {"bbox": {"x": [200.0, 202.0], "y": [46.0, 48.0]}}}
 ```
 
-
-    
-```button
-label: Exercise supplementation 
-api: {"zoom": {"bbox": {"x": [65.0, 75.0], "y": [-10.0, 10.0]}}}
-```
-
 :::
 
 :::chunk
 
-There was substantial heterogeneity of gender ratios within some of the individual disciplines, and our fine-grained map allowed us to zoom in further. For example, in healthcare (overall 49.6\% female first authors), there were male- and female-dominated regions in the map. One of the more male-dominated clusters (33.9\% female) focused on financial management while one of the more female ones (68.1\% female) -- on patient care. (Here we need to select only healthcare papers).
-
-
+In some individual disciplines we saw substantial heterogeneity of gender ratios. For example, there were male- and female-dominated regions in the map of healthcare papers. One of the more male-dominated clusters focused on financial management while one of the more female ones -- on patient care.
 
 ```api
 point_size: 1.2
 alpha: 40
-
 zoom:
   bbox: {"x":[45.0, 95.0],"y":[170.0, 210.0]}
 encoding:
-  filter: null
+  filter: 
+    field: labels
+    lambda: d => d == 'healthcare'
   x: 
     field: x
     transform: literal
@@ -576,7 +550,7 @@ encoding:
 
 :::chunk
 
-In education (58.6\% female authors), female authors dominated research on nursing training whereas male authors were more frequent in research on medical training.(Here we need to select only education papers).
+In education, female authors dominated research on nursing training whereas male authors were more frequent in research on medical training.
 
 ```api
 point_size: 1.2
@@ -585,7 +559,9 @@ alpha: 40
 zoom:
   bbox: {"x":[65.0, 135.0],"y":[150.0, 200.0]}
 encoding:
-  filter: null
+  filter: 
+    field: labels
+    lambda: d => d == 'education'
   x: 
     field: x
     transform: literal
@@ -595,7 +571,7 @@ encoding:
   color:
     field: GenderFirstAuthor
     domain: ['male', 'female', 'unknown']
-    range: ["#1fc3aa", "#8624f5", "#f5f5f5"]
+    range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
 
 ```
@@ -604,7 +580,7 @@ encoding:
 
 :::chunk
 
-In surgery, only 24.4\% of the first authors were female, but this fraction increased to 61.1\% in the cluster of papers on veterinary surgery. This agrees with veterinary medicine being a predominantly female discipline (52.2\% in total). (Here we need to select only surgery papers).
+In surgery, only 24\% of the first authors were female, but this fraction increased to 61\% in the cluster of papers on veterinary surgery. (Here we need to select only surgery papers).
 
 ```api
 point_size: 1.2
@@ -613,7 +589,9 @@ alpha: 40
 zoom:
   bbox: {"x":[115.0, 185.0],"y":[-100.0, -50.0]}
 encoding:
-  filter: null
+  filter: 
+    field: labels
+    lambda: d => d == 'surgery'
   x: 
     field: x
     transform: literal
@@ -623,38 +601,13 @@ encoding:
   color:
     field: GenderFirstAuthor
     domain: ['male', 'female', 'unknown']
-    range: ["#1fc3aa", "#8624f5", "#f5f5f5"]
+    range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
-
 ```
 
 :::
 
 
-:::chunk
-
-```api
-encoding:
-  filter:
-    field: year
-    op: between
-    a: 2011
-    b: 2019
-
-```
-
-```double-slider
-clone:
-  - encoding.filter
-min: 2001
-max: 2020
-step: 1
-label: Year
-target_min: "encoding.filter.a"
-target_max: "encoding.filter.b"
-```
-
-:::
 
 :::chunk
 
@@ -685,28 +638,57 @@ zoom:
 
 :::chunk
 
+```api
+encoding:
+  filter:
+    field: year
+    op: between
+    a: 2011
+    b: 2019
+
+```
+
+```double-slider
+clone:
+  - encoding.filter
+min: 2001
+max: 2020
+step: 1
+label: Year
+target_min: "encoding.filter.a"
+target_max: "encoding.filter.b"
+```
+
+:::
 
 
-In our prior work[^Gonzalez2022], we used the
-bag-of-words representation of PubMed abstracts and found we obstained the the highest $k$NN accuracy using the TF-IDF (term frequency inverse document frequency) representation with log-scaling. For computational
-convenience we used truncated SVD to reduce dimensionality to 300, the largest dimensionality we could obtain given our RAM resources. (Note that we did not use SVD when using the BERT representation and worked directly with the 768-dimensional representation.)
+:::chunk
 
-Our journal-based labels do not constitute the ground truth for the
-topic of each paper, and so the highest possible classification accuracy
-is likely well below 100%. Nevertheless, we reasoned that the higher the
-classification accuracy, the better the embedding, and found this metric
-to be useful to compare different representations.
+## BERT model vs. TF-IDF
 
-[^Gonzalez2022]: TODO, Full cite
+We also produced a two-dimensional map based on the bag-of-words representation of PubMed abstracts (known in the natural language processing literature as TF-IDF) instead of the PubMedBERT model. This resulted in worse separation between our journal-based labels, so used the PubMedBERT approach for all the visualizations above. Please see the paper for more detailed comparison. 
+
+Here you can switch between the PubMedBERT-based and the TF-IDF-based maps.
 
 ```api
 encoding:
   x:
-    field: tfidf.x
+    field: x
     transform: literal
   y:
-    field: tfidf.y
+    field: y
     transform: literal
+  foreground:
+    field: labels
+    lambda: d => d !== 'unlabeled'
+  color:
+    field: labels
+    range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
+    "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-250, 250]
 ```
 
 ```button
@@ -735,9 +717,6 @@ api:
       field: y
       transform: literal
 ```
-
-As you can see, the embeddings based on the TF-IDF and PubMedBERT representation showed
-similar large-scale organization.
 
 :::
 
