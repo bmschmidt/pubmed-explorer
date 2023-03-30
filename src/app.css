@@ -15,16 +15,6 @@ li {
   @apply mb-2;
 }
 
-li::before {
-  content: "•";
-  @apply inline-block text-purple-600 mr-2;
-}
-
-ol li::before {
-  content: counter(list-item) ".";
-  @apply inline-block text-purple-600 mr-2;
-}
-
 ol {
   counter-reset: list-item;
   @apply list-decimal pl-4;
