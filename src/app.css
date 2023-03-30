@@ -45,3 +45,8 @@ h3 {
 h4 {
   @apply text-xl font-semibold text-gray-600 mb-2 mt-4;
 }
+
+details {
+  /* Just hide the details elements */
+  display: none;
+}
