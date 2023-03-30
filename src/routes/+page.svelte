@@ -16,6 +16,7 @@
 	import FancyDivs from '$lib/components/FancyDivs.svelte';
 	import Controls from '$lib/components/Controls.svelte';
 	import ScrollershipCodeBlockWrapper from '$lib/components/ScrollershipCodeBlockWrapper.svelte';
+	import RangeSlider from '$lib/components/RangeSlider.svelte';
 
 	const controls = {
 		'codeblock.method': CallMethod,
@@ -23,6 +24,7 @@
 		'codeblock.search': Search,
 		'codeblock.callmethod': CallMethod,
 		'codeblock.slider': Slider,
+		'codeblock.double-slider': RangeSlider,
 		'codeblock.api': ScrollershipCodeBlockWrapper,
 		'div.legend': Legend,
 		'div.barchartprep': SpecialCode,

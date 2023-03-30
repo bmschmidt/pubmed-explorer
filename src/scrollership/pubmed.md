@@ -291,7 +291,7 @@ encoding:
 ## COVID-19
 
 Strikingly, one area of the map contains only papers from 2020&ndash;21. 
-It turns out that these are papers on Covid-19.
+These are papers on Covid-19.
 
 We considered a paper Covid-related if it contained phrases like "Covid-19" or "SARS-CoV-2"
 in the abstract text. Our dataset includes 132 thousand Covid-related papers, most 
@@ -403,10 +403,6 @@ api:
 
 At a much smaller temporal dimension, we can see the differences in COVID papers in the 2020-2021 period.
 
-:::TODO
-Make the COVID slider work.
-:::
-
 ```api
 
 encoding:
@@ -417,36 +413,33 @@ encoding:
     domain: [1572566400000, 1654041600000]
     range: viridis
 ```
-
-
-:::legend
 :::
 
-:::
 
 :::chunk
 
-
+### Publications in 2020-2021
 ```api
 encoding:
   filter:
     field: date
-    op: within
-    a: 10000000000
-    b: 1572566400000
+    op: between
+    a: 1572566400000
+    b: 1682566400000
 zoom:
   bbox: {"x":[-26.113317446654943,16.705487505186465],"y":[47.62328228197863,84.66201097142243]}    
 
 ```
 
-```slider
+```double-slider
 clone:
   - encoding.filter
 min: 1572566400000
 max: 1654041600000
-step: 10000000000
+step: 100
+target_min: "encoding.filter.a"
+target_max: "encoding.filter.b"
 label: date
-target: "encoding.filter.b"
 ```
 
 
@@ -720,20 +713,21 @@ api: {"zoom": {"bbox": {"x": [200.0, 202.0], "y": [60.0, 62.0]}}}
 encoding:
   filter:
     field: year
-    op: within
-    a: 3
+    op: between
+    a: 2011
     b: 2019
 
 ```
 
-```slider
+```double-slider
 clone:
   - encoding.filter
 min: 2001
 max: 2020
 step: 1
 label: Year
-target: "encoding.filter.b"
+target_min: "encoding.filter.a"
+target_max: "encoding.filter.b"
 ```
 
 :::

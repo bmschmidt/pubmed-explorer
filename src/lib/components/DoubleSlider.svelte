@@ -2,7 +2,6 @@
 	import { clamp } from 'yootils';
 	export let start = 0;
 	export let end = 1;
-
 	let leftHandle;
 	let body;
 	let slider;
