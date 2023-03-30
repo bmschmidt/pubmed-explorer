@@ -509,15 +509,16 @@ api:
 
 :::
 
-## Female examples
 
 :::chunk
+
+## Female areas
 
 A few areas are dominated by female first authors. Here one would need to select only radiology papers.
 
 ```button
 label: breast cancer
-api: {"zoom": {"bbox": {"x": [105.0, 125.0], "y": [105.0, 125.0]}}}
+api: {"zoom": {"bbox": {"x": [105.0, 125.0], "y": [-125.0, -105.0]}}}
 ```
 
 
@@ -525,15 +526,16 @@ api: {"zoom": {"bbox": {"x": [105.0, 125.0], "y": [105.0, 125.0]}}}
 
 ```button
 label: breast cancer in pregnancy
-api: {"zoom": {"bbox": {"x": [80.0, 100.0], "y": [-50.0, -40.0]}}}
+api: {"zoom": {"bbox": {"x": [80.0, 100.0], "y": [40.0, 50.0]}}}
 ```
 
 
 :::
 
-## Male examples
 
 :::chunk
+
+## Male areas
 
 Male issue: The second button should be showing only nutrition papers.
 
@@ -551,19 +553,18 @@ api: {"zoom": {"bbox": {"x": [65.0, 75.0], "y": [-10.0, 10.0]}}}
 
 :::
 
-## 3 panels from gender figure
-## panel c
-
 :::chunk
 
-There was substantial heterogeneity of gender ratios within some of the individual disciplines, and our fine-grained map allowed us to zoom in further. For example, in healthcare (overall 49.6\% female first authors), there were male- and female-dominated regions in the map. One of the more male-dominated clusters (33.9\% female) focused on financial management while one of the more female ones (68.1\% female)~---~on patient care. (Here we need to select only healthcare papers).
+There was substantial heterogeneity of gender ratios within some of the individual disciplines, and our fine-grained map allowed us to zoom in further. For example, in healthcare (overall 49.6\% female first authors), there were male- and female-dominated regions in the map. One of the more male-dominated clusters (33.9\% female) focused on financial management while one of the more female ones (68.1\% female) -- on patient care. (Here we need to select only healthcare papers).
+
+
 
 ```api
 point_size: 1.2
 alpha: 40
 
 zoom:
-  bbox: {"x":[45.0, 95.0],"y":[-210.0, -170.0]}
+  bbox: {"x":[45.0, 95.0],"y":[170.0, 210.0]}
 encoding:
   filter: null
   x: 
@@ -575,14 +576,13 @@ encoding:
   color:
     field: GenderFirstAuthor
     domain: ['male', 'female', 'unknown']
-    range: ["#1fc3aa", "#8624f5", "#f5f5f5"]
+    range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
 
 ```
 
 :::
 
-## panel d
 :::chunk
 
 In education (58.6\% female authors), female authors dominated research on nursing training whereas male authors were more frequent in research on medical training.(Here we need to select only education papers).
@@ -592,7 +592,7 @@ point_size: 1.2
 alpha: 40
 
 zoom:
-  bbox: {"x":[65.0, 135.0],"y":[-200.0, -150.0]}
+  bbox: {"x":[65.0, 135.0],"y":[150.0, 200.0]}
 encoding:
   filter: null
   x: 
@@ -611,7 +611,6 @@ encoding:
 
 :::
 
-## panel e
 :::chunk
 
 In surgery, only 24.4\% of the first authors were female, but this fraction increased to 61.1\% in the cluster of papers on veterinary surgery. This agrees with veterinary medicine being a predominantly female discipline (52.2\% in total). (Here we need to select only surgery papers).
@@ -621,7 +620,7 @@ point_size: 1.2
 alpha: 40
 
 zoom:
-  bbox: {"x":[115.0, 185.0],"y":[50.0, 100.0]}
+  bbox: {"x":[115.0, 185.0],"y":[-100.0, -50.0]}
 encoding:
   filter: null
   x: 
