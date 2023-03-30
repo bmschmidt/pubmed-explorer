@@ -10,9 +10,9 @@ title: The shape of biomedical research
 
 This interactive visualization displays 21 million scientific papers collected in the [PubMed database](https://pubmed.ncbi.nlm.nih.gov), maintained by the United States National Library of Medicine and encompassing all biomedical and life science fields of research.
 
-You can scroll the narration in the left part of the screen, and interact with the visualization in the right part of the screen. Zooming in loads additional papers. Information about each individual paper appears on mouse-over. Search over titles is available in the upper-right corner.
+You can scroll the narration in the left part of the screen, and interact with the visualization in the right part of the screen. Zooming in loads additional papers. Information about each individual paper appears on mouse-over, and clicking on a paper opens its PubMed page in a separate window. Search over titles is available in the upper-right corner.
 
-Please see [our paper](https://www.biorxiv.org/content/10.1101/xxx) for more details.
+Scroll down to read more! And see [our paper](https://www.biorxiv.org/content/10.1101/xxx) for more details.
 
 :::barchartprep
 Prep goes here to pre-allocate some deepscatter data.
@@ -81,7 +81,7 @@ we embedded the abstracts into two dimensions using the
 transformer-based large language model [PubMedBERT](https://dl.acm.org/doi/10.1145/3458754) combined
 with the neighbor embedding method [t-SNE](https://www.jmlr.org/papers/v9/vandermaaten08a.html).
 
-Our embedding is based on the abstract texts alone, and did not use any
+Our map is based on the abstract texts alone, and did not use any
 further metadata or information on citations or references.
 
 :::
@@ -171,8 +171,9 @@ values: ["unlabeled", "dermatology", "physiology", "genetics", "gynecology", "su
 
 :::chunk
 
-While we use journal titles to assign labels, the actual text underlying these representations are **abstracts**.
-These, too, show regional patterns;: 
+While we use journal titles to assign labels, the actual data underlying this representation are **abstract texts**.
+Here we color the map by length of each abstract (darker color: shorter abstracts; lighter color: longer abstracts). This, too, shows regional patterns, with some disciplines preferring longer abstracts than others.
+
 ```api
 labels:
   url: null
@@ -195,8 +196,8 @@ encoding:
 
 :::chunk
 
-Abstract do not obey a smooth distribution: instead, they cluster at 150, 200, and 250 words,
-because authors are constrained in their lengths by journals' submission guidelines. 
+Abstract lengths do not obey a smooth distribution: instead, they cluster at 150, 200, and 250 words,
+likely because authors are constrained by journals' submission guidelines. 
 
 ```api
 labels:
@@ -240,8 +241,7 @@ encoding:
 :::chunk
 
 Our map, however, is not predominantly organized by time. Most regions contain articles from multiple different 
-eras in fairly close proximity; but when zooming in closer, temporal
-periods often become well segregated.
+eras in fairly close proximity.
 
 ```api
 encoding:
@@ -259,7 +259,7 @@ encoding:
 
 :::chunk
 
-In most individual fields, the temporal division is very strong: for example, here we see that science progresses within immunology and virology in such a way that recent articles have abstracts much more similar to each other than to articles from the 1970s and 1980s in the same fields.
+But when zooming in closer, temporal periods often become well segregated. In most individual fields, the temporal division is very strong: for example, here we see that science progresses within immunology and virology in such a way that recent articles have abstracts much more similar to each other than to articles from the 1970s and 1980s in the same fields.
 
 ```api
 point_size: 1.2
@@ -320,22 +320,10 @@ zoom:
 
 :::chunk
 
-We then group the Covid papers based on the presence of keywords in 
-their title. Papers were assigned a label if their title contained that
-term, either capitalized or not. Paper titles containing more than one
-term were assigned randomly to one of them. This resulted in 35,874
-labeled Covid-related papers: 27.0% from the total amount of
-Covid-related papers and 45.6% of the Covid-related papers from the main
-Covid cluster in the embedding.
+We can group the Covid papers based on the presence of specific keywords in 
+their title. All different kinds of Covid-related research appear in this cluster in microcosm, from treatment and epidemiology at the top, to social and family-related issues at the bottom. 
 
-:::
-
-:::chunk
-
-Within this cluster appear all different types of articles in microcosm, from treatment and epidemiology to social and family related issues at the bottom. Vaccines appear as two major regions
-completely distinct: one involving the scientific effort to create and test vaccines, and the other (towards the bottom) involving the public health effort to get people to use the vaccines once they were widely available.
-
-The Covid cluster is among the most regions in the map.
+Vaccines appear as two major regions which are completely distinct: one involving the scientific effort to create and test vaccines, and the other (towards the bottom) involving the public health effort to get people to use the vaccines once they were widely available.
 
 ```api
 labels:
@@ -394,19 +382,24 @@ api:
       field: covid_label
       lambda: |
         d => d !== ''
-    foreground: null
+    foreground:       
+      lambda: |
+        d => d !== 'Covid unlabeled'
 ```
 
 :::
 
 :::chunk
 
-At a much smaller temporal dimension, we can see the differences in COVID papers in the 2020-2021 period.
+We can also see how the focus of Covid publications shifted with time during 2020&nbsp;2021. Early papers are predominantly clinical, while research on societal implications and vaccine hesitancy appeared later.
 
 ```api
 
 encoding:
-  filter: null
+  filter: 
+      field: covid_label
+      lambda: |
+        d => d !== ''
   foreground: null
   color:
     field: date
@@ -418,7 +411,8 @@ encoding:
 
 :::chunk
 
-### Publications in 2020-2021
+THIS SLIDER SHOULD BE PART OF THE PRERIOUS SLIDE.
+
 ```api
 encoding:
   filter:
