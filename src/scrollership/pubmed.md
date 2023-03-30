@@ -377,7 +377,8 @@ values: ["Antibody", "Anxiety", "Cancer", "Children", "Clinical", "Epidemic", "H
 ```button
 label: clear
 api:
-  encoding :
+  encoding:
+    filter2: null
     filter:
       field: covid_label
       lambda: |
@@ -395,48 +396,35 @@ api:
 We can also see how the focus of Covid publications shifted with time during 2020&nbsp;2021. Early papers are predominantly clinical, while research on societal implications and vaccine hesitancy appeared later.
 
 ```api
-
+zoom:
+  bbox: {"x":[-26.113317446654943,16.705487505186465],"y":[47.62328228197863,84.66201097142243]}
 encoding:
   filter: 
       field: covid_label
       lambda: |
         d => d !== ''
+  filter2:
+    field: date
+    op: between
+    a: 1572566400000
+    b: 1682566400000
   foreground: null
   color:
     field: date
     domain: [1572566400000, 1654041600000]
     range: viridis
 ```
-:::
-
-
-:::chunk
-
-THIS SLIDER SHOULD BE PART OF THE PRERIOUS SLIDE. AND IT SHOULD FILTER TO SHOW ONLY COVID PAPERS LIKE IN THE PREVIOUS SLIDE. NOT SURE HOW TO DO IT (DOUBLE FILTER, BY COVID_LABEL AND BY DATE)
-
-```api
-encoding:
-  filter:
-    field: date
-    op: between
-    a: 1572566400000
-    b: 1682566400000
-zoom:
-  bbox: {"x":[-26.113317446654943,16.705487505186465],"y":[47.62328228197863,84.66201097142243]}    
-
-```
 
 ```double-slider
 clone:
-  - encoding.filter
+  - encoding.filter2
 min: 1572566400000
 max: 1654041600000
 step: 100
-target_min: "encoding.filter.a"
-target_max: "encoding.filter.b"
+target_min: "encoding.filter2.a"
+target_max: "encoding.filter2.b"
 label: date
 ```
-
 
 :::
 
@@ -450,12 +438,14 @@ which areas of publication have more male or female authors.
 ```api
 duration: 1000
 point_size: 1.4
+
 zoom:
   bbox:
     x: [-250, 250]
     y: [-250, 250]
 encoding:
   filter: null
+  filter2: null
   foreground: null
   color:
     field: GenderFirstAuthor
