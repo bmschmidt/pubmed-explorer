@@ -61,19 +61,11 @@
 			<div class="logos">
 				<div class="logo">
 					<a href="https://www.eye-tuebingen.de/berenslab/">
-						<img
-							alt="Tübingen University logo"
-							src="//static.nomic.ai/journeys/pubmed/UniversitaetTuebingen_WortBildMarke.png"
-						/>
+						<img alt="Tübingen University logo" src="UniversitaetTuebingen_WortBildMarke.png" />
 					</a>
 				</div>
 				<div class="logo mx-8">
-					<a href="http://nomic.ai/"
-						><img
-							src="//static.nomic.ai/journeys/pubmed/nomic_with_transparent.png"
-							alt="Nomic logo"
-						/></a
-					>
+					<a href="http://nomic.ai/"><img src="nomic_with_transparent.png" alt="Nomic logo" /></a>
 				</div>
 			</div>
 		</div>
