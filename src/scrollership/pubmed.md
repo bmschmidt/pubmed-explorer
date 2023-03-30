@@ -382,7 +382,8 @@ api:
       field: covid_label
       lambda: |
         d => d !== ''
-    foreground:       
+    foreground: 
+      field: covid_label
       lambda: |
         d => d !== 'Covid unlabeled'
 ```
@@ -411,7 +412,7 @@ encoding:
 
 :::chunk
 
-THIS SLIDER SHOULD BE PART OF THE PRERIOUS SLIDE.
+THIS SLIDER SHOULD BE PART OF THE PRERIOUS SLIDE. AND IT SHOULD FILTER TO SHOW ONLY COVID PAPERS LIKE IN THE PREVIOUS SLIDE. NOT SURE HOW TO DO IT (DOUBLE FILTER, BY COVID_LABEL AND BY DATE)
 
 ```api
 encoding:
