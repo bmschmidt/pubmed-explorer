@@ -98,7 +98,7 @@ our approach in four examples:
 1. [The emergence of the Covid-19 literature.](#covid-19)
 2. [The evolution of different subfields of neuroscience](#neuroscience)
 3. The uptake of machine learning (???)
-4. [The distribution of gender imbalance across biomedical fields.](#gender)
+4. [The distribution of gender imbalance across biomedical fields.](#gender-bias)
 
 The shared strategy in all of these is to formulate specific hypotheses
 about the data based on the visual exploration, and then to confirm them by a dedicated statistical
