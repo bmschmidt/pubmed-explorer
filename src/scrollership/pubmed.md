@@ -393,7 +393,7 @@ api:
 
 :::chunk
 
-We can also see how the focus of Covid publications shifted with time during 2020&nbsp;2021. Early papers are predominantly clinical, while research on societal implications and vaccine hesitancy appeared later.
+We can also see how the focus of Covid publications shifted with time during 2020–2021. Early papers are predominantly clinical, while research on societal implications and vaccine hesitancy appeared later.
 
 ```api
 zoom:
