@@ -524,7 +524,7 @@ api: {"zoom": {"bbox": {"x": [200.0, 202.0], "y": [46.0, 48.0]}}}
 In some individual disciplines we saw substantial heterogeneity of gender ratios. For example, there were male- and female-dominated regions in the map of healthcare papers. One of the more male-dominated clusters focused on financial management while one of the more female ones -- on patient care.
 
 ```api
-point_size: 1.2
+point_size: 2
 alpha: 40
 zoom:
   bbox: {"x":[45.0, 95.0],"y":[170.0, 210.0]}
@@ -532,6 +532,9 @@ encoding:
   filter: 
     field: labels
     lambda: d => d == 'healthcare'
+  foreground:
+    field: GenderFirstAuthor
+    lambda: "d => d !== 'unknown'"
   x: 
     field: x
     transform: literal
@@ -553,15 +556,17 @@ encoding:
 In education, female authors dominated research on nursing training whereas male authors were more frequent in research on medical training.
 
 ```api
-point_size: 1.2
+point_size: 2
 alpha: 40
-
 zoom:
   bbox: {"x":[65.0, 135.0],"y":[150.0, 200.0]}
 encoding:
   filter: 
     field: labels
     lambda: d => d == 'education'
+  foreground:
+    field: GenderFirstAuthor
+    lambda: "d => d !== 'unknown'"
   x: 
     field: x
     transform: literal
@@ -583,7 +588,7 @@ encoding:
 In surgery, only 24\% of the first authors were female, but this fraction increased to 61\% in the cluster of papers on veterinary surgery. (Here we need to select only surgery papers).
 
 ```api
-point_size: 1.2
+point_size: 2
 alpha: 40
 
 zoom:
@@ -592,6 +597,9 @@ encoding:
   filter: 
     field: labels
     lambda: d => d == 'surgery'
+  foreground:
+    field: GenderFirstAuthor
+    lambda: "d => d !== 'unknown'"
   x: 
     field: x
     transform: literal
@@ -671,6 +679,10 @@ We also produced a two-dimensional map based on the bag-of-words representation 
 Here you can switch between the PubMedBERT-based and the TF-IDF-based maps.
 
 ```api
+point_size: 1.2
+alpha: 45
+labels:
+  url: null
 encoding:
   x:
     field: x
