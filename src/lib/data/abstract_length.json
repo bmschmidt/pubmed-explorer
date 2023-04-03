@@ -1,1598 +1,2726 @@
 [
   {
-    "words": 267,
-    "count": 72110
+    "abstract_length": 1.0,
+    "count": 1
   },
   {
-    "words": 44,
-    "count": 27596
+    "abstract_length": 13.0,
+    "count": 10
   },
   {
-    "words": 157,
-    "count": 96688
+    "abstract_length": 14.0,
+    "count": 1
   },
   {
-    "words": 132,
-    "count": 70755
+    "abstract_length": 15.0,
+    "count": 1
   },
   {
-    "words": 114,
-    "count": 63574
+    "abstract_length": 16.0,
+    "count": 3
   },
   {
-    "words": 383,
-    "count": 5179
+    "abstract_length": 17.0,
+    "count": 6
   },
   {
-    "words": 318,
-    "count": 19325
+    "abstract_length": 18.0,
+    "count": 12
   },
   {
-    "words": 23,
-    "count": 10941
+    "abstract_length": 19.0,
+    "count": 12
   },
   {
-    "words": 313,
-    "count": 22453
+    "abstract_length": 20.0,
+    "count": 21
   },
   {
-    "words": 202,
-    "count": 122174
+    "abstract_length": 21.0,
+    "count": 23
   },
   {
-    "words": 241,
-    "count": 92387
+    "abstract_length": 22.0,
+    "count": 28
   },
   {
-    "words": 199,
-    "count": 115249
+    "abstract_length": 23.0,
+    "count": 49
   },
   {
-    "words": 252,
-    "count": 116184
+    "abstract_length": 24.0,
+    "count": 78
   },
   {
-    "words": 243,
-    "count": 97660
+    "abstract_length": 25.0,
+    "count": 98
   },
   {
-    "words": 249,
-    "count": 114667
+    "abstract_length": 26.0,
+    "count": 183
   },
   {
-    "words": 236,
-    "count": 85258
+    "abstract_length": 27.0,
+    "count": 263
   },
   {
-    "words": 178,
-    "count": 81880
+    "abstract_length": 28.0,
+    "count": 384
   },
   {
-    "words": 162,
-    "count": 86788
+    "abstract_length": 29.0,
+    "count": 594
   },
   {
-    "words": 258,
-    "count": 100283
+    "abstract_length": 30.0,
+    "count": 834
   },
   {
-    "words": 197,
-    "count": 108121
+    "abstract_length": 31.0,
+    "count": 1348
   },
   {
-    "words": 206,
-    "count": 114218
+    "abstract_length": 32.0,
+    "count": 1973
   },
   {
-    "words": 104,
-    "count": 65960
+    "abstract_length": 33.0,
+    "count": 2846
   },
   {
-    "words": 77,
-    "count": 46964
+    "abstract_length": 34.0,
+    "count": 4876
   },
   {
-    "words": 133,
-    "count": 70794
+    "abstract_length": 35.0,
+    "count": 5949
   },
   {
-    "words": 250,
-    "count": 116577
+    "abstract_length": 36.0,
+    "count": 7655
   },
   {
-    "words": 144,
-    "count": 83288
-  },
-  {
-    "words": 56,
-    "count": 37135
-  },
-  {
-    "words": 151,
-    "count": 108321
-  },
-  {
-    "words": 130,
-    "count": 69529
-  },
-  {
-    "words": 194,
-    "count": 98655
-  },
-  {
-    "words": 78,
-    "count": 47300
-  },
-  {
-    "words": 214,
-    "count": 94163
-  },
-  {
-    "words": 113,
-    "count": 62831
-  },
-  {
-    "words": 155,
-    "count": 102495
-  },
-  {
-    "words": 273,
-    "count": 57519
-  },
-  {
-    "words": 352,
-    "count": 11226
-  },
-  {
-    "words": 122,
-    "count": 69841
-  },
-  {
-    "words": 205,
-    "count": 116897
-  },
-  {
-    "words": 141,
-    "count": 78008
-  },
-  {
-    "words": 339,
-    "count": 12524
-  },
-  {
-    "words": 74,
-    "count": 45003
-  },
-  {
-    "words": 238,
-    "count": 88036
-  },
-  {
-    "words": 193,
-    "count": 96469
-  },
-  {
-    "words": 54,
-    "count": 36910
-  },
-  {
-    "words": 70,
-    "count": 41815
-  },
-  {
-    "words": 239,
-    "count": 89099
-  },
-  {
-    "words": 338,
-    "count": 12835
-  },
-  {
-    "words": 248,
-    "count": 112649
-  },
-  {
-    "words": 33,
-    "count": 10655
-  },
-  {
-    "words": 288,
-    "count": 37421
-  },
-  {
-    "words": 247,
-    "count": 110075
-  },
-  {
-    "words": 143,
-    "count": 81141
-  },
-  {
-    "words": 89,
-    "count": 51133
-  },
-  {
-    "words": 107,
-    "count": 63737
-  },
-  {
-    "words": 50,
-    "count": 37819
-  },
-  {
-    "words": 210,
-    "count": 102587
-  },
-  {
-    "words": 203,
-    "count": 121091
-  },
-  {
-    "words": 213,
-    "count": 95660
-  },
-  {
-    "words": 191,
-    "count": 91640
-  },
-  {
-    "words": 218,
-    "count": 87841
-  },
-  {
-    "words": 90,
-    "count": 51707
-  },
-  {
-    "words": 145,
-    "count": 85770
-  },
-  {
-    "words": 101,
-    "count": 68851
-  },
-  {
-    "words": 209,
-    "count": 105050
-  },
-  {
-    "words": 233,
-    "count": 82883
-  },
-  {
-    "words": 300,
-    "count": 32785
-  },
-  {
-    "words": 97,
-    "count": 60270
-  },
-  {
-    "words": 391,
-    "count": 4539
-  },
-  {
-    "words": 289,
-    "count": 36703
-  },
-  {
-    "words": 186,
-    "count": 85196
-  },
-  {
-    "words": 148,
-    "count": 95770
-  },
-  {
-    "words": 256,
-    "count": 106622
-  },
-  {
-    "words": 299,
-    "count": 33054
-  },
-  {
-    "words": 156,
-    "count": 99646
-  },
-  {
-    "words": 255,
-    "count": 109177
-  },
-  {
-    "words": 270,
-    "count": 64620
-  },
-  {
-    "words": 118,
-    "count": 66122
-  },
-  {
-    "words": 235,
-    "count": 83913
-  },
-  {
-    "words": 21,
-    "count": 11538
-  },
-  {
-    "words": 121,
-    "count": 68789
-  },
-  {
-    "words": 134,
-    "count": 71626
-  },
-  {
-    "words": 48,
-    "count": 33009
-  },
-  {
-    "words": 198,
-    "count": 110969
-  },
-  {
-    "words": 110,
-    "count": 62662
-  },
-  {
-    "words": 172,
-    "count": 80539
-  },
-  {
-    "words": 158,
-    "count": 93810
-  },
-  {
-    "words": 86,
-    "count": 50069
-  },
-  {
-    "words": 311,
-    "count": 23927
-  },
-  {
-    "words": 60,
-    "count": 38445
-  },
-  {
-    "words": 277,
-    "count": 49109
-  },
-  {
-    "words": 303,
-    "count": 30788
-  },
-  {
-    "words": 189,
-    "count": 89059
-  },
-  {
-    "words": 164,
-    "count": 84055
-  },
-  {
-    "words": 216,
-    "count": 91382
-  },
-  {
-    "words": 312,
-    "count": 22788
-  },
-  {
-    "words": 99,
-    "count": 65613
-  },
-  {
-    "words": 176,
-    "count": 81716
-  },
-  {
-    "words": 211,
-    "count": 100679
-  },
-  {
-    "words": 75,
-    "count": 46106
-  },
-  {
-    "words": 129,
-    "count": 69781
-  },
-  {
-    "words": 226,
-    "count": 82679
-  },
-  {
-    "words": 220,
-    "count": 85924
-  },
-  {
-    "words": 192,
-    "count": 94173
-  },
-  {
-    "words": 259,
-    "count": 96258
-  },
-  {
-    "words": 112,
-    "count": 62855
-  },
-  {
-    "words": 265,
-    "count": 77188
-  },
-  {
-    "words": 165,
-    "count": 83883
-  },
-  {
-    "words": 302,
-    "count": 31535
-  },
-  {
-    "words": 159,
-    "count": 92208
-  },
-  {
-    "words": 152,
-    "count": 108876
-  },
-  {
-    "words": 149,
-    "count": 100850
-  },
-  {
-    "words": 257,
-    "count": 103864
-  },
-  {
-    "words": 343,
-    "count": 11916
-  },
-  {
-    "words": 174,
-    "count": 81024
-  },
-  {
-    "words": 181,
-    "count": 82851
-  },
-  {
-    "words": 264,
-    "count": 80062
-  },
-  {
-    "words": 105,
-    "count": 64829
-  },
-  {
-    "words": 272,
-    "count": 59900
-  },
-  {
-    "words": 242,
-    "count": 94894
-  },
-  {
-    "words": 224,
-    "count": 82395
-  },
-  {
-    "words": 96,
-    "count": 58648
-  },
-  {
-    "words": 260,
-    "count": 93678
-  },
-  {
-    "words": 169,
-    "count": 81274
-  },
-  {
-    "words": 359,
-    "count": 9140
-  },
-  {
-    "words": 57,
-    "count": 36834
-  },
-  {
-    "words": 269,
-    "count": 66401
-  },
-  {
-    "words": 212,
-    "count": 97950
-  },
-  {
-    "words": 237,
-    "count": 86300
-  },
-  {
-    "words": 225,
-    "count": 82496
-  },
-  {
-    "words": 223,
-    "count": 84197
-  },
-  {
-    "words": 325,
-    "count": 16487
-  },
-  {
-    "words": 88,
-    "count": 50960
-  },
-  {
-    "words": 168,
-    "count": 81783
-  },
-  {
-    "words": 330,
-    "count": 14571
-  },
-  {
-    "words": 232,
-    "count": 82733
-  },
-  {
-    "words": 115,
-    "count": 63992
-  },
-  {
-    "words": 231,
-    "count": 82326
-  },
-  {
-    "words": 66,
-    "count": 40141
-  },
-  {
-    "words": 207,
-    "count": 111803
-  },
-  {
-    "words": 251,
-    "count": 116382
-  },
-  {
-    "words": 124,
-    "count": 69427
-  },
-  {
-    "words": 94,
-    "count": 55495
-  },
-  {
-    "words": 173,
-    "count": 81223
-  },
-  {
-    "words": 275,
-    "count": 52480
-  },
-  {
-    "words": 154,
-    "count": 104606
-  },
-  {
-    "words": 93,
-    "count": 54695
-  },
-  {
-    "words": 179,
-    "count": 82353
-  },
-  {
-    "words": 290,
-    "count": 36416
-  },
-  {
-    "words": 167,
-    "count": 82097
-  },
-  {
-    "words": 230,
-    "count": 81912
-  },
-  {
-    "words": 215,
-    "count": 92292
-  },
-  {
-    "words": 64,
-    "count": 39078
-  },
-  {
-    "words": 175,
-    "count": 81187
-  },
-  {
-    "words": 187,
-    "count": 85990
-  },
-  {
-    "words": 85,
-    "count": 48992
-  },
-  {
-    "words": 119,
-    "count": 67562
-  },
-  {
-    "words": 10,
-    "count": 15527
-  },
-  {
-    "words": 36,
-    "count": 14513
-  },
-  {
-    "words": 195,
-    "count": 101309
-  },
-  {
-    "words": 138,
-    "count": 74490
-  },
-  {
-    "words": 83,
-    "count": 48531
-  },
-  {
-    "words": 146,
-    "count": 88964
-  },
-  {
-    "words": 41,
-    "count": 23992
-  },
-  {
-    "words": 47,
-    "count": 31093
-  },
-  {
-    "words": 298,
-    "count": 33531
-  },
-  {
-    "words": 287,
-    "count": 38446
-  },
-  {
-    "words": 137,
-    "count": 73528
-  },
-  {
-    "words": 331,
-    "count": 14351
-  },
-  {
-    "words": 228,
-    "count": 82355
-  },
-  {
-    "words": 345,
-    "count": 12013
-  },
-  {
-    "words": 188,
-    "count": 87724
-  },
-  {
-    "words": 71,
-    "count": 42858
-  },
-  {
-    "words": 166,
-    "count": 82706
-  },
-  {
-    "words": 131,
-    "count": 70379
-  },
-  {
-    "words": 253,
-    "count": 114341
-  },
-  {
-    "words": 190,
-    "count": 90263
-  },
-  {
-    "words": 136,
-    "count": 72955
-  },
-  {
-    "words": 7,
-    "count": 15936
-  },
-  {
-    "words": 182,
-    "count": 83416
-  },
-  {
-    "words": 281,
-    "count": 44039
-  },
-  {
-    "words": 346,
-    "count": 11993
-  },
-  {
-    "words": 320,
-    "count": 18170
-  },
-  {
-    "words": 127,
-    "count": 69952
-  },
-  {
-    "words": 282,
-    "count": 42668
-  },
-  {
-    "words": 208,
-    "count": 107988
-  },
-  {
-    "words": 177,
-    "count": 81262
-  },
-  {
-    "words": 180,
-    "count": 81984
-  },
-  {
-    "words": 266,
-    "count": 74838
-  },
-  {
-    "words": 87,
-    "count": 50110
-  },
-  {
-    "words": 84,
-    "count": 48752
-  },
-  {
-    "words": 135,
-    "count": 72106
-  },
-  {
-    "words": 76,
-    "count": 46560
-  },
-  {
-    "words": 120,
-    "count": 68829
-  },
-  {
-    "words": 229,
-    "count": 81568
-  },
-  {
-    "words": 126,
-    "count": 69628
-  },
-  {
-    "words": 222,
-    "count": 84558
-  },
-  {
-    "words": 72,
-    "count": 43484
-  },
-  {
-    "words": 184,
-    "count": 84689
-  },
-  {
-    "words": 268,
-    "count": 69106
-  },
-  {
-    "words": 263,
-    "count": 82868
-  },
-  {
-    "words": 204,
-    "count": 119543
-  },
-  {
-    "words": 111,
-    "count": 62897
-  },
-  {
-    "words": 109,
-    "count": 63623
-  },
-  {
-    "words": 80,
-    "count": 47566
-  },
-  {
-    "words": 12,
-    "count": 14361
-  },
-  {
-    "words": 39,
-    "count": 20386
-  },
-  {
-    "words": 315,
-    "count": 20922
-  },
-  {
-    "words": 139,
-    "count": 75656
-  },
-  {
-    "words": 344,
-    "count": 12089
-  },
-  {
-    "words": 171,
-    "count": 81089
-  },
-  {
-    "words": 55,
-    "count": 37095
-  },
-  {
-    "words": 262,
-    "count": 85740
-  },
-  {
-    "words": 140,
-    "count": 76033
-  },
-  {
-    "words": 153,
-    "count": 107652
-  },
-  {
-    "words": 254,
-    "count": 112480
-  },
-  {
-    "words": 322,
-    "count": 17259
-  },
-  {
-    "words": 125,
-    "count": 69563
-  },
-  {
-    "words": 244,
-    "count": 101007
-  },
-  {
-    "words": 150,
-    "count": 106068
-  },
-  {
-    "words": 294,
-    "count": 34362
-  },
-  {
-    "words": 200,
-    "count": 119485
-  },
-  {
-    "words": 108,
-    "count": 63328
-  },
-  {
-    "words": 29,
-    "count": 9962
-  },
-  {
-    "words": 128,
-    "count": 69205
-  },
-  {
-    "words": 221,
-    "count": 85101
-  },
-  {
-    "words": 68,
-    "count": 40792
-  },
-  {
-    "words": 274,
-    "count": 55567
-  },
-  {
-    "words": 106,
-    "count": 64424
-  },
-  {
-    "words": 234,
-    "count": 83379
-  },
-  {
-    "words": 91,
-    "count": 52870
-  },
-  {
-    "words": 73,
-    "count": 44303
-  },
-  {
-    "words": 246,
-    "count": 106656
-  },
-  {
-    "words": 163,
-    "count": 85593
-  },
-  {
-    "words": 310,
-    "count": 24720
-  },
-  {
-    "words": 123,
-    "count": 69182
-  },
-  {
-    "words": 297,
-    "count": 33781
-  },
-  {
-    "words": 279,
-    "count": 46179
-  },
-  {
-    "words": 271,
-    "count": 62050
-  },
-  {
-    "words": 196,
-    "count": 104214
-  },
-  {
-    "words": 201,
-    "count": 121502
-  },
-  {
-    "words": 92,
-    "count": 53319
-  },
-  {
-    "words": 100,
-    "count": 68827
-  },
-  {
-    "words": 3,
-    "count": 4556
-  },
-  {
-    "words": 170,
-    "count": 81745
-  },
-  {
-    "words": 240,
-    "count": 91104
-  },
-  {
-    "words": 11,
-    "count": 14037
-  },
-  {
-    "words": 117,
-    "count": 64968
-  },
-  {
-    "words": 102,
-    "count": 68280
-  },
-  {
-    "words": 376,
-    "count": 5993
-  },
-  {
-    "words": 98,
-    "count": 62641
-  },
-  {
-    "words": 317,
-    "count": 19776
-  },
-  {
-    "words": 61,
-    "count": 38499
-  },
-  {
-    "words": 82,
-    "count": 48291
-  },
-  {
-    "words": 217,
-    "count": 89317
-  },
-  {
-    "words": 43,
-    "count": 26363
-  },
-  {
-    "words": 309,
-    "count": 25261
-  },
-  {
-    "words": 53,
-    "count": 37303
-  },
-  {
-    "words": 116,
-    "count": 64568
-  },
-  {
-    "words": 278,
-    "count": 47585
-  },
-  {
-    "words": 40,
-    "count": 22670
-  },
-  {
-    "words": 52,
-    "count": 38077
-  },
-  {
-    "words": 327,
-    "count": 15436
-  },
-  {
-    "words": 350,
-    "count": 11327
-  },
-  {
-    "words": 276,
-    "count": 50984
-  },
-  {
-    "words": 25,
-    "count": 10485
-  },
-  {
-    "words": 286,
-    "count": 38949
-  },
-  {
-    "words": 367,
-    "count": 7309
-  },
-  {
-    "words": 219,
-    "count": 87237
-  },
-  {
-    "words": 81,
-    "count": 47710
-  },
-  {
-    "words": 326,
-    "count": 16187
-  },
-  {
-    "words": 308,
-    "count": 26211
-  },
-  {
-    "words": 378,
-    "count": 5540
-  },
-  {
-    "words": 261,
-    "count": 89773
-  },
-  {
-    "words": 147,
-    "count": 91432
-  },
-  {
-    "words": 142,
-    "count": 79288
-  },
-  {
-    "words": 373,
-    "count": 6344
-  },
-  {
-    "words": 59,
-    "count": 37735
-  },
-  {
-    "words": 314,
-    "count": 21693
-  },
-  {
-    "words": 24,
-    "count": 10861
-  },
-  {
-    "words": 65,
-    "count": 39678
-  },
-  {
-    "words": 67,
-    "count": 40201
-  },
-  {
-    "words": 362,
-    "count": 8191
-  },
-  {
-    "words": 280,
-    "count": 44519
-  },
-  {
-    "words": 160,
-    "count": 90383
-  },
-  {
-    "words": 183,
-    "count": 83836
-  },
-  {
-    "words": 381,
-    "count": 5274
-  },
-  {
-    "words": 28,
-    "count": 10116
-  },
-  {
-    "words": 307,
-    "count": 27731
-  },
-  {
-    "words": 335,
-    "count": 13350
-  },
-  {
-    "words": 62,
-    "count": 39084
-  },
-  {
-    "words": 356,
-    "count": 9872
-  },
-  {
-    "words": 341,
-    "count": 12327
-  },
-  {
-    "words": 14,
-    "count": 13937
-  },
-  {
-    "words": 292,
-    "count": 35430
-  },
-  {
-    "words": 364,
-    "count": 7726
-  },
-  {
-    "words": 185,
-    "count": 84841
-  },
-  {
-    "words": 20,
-    "count": 11865
-  },
-  {
-    "words": 9,
-    "count": 14659
-  },
-  {
-    "words": 161,
-    "count": 88557
-  },
-  {
-    "words": 291,
-    "count": 35816
-  },
-  {
-    "words": 355,
-    "count": 10246
-  },
-  {
-    "words": 4,
-    "count": 31811
-  },
-  {
-    "words": 306,
-    "count": 28563
-  },
-  {
-    "words": 329,
-    "count": 14866
-  },
-  {
-    "words": 42,
-    "count": 25391
-  },
-  {
-    "words": 227,
-    "count": 82070
-  },
-  {
-    "words": 296,
-    "count": 34009
-  },
-  {
-    "words": 49,
-    "count": 34798
-  },
-  {
-    "words": 347,
-    "count": 11721
-  },
-  {
-    "words": 13,
-    "count": 13417
-  },
-  {
-    "words": 385,
-    "count": 4814
-  },
-  {
-    "words": 45,
-    "count": 28627
-  },
-  {
-    "words": 380,
-    "count": 5301
-  },
-  {
-    "words": 103,
-    "count": 66822
-  },
-  {
-    "words": 334,
-    "count": 13682
-  },
-  {
-    "words": 245,
-    "count": 103399
-  },
-  {
-    "words": 95,
-    "count": 56903
-  },
-  {
-    "words": 63,
-    "count": 38865
-  },
-  {
-    "words": 58,
-    "count": 37599
-  },
-  {
-    "words": 392,
-    "count": 4459
-  },
-  {
-    "words": 393,
-    "count": 4494
-  },
-  {
-    "words": 69,
-    "count": 41583
-  },
-  {
-    "words": 305,
-    "count": 29260
-  },
-  {
-    "words": 372,
-    "count": 6227
-  },
-  {
-    "words": 323,
-    "count": 17241
-  },
-  {
-    "words": 79,
-    "count": 47214
-  },
-  {
-    "words": 371,
-    "count": 6439
-  },
-  {
-    "words": 348,
-    "count": 11844
-  },
-  {
-    "words": 19,
-    "count": 11971
-  },
-  {
-    "words": 295,
-    "count": 34505
-  },
-  {
-    "words": 324,
-    "count": 16533
-  },
-  {
-    "words": 46,
-    "count": 30117
-  },
-  {
-    "words": 8,
-    "count": 17038
-  },
-  {
-    "words": 2,
-    "count": 3029
-  },
-  {
-    "words": 368,
-    "count": 7062
-  },
-  {
-    "words": 18,
-    "count": 12373
-  },
-  {
-    "words": 26,
-    "count": 10454
-  },
-  {
-    "words": 285,
-    "count": 39806
-  },
-  {
-    "words": 17,
-    "count": 12622
-  },
-  {
-    "words": 358,
-    "count": 9374
-  },
-  {
-    "words": 30,
+    "abstract_length": 37.0,
     "count": 9896
   },
   {
-    "words": 27,
-    "count": 10195
+    "abstract_length": 38.0,
+    "count": 12181
   },
   {
-    "words": 16,
-    "count": 12902
+    "abstract_length": 39.0,
+    "count": 14548
   },
   {
-    "words": 328,
-    "count": 15210
+    "abstract_length": 40.0,
+    "count": 16536
   },
   {
-    "words": 388,
-    "count": 4782
+    "abstract_length": 41.0,
+    "count": 17473
   },
   {
-    "words": 375,
-    "count": 5901
-  },
-  {
-    "words": 284,
-    "count": 40672
-  },
-  {
-    "words": 354,
-    "count": 10422
-  },
-  {
-    "words": 5,
-    "count": 19530
-  },
-  {
-    "words": 31,
-    "count": 9928
-  },
-  {
-    "words": 283,
-    "count": 41596
-  },
-  {
-    "words": 319,
+    "abstract_length": 42.0,
     "count": 18912
   },
   {
-    "words": 38,
-    "count": 18317
+    "abstract_length": 43.0,
+    "count": 20372
   },
   {
-    "words": 337,
-    "count": 12855
+    "abstract_length": 44.0,
+    "count": 21493
   },
   {
-    "words": 301,
-    "count": 32154
+    "abstract_length": 45.0,
+    "count": 22884
   },
   {
-    "words": 51,
-    "count": 37650
+    "abstract_length": 46.0,
+    "count": 24306
   },
   {
-    "words": 351,
-    "count": 11447
+    "abstract_length": 47.0,
+    "count": 26310
   },
   {
-    "words": 395,
-    "count": 4425
+    "abstract_length": 48.0,
+    "count": 28426
   },
   {
-    "words": 370,
-    "count": 6716
+    "abstract_length": 49.0,
+    "count": 31532
   },
   {
-    "words": 304,
-    "count": 29882
+    "abstract_length": 50.0,
+    "count": 35573
   },
   {
-    "words": 397,
-    "count": 4245
+    "abstract_length": 51.0,
+    "count": 31227
   },
   {
-    "words": 35,
-    "count": 12531
+    "abstract_length": 52.0,
+    "count": 30407
   },
   {
-    "words": 342,
-    "count": 12205
+    "abstract_length": 53.0,
+    "count": 29711
   },
   {
-    "words": 366,
+    "abstract_length": 54.0,
+    "count": 29986
+  },
+  {
+    "abstract_length": 55.0,
+    "count": 30001
+  },
+  {
+    "abstract_length": 56.0,
+    "count": 30469
+  },
+  {
+    "abstract_length": 57.0,
+    "count": 30415
+  },
+  {
+    "abstract_length": 58.0,
+    "count": 31162
+  },
+  {
+    "abstract_length": 59.0,
+    "count": 31894
+  },
+  {
+    "abstract_length": 60.0,
+    "count": 32207
+  },
+  {
+    "abstract_length": 61.0,
+    "count": 32308
+  },
+  {
+    "abstract_length": 62.0,
+    "count": 32622
+  },
+  {
+    "abstract_length": 63.0,
+    "count": 32954
+  },
+  {
+    "abstract_length": 64.0,
+    "count": 33202
+  },
+  {
+    "abstract_length": 65.0,
+    "count": 33678
+  },
+  {
+    "abstract_length": 66.0,
+    "count": 34264
+  },
+  {
+    "abstract_length": 67.0,
+    "count": 35154
+  },
+  {
+    "abstract_length": 68.0,
+    "count": 35853
+  },
+  {
+    "abstract_length": 69.0,
+    "count": 37087
+  },
+  {
+    "abstract_length": 70.0,
+    "count": 37599
+  },
+  {
+    "abstract_length": 71.0,
+    "count": 38053
+  },
+  {
+    "abstract_length": 72.0,
+    "count": 39238
+  },
+  {
+    "abstract_length": 73.0,
+    "count": 40347
+  },
+  {
+    "abstract_length": 74.0,
+    "count": 41423
+  },
+  {
+    "abstract_length": 75.0,
+    "count": 42636
+  },
+  {
+    "abstract_length": 76.0,
+    "count": 41894
+  },
+  {
+    "abstract_length": 77.0,
+    "count": 41841
+  },
+  {
+    "abstract_length": 78.0,
+    "count": 42290
+  },
+  {
+    "abstract_length": 79.0,
+    "count": 42240
+  },
+  {
+    "abstract_length": 80.0,
+    "count": 42977
+  },
+  {
+    "abstract_length": 81.0,
+    "count": 43254
+  },
+  {
+    "abstract_length": 82.0,
+    "count": 43667
+  },
+  {
+    "abstract_length": 83.0,
+    "count": 43830
+  },
+  {
+    "abstract_length": 84.0,
+    "count": 44620
+  },
+  {
+    "abstract_length": 85.0,
+    "count": 45385
+  },
+  {
+    "abstract_length": 86.0,
+    "count": 45723
+  },
+  {
+    "abstract_length": 87.0,
+    "count": 46755
+  },
+  {
+    "abstract_length": 88.0,
+    "count": 47383
+  },
+  {
+    "abstract_length": 89.0,
+    "count": 48237
+  },
+  {
+    "abstract_length": 90.0,
+    "count": 49475
+  },
+  {
+    "abstract_length": 91.0,
+    "count": 50373
+  },
+  {
+    "abstract_length": 92.0,
+    "count": 51514
+  },
+  {
+    "abstract_length": 93.0,
+    "count": 53477
+  },
+  {
+    "abstract_length": 94.0,
+    "count": 54713
+  },
+  {
+    "abstract_length": 95.0,
+    "count": 57582
+  },
+  {
+    "abstract_length": 96.0,
+    "count": 59258
+  },
+  {
+    "abstract_length": 97.0,
+    "count": 61948
+  },
+  {
+    "abstract_length": 98.0,
+    "count": 65974
+  },
+  {
+    "abstract_length": 99.0,
+    "count": 70642
+  },
+  {
+    "abstract_length": 100.0,
+    "count": 75265
+  },
+  {
+    "abstract_length": 101.0,
+    "count": 64295
+  },
+  {
+    "abstract_length": 102.0,
+    "count": 62271
+  },
+  {
+    "abstract_length": 103.0,
+    "count": 61314
+  },
+  {
+    "abstract_length": 104.0,
+    "count": 60341
+  },
+  {
+    "abstract_length": 105.0,
+    "count": 59758
+  },
+  {
+    "abstract_length": 106.0,
+    "count": 59833
+  },
+  {
+    "abstract_length": 107.0,
+    "count": 59779
+  },
+  {
+    "abstract_length": 108.0,
+    "count": 60007
+  },
+  {
+    "abstract_length": 109.0,
+    "count": 59974
+  },
+  {
+    "abstract_length": 110.0,
+    "count": 60517
+  },
+  {
+    "abstract_length": 111.0,
+    "count": 60140
+  },
+  {
+    "abstract_length": 112.0,
+    "count": 61330
+  },
+  {
+    "abstract_length": 113.0,
+    "count": 62238
+  },
+  {
+    "abstract_length": 114.0,
+    "count": 63034
+  },
+  {
+    "abstract_length": 115.0,
+    "count": 64163
+  },
+  {
+    "abstract_length": 116.0,
+    "count": 65142
+  },
+  {
+    "abstract_length": 117.0,
+    "count": 66192
+  },
+  {
+    "abstract_length": 118.0,
+    "count": 68082
+  },
+  {
+    "abstract_length": 119.0,
+    "count": 70324
+  },
+  {
+    "abstract_length": 120.0,
+    "count": 72860
+  },
+  {
+    "abstract_length": 121.0,
+    "count": 68863
+  },
+  {
+    "abstract_length": 122.0,
+    "count": 68929
+  },
+  {
+    "abstract_length": 123.0,
+    "count": 68576
+  },
+  {
+    "abstract_length": 124.0,
+    "count": 69410
+  },
+  {
+    "abstract_length": 125.0,
+    "count": 69968
+  },
+  {
+    "abstract_length": 126.0,
+    "count": 68933
+  },
+  {
+    "abstract_length": 127.0,
+    "count": 68932
+  },
+  {
+    "abstract_length": 128.0,
+    "count": 70003
+  },
+  {
+    "abstract_length": 129.0,
+    "count": 70481
+  },
+  {
+    "abstract_length": 130.0,
+    "count": 70815
+  },
+  {
+    "abstract_length": 131.0,
+    "count": 71635
+  },
+  {
+    "abstract_length": 132.0,
+    "count": 72361
+  },
+  {
+    "abstract_length": 133.0,
+    "count": 73200
+  },
+  {
+    "abstract_length": 134.0,
+    "count": 74760
+  },
+  {
+    "abstract_length": 135.0,
+    "count": 75808
+  },
+  {
+    "abstract_length": 136.0,
+    "count": 76281
+  },
+  {
+    "abstract_length": 137.0,
+    "count": 78572
+  },
+  {
+    "abstract_length": 138.0,
+    "count": 79886
+  },
+  {
+    "abstract_length": 139.0,
+    "count": 80995
+  },
+  {
+    "abstract_length": 140.0,
+    "count": 84264
+  },
+  {
+    "abstract_length": 141.0,
+    "count": 86048
+  },
+  {
+    "abstract_length": 142.0,
+    "count": 89096
+  },
+  {
+    "abstract_length": 143.0,
+    "count": 92892
+  },
+  {
+    "abstract_length": 144.0,
+    "count": 96829
+  },
+  {
+    "abstract_length": 145.0,
+    "count": 102318
+  },
+  {
+    "abstract_length": 146.0,
+    "count": 108238
+  },
+  {
+    "abstract_length": 147.0,
+    "count": 113790
+  },
+  {
+    "abstract_length": 148.0,
+    "count": 123112
+  },
+  {
+    "abstract_length": 149.0,
+    "count": 133566
+  },
+  {
+    "abstract_length": 150.0,
+    "count": 148349
+  },
+  {
+    "abstract_length": 151.0,
+    "count": 113327
+  },
+  {
+    "abstract_length": 152.0,
+    "count": 104857
+  },
+  {
+    "abstract_length": 153.0,
+    "count": 99577
+  },
+  {
+    "abstract_length": 154.0,
+    "count": 95783
+  },
+  {
+    "abstract_length": 155.0,
+    "count": 92818
+  },
+  {
+    "abstract_length": 156.0,
+    "count": 90979
+  },
+  {
+    "abstract_length": 157.0,
+    "count": 89496
+  },
+  {
+    "abstract_length": 158.0,
+    "count": 88193
+  },
+  {
+    "abstract_length": 159.0,
+    "count": 86740
+  },
+  {
+    "abstract_length": 160.0,
+    "count": 86469
+  },
+  {
+    "abstract_length": 161.0,
+    "count": 85246
+  },
+  {
+    "abstract_length": 162.0,
+    "count": 84727
+  },
+  {
+    "abstract_length": 163.0,
+    "count": 84125
+  },
+  {
+    "abstract_length": 164.0,
+    "count": 83315
+  },
+  {
+    "abstract_length": 165.0,
+    "count": 83829
+  },
+  {
+    "abstract_length": 166.0,
+    "count": 84244
+  },
+  {
+    "abstract_length": 167.0,
+    "count": 83949
+  },
+  {
+    "abstract_length": 168.0,
+    "count": 83943
+  },
+  {
+    "abstract_length": 169.0,
+    "count": 84868
+  },
+  {
+    "abstract_length": 170.0,
+    "count": 85153
+  },
+  {
+    "abstract_length": 171.0,
+    "count": 84796
+  },
+  {
+    "abstract_length": 172.0,
+    "count": 84957
+  },
+  {
+    "abstract_length": 173.0,
+    "count": 85779
+  },
+  {
+    "abstract_length": 174.0,
+    "count": 86395
+  },
+  {
+    "abstract_length": 175.0,
+    "count": 87609
+  },
+  {
+    "abstract_length": 176.0,
+    "count": 87345
+  },
+  {
+    "abstract_length": 177.0,
+    "count": 87000
+  },
+  {
+    "abstract_length": 178.0,
+    "count": 88318
+  },
+  {
+    "abstract_length": 179.0,
+    "count": 88761
+  },
+  {
+    "abstract_length": 180.0,
+    "count": 89494
+  },
+  {
+    "abstract_length": 181.0,
+    "count": 90432
+  },
+  {
+    "abstract_length": 182.0,
+    "count": 91224
+  },
+  {
+    "abstract_length": 183.0,
+    "count": 92070
+  },
+  {
+    "abstract_length": 184.0,
+    "count": 93748
+  },
+  {
+    "abstract_length": 185.0,
+    "count": 95088
+  },
+  {
+    "abstract_length": 186.0,
+    "count": 96676
+  },
+  {
+    "abstract_length": 187.0,
+    "count": 99316
+  },
+  {
+    "abstract_length": 188.0,
+    "count": 101162
+  },
+  {
+    "abstract_length": 189.0,
+    "count": 104264
+  },
+  {
+    "abstract_length": 190.0,
+    "count": 106971
+  },
+  {
+    "abstract_length": 191.0,
+    "count": 110939
+  },
+  {
+    "abstract_length": 192.0,
+    "count": 115271
+  },
+  {
+    "abstract_length": 193.0,
+    "count": 120501
+  },
+  {
+    "abstract_length": 194.0,
+    "count": 127218
+  },
+  {
+    "abstract_length": 195.0,
+    "count": 132129
+  },
+  {
+    "abstract_length": 196.0,
+    "count": 138713
+  },
+  {
+    "abstract_length": 197.0,
+    "count": 140991
+  },
+  {
+    "abstract_length": 198.0,
+    "count": 148288
+  },
+  {
+    "abstract_length": 199.0,
+    "count": 158473
+  },
+  {
+    "abstract_length": 200.0,
+    "count": 170806
+  },
+  {
+    "abstract_length": 201.0,
+    "count": 134808
+  },
+  {
+    "abstract_length": 202.0,
+    "count": 125998
+  },
+  {
+    "abstract_length": 203.0,
+    "count": 118310
+  },
+  {
+    "abstract_length": 204.0,
+    "count": 113029
+  },
+  {
+    "abstract_length": 205.0,
+    "count": 108538
+  },
+  {
+    "abstract_length": 206.0,
+    "count": 106092
+  },
+  {
+    "abstract_length": 207.0,
+    "count": 103207
+  },
+  {
+    "abstract_length": 208.0,
+    "count": 100771
+  },
+  {
+    "abstract_length": 209.0,
+    "count": 98370
+  },
+  {
+    "abstract_length": 210.0,
+    "count": 96946
+  },
+  {
+    "abstract_length": 211.0,
+    "count": 94743
+  },
+  {
+    "abstract_length": 212.0,
+    "count": 93302
+  },
+  {
+    "abstract_length": 213.0,
+    "count": 92336
+  },
+  {
+    "abstract_length": 214.0,
+    "count": 91609
+  },
+  {
+    "abstract_length": 215.0,
+    "count": 89984
+  },
+  {
+    "abstract_length": 216.0,
+    "count": 89512
+  },
+  {
+    "abstract_length": 217.0,
+    "count": 88872
+  },
+  {
+    "abstract_length": 218.0,
+    "count": 88580
+  },
+  {
+    "abstract_length": 219.0,
+    "count": 88432
+  },
+  {
+    "abstract_length": 220.0,
+    "count": 88510
+  },
+  {
+    "abstract_length": 221.0,
+    "count": 87623
+  },
+  {
+    "abstract_length": 222.0,
+    "count": 87661
+  },
+  {
+    "abstract_length": 223.0,
+    "count": 87781
+  },
+  {
+    "abstract_length": 224.0,
+    "count": 87921
+  },
+  {
+    "abstract_length": 225.0,
+    "count": 88196
+  },
+  {
+    "abstract_length": 226.0,
+    "count": 88406
+  },
+  {
+    "abstract_length": 227.0,
+    "count": 88417
+  },
+  {
+    "abstract_length": 228.0,
+    "count": 89419
+  },
+  {
+    "abstract_length": 229.0,
+    "count": 89821
+  },
+  {
+    "abstract_length": 230.0,
+    "count": 91643
+  },
+  {
+    "abstract_length": 231.0,
+    "count": 92476
+  },
+  {
+    "abstract_length": 232.0,
+    "count": 93408
+  },
+  {
+    "abstract_length": 233.0,
+    "count": 94583
+  },
+  {
+    "abstract_length": 234.0,
+    "count": 97312
+  },
+  {
+    "abstract_length": 235.0,
+    "count": 98994
+  },
+  {
+    "abstract_length": 236.0,
+    "count": 101079
+  },
+  {
+    "abstract_length": 237.0,
+    "count": 104594
+  },
+  {
+    "abstract_length": 238.0,
+    "count": 108097
+  },
+  {
+    "abstract_length": 239.0,
+    "count": 111389
+  },
+  {
+    "abstract_length": 240.0,
+    "count": 116077
+  },
+  {
+    "abstract_length": 241.0,
+    "count": 120670
+  },
+  {
+    "abstract_length": 242.0,
+    "count": 126375
+  },
+  {
+    "abstract_length": 243.0,
+    "count": 132538
+  },
+  {
+    "abstract_length": 244.0,
+    "count": 137707
+  },
+  {
+    "abstract_length": 245.0,
+    "count": 142720
+  },
+  {
+    "abstract_length": 246.0,
+    "count": 146797
+  },
+  {
+    "abstract_length": 247.0,
+    "count": 140681
+  },
+  {
+    "abstract_length": 248.0,
+    "count": 142891
+  },
+  {
+    "abstract_length": 249.0,
+    "count": 143529
+  },
+  {
+    "abstract_length": 250.0,
+    "count": 147021
+  },
+  {
+    "abstract_length": 251.0,
+    "count": 122623
+  },
+  {
+    "abstract_length": 252.0,
+    "count": 114165
+  },
+  {
+    "abstract_length": 253.0,
+    "count": 106607
+  },
+  {
+    "abstract_length": 254.0,
+    "count": 100798
+  },
+  {
+    "abstract_length": 255.0,
+    "count": 94629
+  },
+  {
+    "abstract_length": 256.0,
+    "count": 91339
+  },
+  {
+    "abstract_length": 257.0,
+    "count": 86597
+  },
+  {
+    "abstract_length": 258.0,
+    "count": 82874
+  },
+  {
+    "abstract_length": 259.0,
+    "count": 79163
+  },
+  {
+    "abstract_length": 260.0,
+    "count": 75524
+  },
+  {
+    "abstract_length": 261.0,
+    "count": 72497
+  },
+  {
+    "abstract_length": 262.0,
+    "count": 69656
+  },
+  {
+    "abstract_length": 263.0,
+    "count": 67287
+  },
+  {
+    "abstract_length": 264.0,
+    "count": 64489
+  },
+  {
+    "abstract_length": 265.0,
+    "count": 62056
+  },
+  {
+    "abstract_length": 266.0,
+    "count": 60155
+  },
+  {
+    "abstract_length": 267.0,
+    "count": 57865
+  },
+  {
+    "abstract_length": 268.0,
+    "count": 55918
+  },
+  {
+    "abstract_length": 269.0,
+    "count": 54018
+  },
+  {
+    "abstract_length": 270.0,
+    "count": 52225
+  },
+  {
+    "abstract_length": 271.0,
+    "count": 50300
+  },
+  {
+    "abstract_length": 272.0,
+    "count": 49054
+  },
+  {
+    "abstract_length": 273.0,
+    "count": 47945
+  },
+  {
+    "abstract_length": 274.0,
+    "count": 47145
+  },
+  {
+    "abstract_length": 275.0,
+    "count": 45470
+  },
+  {
+    "abstract_length": 276.0,
+    "count": 44832
+  },
+  {
+    "abstract_length": 277.0,
+    "count": 43850
+  },
+  {
+    "abstract_length": 278.0,
+    "count": 42955
+  },
+  {
+    "abstract_length": 279.0,
+    "count": 42083
+  },
+  {
+    "abstract_length": 280.0,
+    "count": 41524
+  },
+  {
+    "abstract_length": 281.0,
+    "count": 40733
+  },
+  {
+    "abstract_length": 282.0,
+    "count": 39513
+  },
+  {
+    "abstract_length": 283.0,
+    "count": 39110
+  },
+  {
+    "abstract_length": 284.0,
+    "count": 38811
+  },
+  {
+    "abstract_length": 285.0,
+    "count": 38524
+  },
+  {
+    "abstract_length": 286.0,
+    "count": 37562
+  },
+  {
+    "abstract_length": 287.0,
+    "count": 37452
+  },
+  {
+    "abstract_length": 288.0,
+    "count": 36941
+  },
+  {
+    "abstract_length": 289.0,
+    "count": 36849
+  },
+  {
+    "abstract_length": 290.0,
+    "count": 36802
+  },
+  {
+    "abstract_length": 291.0,
+    "count": 36502
+  },
+  {
+    "abstract_length": 292.0,
+    "count": 36618
+  },
+  {
+    "abstract_length": 293.0,
+    "count": 37040
+  },
+  {
+    "abstract_length": 294.0,
+    "count": 36912
+  },
+  {
+    "abstract_length": 295.0,
+    "count": 37352
+  },
+  {
+    "abstract_length": 296.0,
+    "count": 37027
+  },
+  {
+    "abstract_length": 297.0,
+    "count": 35069
+  },
+  {
+    "abstract_length": 298.0,
+    "count": 34821
+  },
+  {
+    "abstract_length": 299.0,
+    "count": 34678
+  },
+  {
+    "abstract_length": 300.0,
+    "count": 35802
+  },
+  {
+    "abstract_length": 301.0,
+    "count": 29998
+  },
+  {
+    "abstract_length": 302.0,
+    "count": 28490
+  },
+  {
+    "abstract_length": 303.0,
+    "count": 26840
+  },
+  {
+    "abstract_length": 304.0,
+    "count": 26082
+  },
+  {
+    "abstract_length": 305.0,
+    "count": 24842
+  },
+  {
+    "abstract_length": 306.0,
+    "count": 24261
+  },
+  {
+    "abstract_length": 307.0,
+    "count": 23485
+  },
+  {
+    "abstract_length": 308.0,
+    "count": 22598
+  },
+  {
+    "abstract_length": 309.0,
+    "count": 21827
+  },
+  {
+    "abstract_length": 310.0,
+    "count": 21352
+  },
+  {
+    "abstract_length": 311.0,
+    "count": 20775
+  },
+  {
+    "abstract_length": 312.0,
+    "count": 20263
+  },
+  {
+    "abstract_length": 313.0,
+    "count": 19714
+  },
+  {
+    "abstract_length": 314.0,
+    "count": 19309
+  },
+  {
+    "abstract_length": 315.0,
+    "count": 18857
+  },
+  {
+    "abstract_length": 316.0,
+    "count": 18484
+  },
+  {
+    "abstract_length": 317.0,
+    "count": 17884
+  },
+  {
+    "abstract_length": 318.0,
+    "count": 17724
+  },
+  {
+    "abstract_length": 319.0,
+    "count": 17414
+  },
+  {
+    "abstract_length": 320.0,
+    "count": 16818
+  },
+  {
+    "abstract_length": 321.0,
+    "count": 16808
+  },
+  {
+    "abstract_length": 322.0,
+    "count": 16286
+  },
+  {
+    "abstract_length": 323.0,
+    "count": 16036
+  },
+  {
+    "abstract_length": 324.0,
+    "count": 15767
+  },
+  {
+    "abstract_length": 325.0,
+    "count": 15420
+  },
+  {
+    "abstract_length": 326.0,
+    "count": 15158
+  },
+  {
+    "abstract_length": 327.0,
+    "count": 14800
+  },
+  {
+    "abstract_length": 328.0,
+    "count": 14708
+  },
+  {
+    "abstract_length": 329.0,
+    "count": 14169
+  },
+  {
+    "abstract_length": 330.0,
+    "count": 14169
+  },
+  {
+    "abstract_length": 331.0,
+    "count": 13882
+  },
+  {
+    "abstract_length": 332.0,
+    "count": 13551
+  },
+  {
+    "abstract_length": 333.0,
+    "count": 13516
+  },
+  {
+    "abstract_length": 334.0,
+    "count": 13224
+  },
+  {
+    "abstract_length": 335.0,
+    "count": 13544
+  },
+  {
+    "abstract_length": 336.0,
+    "count": 13207
+  },
+  {
+    "abstract_length": 337.0,
+    "count": 13041
+  },
+  {
+    "abstract_length": 338.0,
+    "count": 13010
+  },
+  {
+    "abstract_length": 339.0,
+    "count": 13044
+  },
+  {
+    "abstract_length": 340.0,
+    "count": 13050
+  },
+  {
+    "abstract_length": 341.0,
+    "count": 13148
+  },
+  {
+    "abstract_length": 342.0,
+    "count": 13347
+  },
+  {
+    "abstract_length": 343.0,
+    "count": 13594
+  },
+  {
+    "abstract_length": 344.0,
+    "count": 13855
+  },
+  {
+    "abstract_length": 345.0,
+    "count": 14332
+  },
+  {
+    "abstract_length": 346.0,
+    "count": 14726
+  },
+  {
+    "abstract_length": 347.0,
+    "count": 13205
+  },
+  {
+    "abstract_length": 348.0,
+    "count": 12386
+  },
+  {
+    "abstract_length": 349.0,
+    "count": 12013
+  },
+  {
+    "abstract_length": 350.0,
+    "count": 12117
+  },
+  {
+    "abstract_length": 351.0,
+    "count": 10842
+  },
+  {
+    "abstract_length": 352.0,
+    "count": 10208
+  },
+  {
+    "abstract_length": 353.0,
+    "count": 9789
+  },
+  {
+    "abstract_length": 354.0,
+    "count": 9358
+  },
+  {
+    "abstract_length": 355.0,
+    "count": 8884
+  },
+  {
+    "abstract_length": 356.0,
+    "count": 8865
+  },
+  {
+    "abstract_length": 357.0,
+    "count": 8514
+  },
+  {
+    "abstract_length": 358.0,
+    "count": 8338
+  },
+  {
+    "abstract_length": 359.0,
+    "count": 8135
+  },
+  {
+    "abstract_length": 360.0,
+    "count": 8037
+  },
+  {
+    "abstract_length": 361.0,
+    "count": 7747
+  },
+  {
+    "abstract_length": 362.0,
+    "count": 7696
+  },
+  {
+    "abstract_length": 363.0,
     "count": 7312
   },
   {
-    "words": 399,
-    "count": 4136
+    "abstract_length": 364.0,
+    "count": 7239
   },
   {
-    "words": 6,
-    "count": 20612
+    "abstract_length": 365.0,
+    "count": 6999
   },
   {
-    "words": 32,
-    "count": 10111
+    "abstract_length": 366.0,
+    "count": 6965
   },
   {
-    "words": 336,
-    "count": 13114
+    "abstract_length": 367.0,
+    "count": 6694
   },
   {
-    "words": 361,
-    "count": 8482
+    "abstract_length": 368.0,
+    "count": 6522
   },
   {
-    "words": 333,
-    "count": 13758
+    "abstract_length": 369.0,
+    "count": 6567
   },
   {
-    "words": 398,
-    "count": 4200
+    "abstract_length": 370.0,
+    "count": 6342
   },
   {
-    "words": 363,
-    "count": 8014
+    "abstract_length": 371.0,
+    "count": 6271
   },
   {
-    "words": 34,
-    "count": 11773
+    "abstract_length": 372.0,
+    "count": 6077
   },
   {
-    "words": 386,
-    "count": 4926
+    "abstract_length": 373.0,
+    "count": 6082
   },
   {
-    "words": 321,
-    "count": 17825
+    "abstract_length": 374.0,
+    "count": 5884
   },
   {
-    "words": 37,
-    "count": 16035
+    "abstract_length": 375.0,
+    "count": 5876
   },
   {
-    "words": 357,
-    "count": 9490
+    "abstract_length": 376.0,
+    "count": 5751
   },
   {
-    "words": 316,
-    "count": 20164
+    "abstract_length": 377.0,
+    "count": 5643
   },
   {
-    "words": 293,
-    "count": 34895
+    "abstract_length": 378.0,
+    "count": 5491
   },
   {
-    "words": 22,
-    "count": 11358
+    "abstract_length": 379.0,
+    "count": 5248
   },
   {
-    "words": 15,
-    "count": 12995
+    "abstract_length": 380.0,
+    "count": 5318
   },
   {
-    "words": 332,
-    "count": 14023
+    "abstract_length": 381.0,
+    "count": 5292
   },
   {
-    "words": 394,
-    "count": 4430
+    "abstract_length": 382.0,
+    "count": 5072
   },
   {
-    "words": 374,
-    "count": 6066
+    "abstract_length": 383.0,
+    "count": 5119
   },
   {
-    "words": 349,
-    "count": 11783
+    "abstract_length": 384.0,
+    "count": 5034
   },
   {
-    "words": 389,
-    "count": 4848
+    "abstract_length": 385.0,
+    "count": 4983
   },
   {
-    "words": 369,
-    "count": 6993
+    "abstract_length": 386.0,
+    "count": 4865
   },
   {
-    "words": 360,
-    "count": 8730
+    "abstract_length": 387.0,
+    "count": 4782
   },
   {
-    "words": 365,
-    "count": 7513
+    "abstract_length": 388.0,
+    "count": 4751
   },
   {
-    "words": 379,
-    "count": 5599
+    "abstract_length": 389.0,
+    "count": 4617
   },
   {
-    "words": 353,
-    "count": 10860
+    "abstract_length": 390.0,
+    "count": 4598
   },
   {
-    "words": 390,
-    "count": 4711
+    "abstract_length": 391.0,
+    "count": 4574
   },
   {
-    "words": 384,
-    "count": 5002
+    "abstract_length": 392.0,
+    "count": 4483
   },
   {
-    "words": 396,
-    "count": 4349
+    "abstract_length": 393.0,
+    "count": 4450
   },
   {
-    "words": 377,
-    "count": 5682
+    "abstract_length": 394.0,
+    "count": 4374
   },
   {
-    "words": 340,
-    "count": 12513
+    "abstract_length": 395.0,
+    "count": 4286
   },
   {
-    "words": 382,
-    "count": 5272
+    "abstract_length": 396.0,
+    "count": 4245
   },
   {
-    "words": 387,
-    "count": 4916
+    "abstract_length": 397.0,
+    "count": 4183
   },
   {
-    "words": 1,
-    "count": 1394
+    "abstract_length": 398.0,
+    "count": 4046
+  },
+  {
+    "abstract_length": 399.0,
+    "count": 4026
+  },
+  {
+    "abstract_length": 400.0,
+    "count": 3972
+  },
+  {
+    "abstract_length": 401.0,
+    "count": 3755
+  },
+  {
+    "abstract_length": 402.0,
+    "count": 3720
+  },
+  {
+    "abstract_length": 403.0,
+    "count": 3635
+  },
+  {
+    "abstract_length": 404.0,
+    "count": 3488
+  },
+  {
+    "abstract_length": 405.0,
+    "count": 3441
+  },
+  {
+    "abstract_length": 406.0,
+    "count": 3245
+  },
+  {
+    "abstract_length": 407.0,
+    "count": 3057
+  },
+  {
+    "abstract_length": 408.0,
+    "count": 3064
+  },
+  {
+    "abstract_length": 409.0,
+    "count": 2927
+  },
+  {
+    "abstract_length": 410.0,
+    "count": 2862
+  },
+  {
+    "abstract_length": 411.0,
+    "count": 2863
+  },
+  {
+    "abstract_length": 412.0,
+    "count": 2747
+  },
+  {
+    "abstract_length": 413.0,
+    "count": 2669
+  },
+  {
+    "abstract_length": 414.0,
+    "count": 2614
+  },
+  {
+    "abstract_length": 415.0,
+    "count": 2468
+  },
+  {
+    "abstract_length": 416.0,
+    "count": 2367
+  },
+  {
+    "abstract_length": 417.0,
+    "count": 2298
+  },
+  {
+    "abstract_length": 418.0,
+    "count": 2185
+  },
+  {
+    "abstract_length": 419.0,
+    "count": 2218
+  },
+  {
+    "abstract_length": 420.0,
+    "count": 2176
+  },
+  {
+    "abstract_length": 421.0,
+    "count": 2055
+  },
+  {
+    "abstract_length": 422.0,
+    "count": 2029
+  },
+  {
+    "abstract_length": 423.0,
+    "count": 1994
+  },
+  {
+    "abstract_length": 424.0,
+    "count": 1888
+  },
+  {
+    "abstract_length": 425.0,
+    "count": 1849
+  },
+  {
+    "abstract_length": 426.0,
+    "count": 1917
+  },
+  {
+    "abstract_length": 427.0,
+    "count": 1871
+  },
+  {
+    "abstract_length": 428.0,
+    "count": 1822
+  },
+  {
+    "abstract_length": 429.0,
+    "count": 1759
+  },
+  {
+    "abstract_length": 430.0,
+    "count": 1709
+  },
+  {
+    "abstract_length": 431.0,
+    "count": 1762
+  },
+  {
+    "abstract_length": 432.0,
+    "count": 1600
+  },
+  {
+    "abstract_length": 433.0,
+    "count": 1667
+  },
+  {
+    "abstract_length": 434.0,
+    "count": 1652
+  },
+  {
+    "abstract_length": 435.0,
+    "count": 1544
+  },
+  {
+    "abstract_length": 436.0,
+    "count": 1565
+  },
+  {
+    "abstract_length": 437.0,
+    "count": 1560
+  },
+  {
+    "abstract_length": 438.0,
+    "count": 1528
+  },
+  {
+    "abstract_length": 439.0,
+    "count": 1528
+  },
+  {
+    "abstract_length": 440.0,
+    "count": 1432
+  },
+  {
+    "abstract_length": 441.0,
+    "count": 1430
+  },
+  {
+    "abstract_length": 442.0,
+    "count": 1507
+  },
+  {
+    "abstract_length": 443.0,
+    "count": 1484
+  },
+  {
+    "abstract_length": 444.0,
+    "count": 1459
+  },
+  {
+    "abstract_length": 445.0,
+    "count": 1470
+  },
+  {
+    "abstract_length": 446.0,
+    "count": 1342
+  },
+  {
+    "abstract_length": 447.0,
+    "count": 1221
+  },
+  {
+    "abstract_length": 448.0,
+    "count": 1251
+  },
+  {
+    "abstract_length": 449.0,
+    "count": 1247
+  },
+  {
+    "abstract_length": 450.0,
+    "count": 1239
+  },
+  {
+    "abstract_length": 451.0,
+    "count": 1215
+  },
+  {
+    "abstract_length": 452.0,
+    "count": 1152
+  },
+  {
+    "abstract_length": 453.0,
+    "count": 1120
+  },
+  {
+    "abstract_length": 454.0,
+    "count": 1097
+  },
+  {
+    "abstract_length": 455.0,
+    "count": 1048
+  },
+  {
+    "abstract_length": 456.0,
+    "count": 1081
+  },
+  {
+    "abstract_length": 457.0,
+    "count": 1047
+  },
+  {
+    "abstract_length": 458.0,
+    "count": 1049
+  },
+  {
+    "abstract_length": 459.0,
+    "count": 1054
+  },
+  {
+    "abstract_length": 460.0,
+    "count": 954
+  },
+  {
+    "abstract_length": 461.0,
+    "count": 944
+  },
+  {
+    "abstract_length": 462.0,
+    "count": 909
+  },
+  {
+    "abstract_length": 463.0,
+    "count": 940
+  },
+  {
+    "abstract_length": 464.0,
+    "count": 912
+  },
+  {
+    "abstract_length": 465.0,
+    "count": 861
+  },
+  {
+    "abstract_length": 466.0,
+    "count": 887
+  },
+  {
+    "abstract_length": 467.0,
+    "count": 817
+  },
+  {
+    "abstract_length": 468.0,
+    "count": 873
+  },
+  {
+    "abstract_length": 469.0,
+    "count": 858
+  },
+  {
+    "abstract_length": 470.0,
+    "count": 810
+  },
+  {
+    "abstract_length": 471.0,
+    "count": 815
+  },
+  {
+    "abstract_length": 472.0,
+    "count": 854
+  },
+  {
+    "abstract_length": 473.0,
+    "count": 812
+  },
+  {
+    "abstract_length": 474.0,
+    "count": 770
+  },
+  {
+    "abstract_length": 475.0,
+    "count": 745
+  },
+  {
+    "abstract_length": 476.0,
+    "count": 751
+  },
+  {
+    "abstract_length": 477.0,
+    "count": 682
+  },
+  {
+    "abstract_length": 478.0,
+    "count": 718
+  },
+  {
+    "abstract_length": 479.0,
+    "count": 660
+  },
+  {
+    "abstract_length": 480.0,
+    "count": 721
+  },
+  {
+    "abstract_length": 481.0,
+    "count": 702
+  },
+  {
+    "abstract_length": 482.0,
+    "count": 673
+  },
+  {
+    "abstract_length": 483.0,
+    "count": 693
+  },
+  {
+    "abstract_length": 484.0,
+    "count": 692
+  },
+  {
+    "abstract_length": 485.0,
+    "count": 604
+  },
+  {
+    "abstract_length": 486.0,
+    "count": 632
+  },
+  {
+    "abstract_length": 487.0,
+    "count": 683
+  },
+  {
+    "abstract_length": 488.0,
+    "count": 588
+  },
+  {
+    "abstract_length": 489.0,
+    "count": 595
+  },
+  {
+    "abstract_length": 490.0,
+    "count": 682
+  },
+  {
+    "abstract_length": 491.0,
+    "count": 669
+  },
+  {
+    "abstract_length": 492.0,
+    "count": 679
+  },
+  {
+    "abstract_length": 493.0,
+    "count": 613
+  },
+  {
+    "abstract_length": 494.0,
+    "count": 609
+  },
+  {
+    "abstract_length": 495.0,
+    "count": 644
+  },
+  {
+    "abstract_length": 496.0,
+    "count": 615
+  },
+  {
+    "abstract_length": 497.0,
+    "count": 601
+  },
+  {
+    "abstract_length": 498.0,
+    "count": 578
+  },
+  {
+    "abstract_length": 499.0,
+    "count": 553
+  },
+  {
+    "abstract_length": 500.0,
+    "count": 597
+  },
+  {
+    "abstract_length": 501.0,
+    "count": 555
+  },
+  {
+    "abstract_length": 502.0,
+    "count": 511
+  },
+  {
+    "abstract_length": 503.0,
+    "count": 525
+  },
+  {
+    "abstract_length": 504.0,
+    "count": 500
+  },
+  {
+    "abstract_length": 505.0,
+    "count": 464
+  },
+  {
+    "abstract_length": 506.0,
+    "count": 464
+  },
+  {
+    "abstract_length": 507.0,
+    "count": 494
+  },
+  {
+    "abstract_length": 508.0,
+    "count": 437
+  },
+  {
+    "abstract_length": 509.0,
+    "count": 442
+  },
+  {
+    "abstract_length": 510.0,
+    "count": 453
+  },
+  {
+    "abstract_length": 511.0,
+    "count": 409
+  },
+  {
+    "abstract_length": 512.0,
+    "count": 450
+  },
+  {
+    "abstract_length": 513.0,
+    "count": 402
+  },
+  {
+    "abstract_length": 514.0,
+    "count": 421
+  },
+  {
+    "abstract_length": 515.0,
+    "count": 379
+  },
+  {
+    "abstract_length": 516.0,
+    "count": 380
+  },
+  {
+    "abstract_length": 517.0,
+    "count": 385
+  },
+  {
+    "abstract_length": 518.0,
+    "count": 419
+  },
+  {
+    "abstract_length": 519.0,
+    "count": 382
+  },
+  {
+    "abstract_length": 520.0,
+    "count": 403
+  },
+  {
+    "abstract_length": 521.0,
+    "count": 341
+  },
+  {
+    "abstract_length": 522.0,
+    "count": 340
+  },
+  {
+    "abstract_length": 523.0,
+    "count": 376
+  },
+  {
+    "abstract_length": 524.0,
+    "count": 332
+  },
+  {
+    "abstract_length": 525.0,
+    "count": 321
+  },
+  {
+    "abstract_length": 526.0,
+    "count": 315
+  },
+  {
+    "abstract_length": 527.0,
+    "count": 308
+  },
+  {
+    "abstract_length": 528.0,
+    "count": 326
+  },
+  {
+    "abstract_length": 529.0,
+    "count": 298
+  },
+  {
+    "abstract_length": 530.0,
+    "count": 317
+  },
+  {
+    "abstract_length": 531.0,
+    "count": 277
+  },
+  {
+    "abstract_length": 532.0,
+    "count": 283
+  },
+  {
+    "abstract_length": 533.0,
+    "count": 319
+  },
+  {
+    "abstract_length": 534.0,
+    "count": 327
+  },
+  {
+    "abstract_length": 535.0,
+    "count": 247
+  },
+  {
+    "abstract_length": 536.0,
+    "count": 295
+  },
+  {
+    "abstract_length": 537.0,
+    "count": 304
+  },
+  {
+    "abstract_length": 538.0,
+    "count": 280
+  },
+  {
+    "abstract_length": 539.0,
+    "count": 261
+  },
+  {
+    "abstract_length": 540.0,
+    "count": 262
+  },
+  {
+    "abstract_length": 541.0,
+    "count": 295
+  },
+  {
+    "abstract_length": 542.0,
+    "count": 260
+  },
+  {
+    "abstract_length": 543.0,
+    "count": 257
+  },
+  {
+    "abstract_length": 544.0,
+    "count": 260
+  },
+  {
+    "abstract_length": 545.0,
+    "count": 240
+  },
+  {
+    "abstract_length": 546.0,
+    "count": 270
+  },
+  {
+    "abstract_length": 547.0,
+    "count": 224
+  },
+  {
+    "abstract_length": 548.0,
+    "count": 234
+  },
+  {
+    "abstract_length": 549.0,
+    "count": 229
+  },
+  {
+    "abstract_length": 550.0,
+    "count": 229
+  },
+  {
+    "abstract_length": 551.0,
+    "count": 225
+  },
+  {
+    "abstract_length": 552.0,
+    "count": 230
+  },
+  {
+    "abstract_length": 553.0,
+    "count": 204
+  },
+  {
+    "abstract_length": 554.0,
+    "count": 224
+  },
+  {
+    "abstract_length": 555.0,
+    "count": 227
+  },
+  {
+    "abstract_length": 556.0,
+    "count": 192
+  },
+  {
+    "abstract_length": 557.0,
+    "count": 170
+  },
+  {
+    "abstract_length": 558.0,
+    "count": 190
+  },
+  {
+    "abstract_length": 559.0,
+    "count": 207
+  },
+  {
+    "abstract_length": 560.0,
+    "count": 204
+  },
+  {
+    "abstract_length": 561.0,
+    "count": 174
+  },
+  {
+    "abstract_length": 562.0,
+    "count": 174
+  },
+  {
+    "abstract_length": 563.0,
+    "count": 162
+  },
+  {
+    "abstract_length": 564.0,
+    "count": 157
+  },
+  {
+    "abstract_length": 565.0,
+    "count": 157
+  },
+  {
+    "abstract_length": 566.0,
+    "count": 170
+  },
+  {
+    "abstract_length": 567.0,
+    "count": 175
+  },
+  {
+    "abstract_length": 568.0,
+    "count": 158
+  },
+  {
+    "abstract_length": 569.0,
+    "count": 148
+  },
+  {
+    "abstract_length": 570.0,
+    "count": 160
+  },
+  {
+    "abstract_length": 571.0,
+    "count": 145
+  },
+  {
+    "abstract_length": 572.0,
+    "count": 120
+  },
+  {
+    "abstract_length": 573.0,
+    "count": 140
+  },
+  {
+    "abstract_length": 574.0,
+    "count": 143
+  },
+  {
+    "abstract_length": 575.0,
+    "count": 142
+  },
+  {
+    "abstract_length": 576.0,
+    "count": 133
+  },
+  {
+    "abstract_length": 577.0,
+    "count": 108
+  },
+  {
+    "abstract_length": 578.0,
+    "count": 129
+  },
+  {
+    "abstract_length": 579.0,
+    "count": 95
+  },
+  {
+    "abstract_length": 580.0,
+    "count": 110
+  },
+  {
+    "abstract_length": 581.0,
+    "count": 131
+  },
+  {
+    "abstract_length": 582.0,
+    "count": 115
+  },
+  {
+    "abstract_length": 583.0,
+    "count": 104
+  },
+  {
+    "abstract_length": 584.0,
+    "count": 93
+  },
+  {
+    "abstract_length": 585.0,
+    "count": 107
+  },
+  {
+    "abstract_length": 586.0,
+    "count": 103
+  },
+  {
+    "abstract_length": 587.0,
+    "count": 114
+  },
+  {
+    "abstract_length": 588.0,
+    "count": 86
+  },
+  {
+    "abstract_length": 589.0,
+    "count": 73
+  },
+  {
+    "abstract_length": 590.0,
+    "count": 94
+  },
+  {
+    "abstract_length": 591.0,
+    "count": 87
+  },
+  {
+    "abstract_length": 592.0,
+    "count": 75
+  },
+  {
+    "abstract_length": 593.0,
+    "count": 89
+  },
+  {
+    "abstract_length": 594.0,
+    "count": 62
+  },
+  {
+    "abstract_length": 595.0,
+    "count": 67
+  },
+  {
+    "abstract_length": 596.0,
+    "count": 57
+  },
+  {
+    "abstract_length": 597.0,
+    "count": 62
+  },
+  {
+    "abstract_length": 598.0,
+    "count": 72
+  },
+  {
+    "abstract_length": 599.0,
+    "count": 56
+  },
+  {
+    "abstract_length": 600.0,
+    "count": 53
+  },
+  {
+    "abstract_length": 601.0,
+    "count": 70
+  },
+  {
+    "abstract_length": 602.0,
+    "count": 50
+  },
+  {
+    "abstract_length": 603.0,
+    "count": 38
+  },
+  {
+    "abstract_length": 604.0,
+    "count": 48
+  },
+  {
+    "abstract_length": 605.0,
+    "count": 62
+  },
+  {
+    "abstract_length": 606.0,
+    "count": 60
+  },
+  {
+    "abstract_length": 607.0,
+    "count": 48
+  },
+  {
+    "abstract_length": 608.0,
+    "count": 36
+  },
+  {
+    "abstract_length": 609.0,
+    "count": 37
+  },
+  {
+    "abstract_length": 610.0,
+    "count": 32
+  },
+  {
+    "abstract_length": 611.0,
+    "count": 37
+  },
+  {
+    "abstract_length": 612.0,
+    "count": 31
+  },
+  {
+    "abstract_length": 613.0,
+    "count": 26
+  },
+  {
+    "abstract_length": 614.0,
+    "count": 34
+  },
+  {
+    "abstract_length": 615.0,
+    "count": 38
+  },
+  {
+    "abstract_length": 616.0,
+    "count": 25
+  },
+  {
+    "abstract_length": 617.0,
+    "count": 20
+  },
+  {
+    "abstract_length": 618.0,
+    "count": 29
+  },
+  {
+    "abstract_length": 619.0,
+    "count": 33
+  },
+  {
+    "abstract_length": 620.0,
+    "count": 29
+  },
+  {
+    "abstract_length": 621.0,
+    "count": 19
+  },
+  {
+    "abstract_length": 622.0,
+    "count": 20
+  },
+  {
+    "abstract_length": 623.0,
+    "count": 28
+  },
+  {
+    "abstract_length": 624.0,
+    "count": 21
+  },
+  {
+    "abstract_length": 625.0,
+    "count": 16
+  },
+  {
+    "abstract_length": 626.0,
+    "count": 21
+  },
+  {
+    "abstract_length": 627.0,
+    "count": 18
+  },
+  {
+    "abstract_length": 628.0,
+    "count": 19
+  },
+  {
+    "abstract_length": 629.0,
+    "count": 21
+  },
+  {
+    "abstract_length": 630.0,
+    "count": 17
+  },
+  {
+    "abstract_length": 631.0,
+    "count": 10
+  },
+  {
+    "abstract_length": 632.0,
+    "count": 12
+  },
+  {
+    "abstract_length": 633.0,
+    "count": 11
+  },
+  {
+    "abstract_length": 634.0,
+    "count": 12
+  },
+  {
+    "abstract_length": 635.0,
+    "count": 10
+  },
+  {
+    "abstract_length": 636.0,
+    "count": 10
+  },
+  {
+    "abstract_length": 637.0,
+    "count": 11
+  },
+  {
+    "abstract_length": 638.0,
+    "count": 8
+  },
+  {
+    "abstract_length": 639.0,
+    "count": 10
+  },
+  {
+    "abstract_length": 640.0,
+    "count": 8
+  },
+  {
+    "abstract_length": 641.0,
+    "count": 13
+  },
+  {
+    "abstract_length": 642.0,
+    "count": 4
+  },
+  {
+    "abstract_length": 643.0,
+    "count": 4
+  },
+  {
+    "abstract_length": 644.0,
+    "count": 8
+  },
+  {
+    "abstract_length": 645.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 646.0,
+    "count": 8
+  },
+  {
+    "abstract_length": 647.0,
+    "count": 11
+  },
+  {
+    "abstract_length": 648.0,
+    "count": 7
+  },
+  {
+    "abstract_length": 649.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 650.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 651.0,
+    "count": 6
+  },
+  {
+    "abstract_length": 652.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 653.0,
+    "count": 3
+  },
+  {
+    "abstract_length": 654.0,
+    "count": 6
+  },
+  {
+    "abstract_length": 655.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 656.0,
+    "count": 3
+  },
+  {
+    "abstract_length": 657.0,
+    "count": 3
+  },
+  {
+    "abstract_length": 658.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 659.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 660.0,
+    "count": 3
+  },
+  {
+    "abstract_length": 661.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 662.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 663.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 664.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 665.0,
+    "count": 3
+  },
+  {
+    "abstract_length": 666.0,
+    "count": 5
+  },
+  {
+    "abstract_length": 668.0,
+    "count": 6
+  },
+  {
+    "abstract_length": 669.0,
+    "count": 3
+  },
+  {
+    "abstract_length": 670.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 671.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 672.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 673.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 675.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 678.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 679.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 680.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 681.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 682.0,
+    "count": 4
+  },
+  {
+    "abstract_length": 684.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 686.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 688.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 689.0,
+    "count": 2
+  },
+  {
+    "abstract_length": 691.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 692.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 693.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 695.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 700.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 701.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 706.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 717.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 722.0,
+    "count": 1
+  },
+  {
+    "abstract_length": 723.0,
+    "count": 1
   }
 ]

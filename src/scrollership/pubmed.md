@@ -26,7 +26,7 @@ zoom_balance: .38
 point_size: 1.2
 alpha: 45
 zoom_align: right
-source_url: "https://static.nomic.ai/tiles/pubmed"
+source_url: "https://static.nomic.ai/tiles/pubmed2"
 background_color: "#EFEFEF"
 click_function: |
    window.open(`https://pubmed.ncbi.nlm.nih.gov/${datum.pmid}/`, '_blank')
@@ -189,7 +189,7 @@ encoding:
     field: y
     transform: literal
   color:
-    field: words
+    field: abstract_length
     domain: [0, 500]
     range: magma
 ```
@@ -213,7 +213,7 @@ encoding:
     transform: literal
   foreground: null
   color:
-    field: words
+    field: abstract_length
     domain: [0, 500]
     range: magma
 ```
