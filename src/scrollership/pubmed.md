@@ -97,7 +97,7 @@ our approach in four examples:
 
 1. [The emergence of the Covid-19 literature.](#covid-19)
 2. [The evolution of different subfields of neuroscience](#neuroscience)
-3. The uptake of machine learning (???)
+3. The uptake of machine learning (upcoming; see paper)
 4. [The distribution of gender imbalance across biomedical fields.](#gender-bias)
 
 The shared strategy in all of these is to formulate specific hypotheses
@@ -299,6 +299,8 @@ We considered a paper Covid-related if it contained phrases like "Covid-19" or "
 in the abstract text. Our dataset includes 132 thousand Covid-related papers, most 
 of which are concentrated in this area.
 
+_See our paper for direct evidence that Covid literature formed an unprecedentally tight research cluster._
+
 ```api
 duration: 4000
 alpha: 80
@@ -428,6 +430,97 @@ label: date
 ```
 
 :::
+
+
+:::chunk
+
+## Neuroscience
+
+Neuroscience papers congeal into two large regions of the map: one in the upper part, and one in the lower part.
+
+```api
+max_points: 750_000
+zoom_balance: .38
+alpha: 45
+zoom_align: right
+duration: 2000
+background_options:
+  opacity: [.05, 2]
+  size: [.1, 1.2]
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-250, 250]
+encoding:
+  foreground:
+    field: labels
+    lambda: d => d == 'neuroscience'
+  color:
+    field: labels
+    range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
+    "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
+```
+
+:::
+
+:::chunk
+
+Coloring neuroscience papers by some of the prominent terms appearing in their titles, we see that the upper part encompasses research on cellular and molecular neuroscience, whereas the lower part contains literature on behavioural and computational neuroscience.  
+
+```api
+duration: 2000
+labels:
+  url: "https://static.nomic.ai/tiles/pubmed/neuroscience_label.geojson"
+  name: neuroscience_label
+  label_field: neuroscience_label
+  size_field: undefined
+encoding:
+  foreground:
+    field: neuroscience_label
+    lambda: |
+      d => d !== 'unlabeled' && d !== '' && d !== "Neuroscience unlabeled"
+  color:
+    field: neuroscience_label
+    range: dark2
+zoom:
+  bbox:
+    {"x":[-498.47709386009717,515.5673050798857],"y":[-263.16976179251145,235.80446625732142]}
+```
+
+:::
+
+:::chunk
+
+Coloring papers by publication year suggests that neuroscience originated as a study of cellular and molecular mechanisms, and later broadened to include behavioural and computational research. 
+
+_See direct quantifications of this effect in our paper._
+
+```api
+encoding:
+  filter:
+    field: year
+    op: between
+    a: 1970
+    b: 2021
+  color:
+    field: year
+    domain: [1970, 2021]
+    range: viridis
+```
+
+```double-slider
+clone:
+  - encoding.filter
+min: 1970
+max: 2021
+step: 1
+label: Year
+target_min: "encoding.filter.a"
+target_max: "encoding.filter.b"
+```
+
+:::
+
 
 :::chunk
 
@@ -611,60 +704,6 @@ encoding:
     domain: ['male', 'female', 'unknown']
     range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
-```
-
-:::
-
-
-
-:::chunk
-
-## Neuroscience
-
-Other fields occupy spots all over the map. Neuroscience congeals into two larger regions.
-
-```api
-labels:
-  url: "https://static.nomic.ai/tiles/pubmed/neuroscience_label.geojson"
-  name: neuroscience_label
-  label_field: neuroscience_label
-  size_field: undefined
-encoding:
-  foreground:
-    field: neuroscience_label
-    lambda: |
-      d => d !== 'unlabeled' && d !== '' && d !== "Neuroscience unlabeled"
-  color:
-    field: neuroscience_label
-    range: dark2
-zoom:
-  bbox:
-    {"x":[-498.47709386009717,515.5673050798857],"y":[-263.16976179251145,235.80446625732142]}
-```
-
-:::
-
-:::chunk
-
-```api
-encoding:
-  filter:
-    field: year
-    op: between
-    a: 2011
-    b: 2019
-
-```
-
-```double-slider
-clone:
-  - encoding.filter
-min: 2001
-max: 2020
-step: 1
-label: Year
-target_min: "encoding.filter.a"
-target_max: "encoding.filter.b"
 ```
 
 :::
