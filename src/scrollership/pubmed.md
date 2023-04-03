@@ -525,7 +525,7 @@ In some individual disciplines we saw substantial heterogeneity of gender ratios
 
 ```api
 point_size: 2
-alpha: 40
+alpha: 100
 zoom:
   bbox: {"x":[45.0, 95.0],"y":[170.0, 210.0]}
 encoding:
@@ -557,7 +557,7 @@ In education, female authors dominated research on nursing training whereas male
 
 ```api
 point_size: 2
-alpha: 40
+alpha: 100
 zoom:
   bbox: {"x":[65.0, 135.0],"y":[150.0, 200.0]}
 encoding:
@@ -589,7 +589,7 @@ In surgery, only 24\% of the first authors were female, but this fraction increa
 
 ```api
 point_size: 2
-alpha: 40
+alpha: 100
 
 zoom:
   bbox: {"x":[115.0, 185.0],"y":[-100.0, -50.0]}
