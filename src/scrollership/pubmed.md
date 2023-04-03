@@ -592,7 +592,7 @@ point_size: 2
 alpha: 100
 
 zoom:
-  bbox: {"x":[115.0, 185.0],"y":[-100.0, -50.0]}
+  bbox: {"x":[125.0, 175.0],"y":[-85.0, -45.0]}
 encoding:
   filter: 
     field: labels
