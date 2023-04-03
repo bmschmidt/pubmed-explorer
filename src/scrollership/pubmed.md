@@ -26,7 +26,7 @@ zoom_balance: .38
 point_size: 1.2
 alpha: 45
 zoom_align: right
-source_url: "https://static.nomic.ai/tiles/pubmed2"
+source_url: "https://static.nomic.ai/tiles/pubmed"
 background_color: "#EFEFEF"
 click_function: |
    window.open(`https://pubmed.ncbi.nlm.nih.gov/${datum.pmid}/`, '_blank')
