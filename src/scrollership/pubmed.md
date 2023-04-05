@@ -499,9 +499,6 @@ encoding:
   color:
     field: neuroscience_label
     range: dark2
-zoom:
-  bbox:
-    {"x":[-498.47709386009717,515.5673050798857],"y":[-263.16976179251145,235.80446625732142]}
 ```
 
 :::
