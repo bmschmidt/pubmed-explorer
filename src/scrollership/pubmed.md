@@ -147,6 +147,7 @@ labels:
 ```
 
 ```buttonset
+label: ' '
 target: "encoding.foreground.lambda"
 clone:
   - "encoding.foreground.lambda"
@@ -362,8 +363,8 @@ encoding:
 
 ```
 
-
 ```buttonset
+label: ' '
 target: "encoding.foreground.lambda"
 mouseover: true
 clone:
@@ -454,24 +455,23 @@ label: date
 Neuroscience papers congeal into two large regions of the map: one in the upper part, and one in the lower part.
 
 ```api
-max_points: 1_000_000
+max_points: 1000000
 zoom_balance: .38
-point_size: 3
+point_size: 4
 labels: null
-alpha: 275
-zoom_align: right
+alpha: 475
 duration: 2000
-background_options:
-  opacity: [.05, 2]
-  size: [.1, 1.2]
 zoom:
   bbox:
     x: [-250, 250]
     y: [-250, 250]
 encoding:
+  foreground: null
+  filter2: null
   filter:
     field: labels
-    lambda: d => d == 'neuroscience'
+    lambda: |
+      d => d == 'neuroscience'
   color:
     field: labels
     range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]

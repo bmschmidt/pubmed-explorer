@@ -1,4 +1,4 @@
-
+/*
 import { redirect } from '@sveltejs/kit';
 
 const pubmed_aliases = new Set([
@@ -17,3 +17,4 @@ export function load({ url }) {
 		throw redirect(302, 'https://static.nomic.ai/pubmed');
 	}
 }
+*/

@@ -17302,10 +17302,10 @@ function isConstantChannel(input) {
   return input.constant !== void 0;
 }
 function isURLLabels(labels) {
-  return labels.url !== void 0;
+  return labels !== null && labels.url !== void 0;
 }
 function isLabelset(labels) {
-  return labels.labels !== void 0;
+  return labels !== null && labels.labels !== void 0;
 }
 var lodash = { exports: {} };
 /**
@@ -35956,6 +35956,7 @@ class Scatterplot {
     delete this.hooks[name];
   }
   stop_labellers() {
+    console.log("Stopping labels");
     for (const [k, v] of Object.entries(this.secondary_renderers)) {
       if (v && v["label_key"] !== void 0) {
         this.secondary_renderers[k].stop();
@@ -36104,7 +36105,7 @@ class Scatterplot {
     this._renderer.reglframe = this._renderer.regl.frame(() => {
       this._renderer.tick("Basic");
     });
-    if (prefs.labels) {
+    if (prefs.labels !== void 0) {
       if (isURLLabels(prefs.labels)) {
         const { url, label_field, size_field } = prefs.labels;
         const name = prefs.labels.name || url;
