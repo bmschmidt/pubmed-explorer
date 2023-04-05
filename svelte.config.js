@@ -12,7 +12,7 @@ const config = {
 		adapter: adapter()
 	},
 	paths: {
-		base: process.env.NODE_ENV === 'development' ? '' : '/pubmed'
+		base: process.env.NODE_ENV === 'development' ? '' : ''
 	}
 };
 

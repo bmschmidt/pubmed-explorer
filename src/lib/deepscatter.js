@@ -17301,6 +17301,12 @@ function isLambdaChannel(input) {
 function isConstantChannel(input) {
   return input.constant !== void 0;
 }
+function isURLLabels(labels) {
+  return labels.url !== void 0;
+}
+function isLabelset(labels) {
+  return labels.labels !== void 0;
+}
 var lodash = { exports: {} };
 /**
  * @license
@@ -35514,6 +35520,7 @@ class LabelMaker extends Renderer {
         d.data.y = y_.invert(event.y);
       });
       handler.on("end", (event, d) => {
+        console.log({ text: d.data.text, x: d.data.x, y: d.data.y });
       });
       bboxes.call(handler);
     }
@@ -35610,7 +35617,7 @@ class DepthTree extends dist.RBush3D {
       throw "Missing Aspect Ratio" + JSON.stringify(point);
     return p;
   }
-  insert_point(point, mindepth = 1) {
+  insert_point(point, mindepth = 1 / 4) {
     if (point.text === void 0 || point.text === "") {
       return;
     }
@@ -35767,6 +35774,26 @@ class Scatterplot {
     labels.update(features, label_key, size_key);
     this.secondary_renderers[name] = labels;
     this.secondary_renderers[name].start();
+  }
+  add_api_label(labelset) {
+    const geojson = {
+      type: "FeatureCollection",
+      features: labelset.labels.map((label) => {
+        return {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [label.x, label.y]
+          },
+          properties: {
+            text: label.text,
+            size: label.size || void 0
+          }
+        };
+      })
+    };
+    console.log("OPTIONS", labelset.options);
+    this.add_labels(geojson, labelset.name, "text", "size", labelset.options || {});
   }
   async reinitialize() {
     const { prefs } = this;
@@ -36046,19 +36073,6 @@ class Scatterplot {
         prefs.background_options.size = [prefs.background_options.size, 1];
       }
     }
-    if (prefs.labels) {
-      const { url, label_field, size_field } = prefs.labels;
-      const name = prefs.labels.name || url;
-      if (!this.secondary_renderers[name]) {
-        this.stop_labellers();
-        this.add_labels_from_url(url, name, label_field, size_field).catch(
-          (error) => {
-            console.error("Label addition failed.");
-            console.error(error);
-          }
-        );
-      }
-    }
     this.update_prefs(prefs);
     if (this._root === void 0) {
       await this.reinitialize();
@@ -36090,6 +36104,31 @@ class Scatterplot {
     this._renderer.reglframe = this._renderer.regl.frame(() => {
       this._renderer.tick("Basic");
     });
+    if (prefs.labels) {
+      if (isURLLabels(prefs.labels)) {
+        const { url, label_field, size_field } = prefs.labels;
+        const name = prefs.labels.name || url;
+        if (!this.secondary_renderers[name]) {
+          this.stop_labellers();
+          this.add_labels_from_url(url, name, label_field, size_field).catch(
+            (error) => {
+              console.error("Label addition failed.");
+              console.error(error);
+            }
+          );
+        }
+      } else if (isLabelset(prefs.labels)) {
+        if (!prefs.labels.name) {
+          throw new Error("API field `labels` must have a name.");
+        }
+        this.stop_labellers();
+        this.add_api_label(prefs.labels);
+      } else if (prefs.labels === null) {
+        this.stop_labellers();
+      } else {
+        throw new Error("API field `labels` format not recognized.");
+      }
+    }
     this._zoom.restart_timer(6e4);
   }
   async root_table() {

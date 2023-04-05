@@ -1,19 +1,19 @@
-export const prerender = true;
 
-import { promisify } from 'util';
-import { exec as raw_exec } from 'child_process';
-const exec = promisify(raw_exec);
+import { redirect } from '@sveltejs/kit';
 
-async function parse(slug) {
-	const command = `pandoc -t json src/scrollership/pubmed.md`;
-	const { stdout } = await exec(command);
-	return stdout;
-}
-
-export async function load({ params }) {
-	const { slug } = params;
-	const text = await parse(slug);
-	return {
-		document: JSON.parse(text)
-	};
+const pubmed_aliases = new Set([
+	'pubmed',
+	'pubmed/pubmed',
+	'pubmed/pubmed.html',
+	'pubmed/index.html',
+	'journeys/pubmed.html'
+])
+export function load({ url }) {
+	console.log({url})
+	if (pubmed_aliases.has(url.pathname)) {
+		throw redirect(301, '/pubmed');
+	}
+	if (url.hostname.includes('pubmed.nomic.ai')) {
+		throw redirect(302, 'https://static.nomic.ai/pubmed');
+	}
 }

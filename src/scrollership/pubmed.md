@@ -48,6 +48,7 @@ encoding:
     field: labels
     range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
     "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
+
 ```
 
 :::
@@ -177,8 +178,7 @@ Here we color the map by length of each abstract (darker color: shorter abstract
 
 ```api
 point_size: 1.2
-labels:
-  url: null
+labels: null
 encoding:
   foreground: null
   filter: null
@@ -202,8 +202,6 @@ Abstract lengths do not obey a smooth distribution: instead, they cluster at 150
 likely because authors are constrained by journals' submission guidelines. 
 
 ```api
-labels:
-  url: null
 encoding:
   x: 
     field: abstract_length.x
@@ -216,7 +214,15 @@ encoding:
     field: abstract_length
     domain: [0, 500]
     range: magma
+labels:
+  name: abstract lengths
+  labels:
+    - {text: '200 words: 170,806 abstracts', x: -47.5837670871576, y: -154.5403565148235}
+    - {text: '150 words: 148,349', x: -122.98567376541476, y: -118.22208002322414}
+    - {text: '250 words: 147,021 abstracts', x: 1.1658502332687704, y: -83.1412289407424}
+    - {text: '100 words: 75,265 abstracts', x: -145.88492702060688, y: 10.953296382699634}
 ```
+
 :::
 
 :::chunk
@@ -236,6 +242,11 @@ encoding:
     field: year
     domain: [1970, 2022]
     range: viridis
+labels:
+  name: publication years
+  labels:
+    - {text: '2020: 1.41m', x: 241.5698747443659, y: -158.4085756806052}   
+    - {text: '1975: 82k', x: -241.5698747443659, y: 100.4085756806052}   
 ```
 
 :::
@@ -246,6 +257,7 @@ Our map, however, is not predominantly organized by time. Most regions contain a
 eras in fairly close proximity.
 
 ```api
+labels: null
 encoding:
   foreground: null
   x: 
@@ -416,9 +428,12 @@ encoding:
     field: date
     domain: [1572566400000, 1654041600000]
     range: viridis
+duration: 2000
 ```
 
 ```double-slider
+api:
+  duration: 1
 clone:
   - encoding.filter2
 min: 1572566400000
@@ -439,9 +454,11 @@ label: date
 Neuroscience papers congeal into two large regions of the map: one in the upper part, and one in the lower part.
 
 ```api
-max_points: 750_000
+max_points: 1_000_000
 zoom_balance: .38
-alpha: 45
+point_size: 3
+labels: null
+alpha: 275
 zoom_align: right
 duration: 2000
 background_options:
@@ -452,7 +469,7 @@ zoom:
     x: [-250, 250]
     y: [-250, 250]
 encoding:
-  foreground:
+  filter:
     field: labels
     lambda: d => d == 'neuroscience'
   color:
@@ -497,7 +514,7 @@ _See direct quantifications of this effect in our paper._
 
 ```api
 encoding:
-  filter:
+  filter2:
     field: year
     op: between
     a: 1970
@@ -510,13 +527,13 @@ encoding:
 
 ```double-slider
 clone:
-  - encoding.filter
+  - encoding.filter2
 min: 1970
 max: 2021
 step: 1
-label: Year
-target_min: "encoding.filter.a"
-target_max: "encoding.filter.b"
+label: year
+target_min: "encoding.filter2.a"
+target_max: "encoding.filter2.b"
 ```
 
 :::
@@ -533,8 +550,7 @@ which research fields have more male or female authors.
 ```api
 duration: 1000
 point_size: 1.4
-labels:
-  url: null
+labels: null
 zoom:
   bbox:
     x: [-250, 250]
@@ -639,7 +655,15 @@ encoding:
     domain: ['male', 'female', 'unknown']
     range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
-
+labels:
+  name: healthcare
+  labels: 
+    - text: finances
+      x: 71.05457651874438
+      y: 198.39371158959952
+    - text: patient care
+      x: 68.47492000400109
+      y: 179.31588838556968
 ```
 
 :::
@@ -671,14 +695,22 @@ encoding:
     domain: ['male', 'female', 'unknown']
     range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
-
+labels:
+  name: education
+  labels: 
+    - text: nurse education
+      x: 91.05457651874438
+      y: 164
+    - text: doctor education
+      x: 119
+      y: 169
 ```
 
 :::
 
 :::chunk
 
-In surgery, only 24\% of the first authors were female, but this fraction increased to 61\% in the cluster of papers on veterinary surgery. (Here we need to select only surgery papers).
+In surgery, only 24\% of the first authors were female, but this fraction increased to 61\% in the cluster of papers on veterinary surgery.
 
 ```api
 point_size: 2
@@ -704,6 +736,15 @@ encoding:
     domain: ['male', 'female', 'unknown']
     range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
+labels:
+  name: education
+  labels: 
+    - text: veterininary surgery
+      x: 153
+      y: -72
+    - text: heart surgery
+      x: 163
+      y: -76  
 ```
 
 :::
@@ -720,14 +761,15 @@ Here you can switch between the PubMedBERT-based and the TF-IDF-based maps.
 ```api
 point_size: 1.2
 alpha: 45
-labels:
-  url: null
+labels: null
 encoding:
+  filter: null
+  filter2: null
   x:
-    field: x
+    field: tfidf.x
     transform: literal
   y:
-    field: y
+    field: tfidf.y
     transform: literal
   foreground:
     field: labels
