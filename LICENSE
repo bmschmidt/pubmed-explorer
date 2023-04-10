@@ -1,8 +1,10 @@
 All rights are reserved for text in src/scrollership/pubmed.md and other substantial blocks of text.
 
-All code in this repository is released under the
+The Deepscatter library in `src/lib` is copyright 2022-23 Nomic, Inc., and used here for
+noncommercial purposes in accordance with its CC-BY-NC-SA 4.0 license. 
+See https://github.com/nomic-ai/deepscatter/blob/main/LICENSE.
 
-MIT License
+All other code in this repository is released under the MIT License below.
 
 Copyright (c) 2023 Benjamin Schmidt
 

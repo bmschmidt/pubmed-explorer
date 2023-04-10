@@ -343,6 +343,7 @@ their title. All different kinds of Covid-related research appear in this cluste
 Vaccines appear as two major regions which are completely distinct: one involving the scientific effort to create and test vaccines, and the other (towards the bottom) involving the public health effort to get people to use the vaccines once they were widely available.
 
 ```api
+point_size: 1.4
 labels:
   url: "https://static.nomic.ai/tiles/pubmed/covid_label.geojson"
   name: covid_label
@@ -370,6 +371,7 @@ mouseover: true
 clone:
   - "encoding.foreground.lambda"
 api:
+  point_size: 2
   background_options:
     opacity: [.05, 2]
     size: [.1, 2]
@@ -393,6 +395,8 @@ values: ["Antibody", "Anxiety", "Cancer", "Children", "Clinical", "Epidemic", "H
 ```button
 label: clear
 api:
+  point_size: 1.4
+  duration: 2000
   encoding:
     filter2: null
     filter:
@@ -412,6 +416,8 @@ api:
 We can also see how the focus of Covid publications shifted with time during 2020–2021. Early papers are predominantly clinical, while research on societal implications and vaccine hesitancy appeared later.
 
 ```api
+duration: 2000
+point_size: 2
 zoom:
   bbox: {"x":[-26.113317446654943,16.705487505186465],"y":[47.62328228197863,84.66201097142243]}
 encoding:
@@ -457,7 +463,7 @@ Neuroscience papers congeal into two large regions of the map: one in the upper 
 ```api
 max_points: 1000000
 zoom_balance: .38
-point_size: 4
+point_size: 2
 labels: null
 alpha: 475
 duration: 2000
@@ -630,7 +636,7 @@ api: {"zoom": {"bbox": {"x": [200.0, 202.0], "y": [46.0, 48.0]}}}
 In some individual disciplines we saw substantial heterogeneity of gender ratios. For example, there were male- and female-dominated regions in the map of healthcare papers. One of the more male-dominated clusters focused on financial management while one of the more female ones -- on patient care.
 
 ```api
-point_size: 2
+point_size: 1.4
 alpha: 100
 zoom:
   bbox: {"x":[45.0, 95.0],"y":[170.0, 210.0]}
@@ -670,7 +676,7 @@ labels:
 In education, female authors dominated research on nursing training whereas male authors were more frequent in research on medical training.
 
 ```api
-point_size: 2
+point_size: 1.4
 alpha: 100
 zoom:
   bbox: {"x":[65.0, 135.0],"y":[150.0, 200.0]}
@@ -710,11 +716,10 @@ labels:
 In surgery, only 24\% of the first authors were female, but this fraction increased to 61\% in the cluster of papers on veterinary surgery.
 
 ```api
-point_size: 2
+point_size: 1.4
 alpha: 100
-
 zoom:
-  bbox: {"x":[125.0, 175.0],"y":[-85.0, -45.0]}
+  bbox: '{"x":[137,173],"y":[-87,-59]}'
 encoding:
   filter: 
     field: labels
