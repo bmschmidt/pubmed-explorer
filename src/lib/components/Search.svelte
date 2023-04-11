@@ -63,7 +63,7 @@
 			const encoded = encode_string(query);
 			const key = tile.key;
 			await tile.promise;
-			const data = tile.record_batch.getChild('title').data[0];
+			const data = tile.record_batch.getChild('response').data[0];
 			let match_start = 0;
 			let match_length = 0;
 			// The first zero in the buffer

@@ -1,5 +1,5 @@
-export default async function apply_search(query, duration = 500, plot) {
-  await run_search(query, plot);
+export default async function apply_search(query, field, duration = 500, plot) {
+  await run_search(query, plot, field);
   if (query === '') {
     return plot.plotAPI({
       duration,
@@ -22,17 +22,17 @@ export default async function apply_search(query, duration = 500, plot) {
     encoding: {
       filter: null,
       color: {
-        field: 'search: ' + query,
+        field: `search: (${field}) ${query}`,
         domain: [0, 1],
         range: ['gray', 'orange']
       },
       size: {
-        field: 'search: ' + query,
+        field: `search: (${field}) ${query}`,
         domain: [0, 1],
         range: [1, 2]
       },
       foreground: {
-        field: 'search: ' + query,
+        field: `search: (${field}) ${query}`,
         op: 'eq',
         a: 1
       }
@@ -48,15 +48,15 @@ function encode_string(searchterm) {
   return arr;
 }
 
-async function run_search(query, plot) {
+async function run_search(query, plot, field) {
   if (query === '') {
     return;
   }
-  plot._root.transformations['search: ' + query] = async function (tile) {
+  plot._root.transformations[`search: (${field}) ${query}`] = async function (tile) {
     // First ensure it exists in duckdb.
     const encoded = encode_string(query);
     await tile.promise;
-    const data = tile.record_batch.getChild('title').data[0];
+    const data = tile.record_batch.getChild(field).data[0];
     let match_start = 0;
     let match_length = 0;
     // The first zero in the buffer

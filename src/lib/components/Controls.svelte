@@ -2,37 +2,45 @@
 	export let scatterpromise;
 	import Legend from '$lib/components/deepscatter/Legend.svelte';
 	import Search from './SearchFloater.svelte';
+	async function searchable_fields(deepscatter) {
+		await deepscatter.ready;
+		const schema = await plot._root.schema();
+		const fields = schema.fields.filter((f) => f.typeId === 5).map((d) => d.name);
+		return fields;
+	}
 	$: show = undefined;
 </script>
 
 <div class="flex flex-col justify-between h-[calc(100vh-74px)] pointer-events-none">
 	{#await scatterpromise then deepscatter}
-		<div class="flex flex-col gap-3 pointer-events-none items-end h-full">
-			<Search {deepscatter} />
-			<div
-				id="legend"
-				class="flex flex-grow flex-col-reverse gap-3 mb-3 h-[50vh] w-[50vw] items-end bottom-0"
-			>
-				<button
-					class="pointer-events-auto"
-					on:click={() => {
-						show === 'legend' ? (show = undefined) : (show = 'legend');
-					}}
-				>
-					Legend
-				</button>
-
+		{#await searchable_fields(deepscatter) then fields}
+			<div class="flex flex-col gap-3 pointer-events-none items-end h-full">
+				<Search {deepscatter} {fields} />
 				<div
-					class="w-full legend-panel overflow-y-scroll hidden flex-col-reverse flex"
-					class:visible={show === 'legend'}
-					class:pointer-events-auto={show === 'legend'}
+					id="legend"
+					class="flex flex-grow flex-col-reverse gap-3 mb-3 h-[50vh] w-[50vw] items-end bottom-0"
 				>
-					{#if show === 'legend'}
-						<Legend {deepscatter} />
-					{/if}
+					<button
+						class="pointer-events-auto"
+						on:click={() => {
+							show === 'legend' ? (show = undefined) : (show = 'legend');
+						}}
+					>
+						Legend
+					</button>
+
+					<div
+						class="w-full legend-panel overflow-y-scroll hidden flex-col-reverse flex"
+						class:visible={show === 'legend'}
+						class:pointer-events-auto={show === 'legend'}
+					>
+						{#if show === 'legend'}
+							<Legend {deepscatter} />
+						{/if}
+					</div>
 				</div>
 			</div>
-		</div>
+		{/await}
 	{/await}
 </div>
 

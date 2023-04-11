@@ -1,9 +1,11 @@
 <script lang="ts">
 	export let deepscatter;
+	export let fields: string[];
 	import apply_search from '$lib/stringsearch';
 	// Are we currently running a search?
 	$: previous_searches = ['brain', 'COVID', 'Coronavirus', 'visualization'];
 	$: searching = false;
+	$: field = fields[0];
 
 	const dispatched_searches = new Set();
 
@@ -13,9 +15,10 @@
 	function toggleSearchBar() {
 		expanded = !expanded;
 	}
+
 	function handleKeyDown(event) {
 		if (event.key === 'Enter') {
-			apply_search(query, 1000, deepscatter);
+			apply_search(query, field, 1000, deepscatter);
 		}
 	}
 
@@ -81,7 +84,7 @@
 		type="search"
 		id="query"
 		name="query"
-		class="p-4 rounded-xl pl-10 text-sm text-gray-900 transition-all duration-600 origin-right transform {expanded
+		class="p-4 m-1 rounded-xl pl-10 text-sm text-gray-900 transition-all duration-600 origin-right transform {expanded
 			? 'w-full'
 			: 'w-0'}"
 		placeholder="Search"
@@ -89,4 +92,18 @@
 		on:focus={() => (expanded = true)}
 		on:keydown={handleKeyDown}
 	/>
+	{#if expanded}
+		<div class="mx-2">
+			<select
+				on:change={(e) => {
+					field = e.target.value;
+				}}
+				class="py-4 p-1 m-1 rounded-xl text-sm text-gray-900 transition-all duration-600 origin-right transform w-full"
+			>
+				{#each fields as field}
+					<option value={field}>{field}</option>
+				{/each}
+			</select>
+		</div>
+	{/if}
 </div>
