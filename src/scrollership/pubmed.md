@@ -14,7 +14,7 @@ You can scroll the narration in the left part of the screen, and interact with t
 
 Scroll down to read more!
 
-And see [our paper](https://www.biorxiv.org/content/10.1101/xxx) for more details.
+And see [our paper](https://www.biorxiv.org/content/10.1101/2023.04.10.536208v1) for more details.
 
 :::barchartprep
 Prep goes here to pre-allocate some deepscatter data.
