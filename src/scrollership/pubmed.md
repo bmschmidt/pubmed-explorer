@@ -227,6 +227,7 @@ encoding:
     range: magma
 labels:
   name: abstract lengths
+  draggable: true
   labels:
     - {text: '200 words: 170,806 abstracts', x: -47.5837670871576, y: -154.5403565148235}
     - {text: '150 words', x: -122.98567376541476, y: -118.22208002322414}
