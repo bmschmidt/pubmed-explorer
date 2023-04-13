@@ -190,8 +190,8 @@ Here we color the map by length of each abstract (darker color: shorter abstract
 ```api
 point_size: 1.2
 labels: null
+duration: 3000
 encoding:
-  foreground: null
   filter: null
   x:
     field: x
@@ -203,7 +203,9 @@ encoding:
     field: abstract_length
     domain: [0, 500]
     range: magma
+  foreground: null
 ```
+
 :::
 
 
@@ -213,6 +215,8 @@ Abstract lengths do not obey a smooth distribution: instead, they cluster at 150
 likely because authors are constrained by journals' submission guidelines. 
 
 ```api
+point_size: 1.2
+duration: 3000
 encoding:
   x: 
     field: abstract_length.x
@@ -227,7 +231,6 @@ encoding:
     range: magma
 labels:
   name: abstract lengths
-  draggable: true
   labels:
     - {text: '200 words: 170,806 abstracts', x: -47.5837670871576, y: -154.5403565148235}
     - {text: '150 words', x: -122.98567376541476, y: -118.22208002322414}

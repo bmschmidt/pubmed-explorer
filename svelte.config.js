@@ -9,7 +9,10 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		prerender: {
+			entries: ['*']
+		}
 	},
 	paths: {
 		base: process.env.NODE_ENV === 'development' ? '' : ''
