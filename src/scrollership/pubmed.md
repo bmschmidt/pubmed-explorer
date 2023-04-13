@@ -166,7 +166,17 @@ api:
       field: labels
       lambda: d => d !== 'unlabeled'
 pattern: 'd => d == "${value}"'
-values: ["unlabeled", "dermatology", "physiology", "genetics", "gynecology", "surgery", "neurology", "ophthalmology", "material", "radiology", "veterinary", "physics", "biochemistry", "cardiology", "nursing", "engineering", "chemistry", "psychiatry", "neuroscience", "virology", "environment", "cancer", "pediatric", "pathology", "nutrition", "microbiology", "education", "bioinformatics", "ecology", "rehabilitation", "optics", "immunology", "pharmacology", "psychology"]
+values: ["anesthesiology","biochemistry","bioinformatics","cancer","cardiology","chemistry","computation","dermatology","ecology","education","engineering","environment","ethics","genetics","gynecology","healthcare","immunology","infectious","material","microbiology","neurology","neuroscience","nursing","nutrition","ophthalmology","optics","pathology","pediatric","pharmacology","physics","physiology","psychiatry","psychology","radiology","rehabilitation","surgery","veterinary","virology", "unlabeled"]
+
+```
+
+```button
+label: Clear
+api:
+  point_size: 1.2
+  encoding:
+    foreground:
+      lambda: d => d !== 'unlabeled'
 ```
 
 :::
@@ -219,8 +229,8 @@ labels:
   name: abstract lengths
   labels:
     - {text: '200 words: 170,806 abstracts', x: -47.5837670871576, y: -154.5403565148235}
-    - {text: '150 words: 148,349', x: -122.98567376541476, y: -118.22208002322414}
-    - {text: '250 words: 147,021 abstracts', x: 1.1658502332687704, y: -83.1412289407424}
+    - {text: '150 words', x: -122.98567376541476, y: -118.22208002322414}
+    - {text: '250 words', x: 1.1658502332687704, y: -83.1412289407424}
     - {text: '100 words: 75,265 abstracts', x: -145.88492702060688, y: 10.953296382699634}
 ```
 
@@ -343,7 +353,7 @@ their title. All different kinds of Covid-related research appear in this cluste
 Vaccines appear as two major regions which are completely distinct: one involving the scientific effort to create and test vaccines, and the other (towards the bottom) involving the public health effort to get people to use the vaccines once they were widely available.
 
 ```api
-point_size: 1.4
+point_size: 1.2
 labels:
   url: "https://static.nomic.ai/tiles/pubmed/covid_label.geojson"
   name: covid_label
@@ -417,7 +427,7 @@ We can also see how the focus of Covid publications shifted with time during 202
 
 ```api
 duration: 2000
-point_size: 2
+point_size: 1.4
 zoom:
   bbox: {"x":[-26.113317446654943,16.705487505186465],"y":[47.62328228197863,84.66201097142243]}
 encoding:
@@ -441,6 +451,12 @@ duration: 2000
 ```double-slider
 api:
   duration: 1
+  encoding:
+    filter2:
+      field: date
+      op: between
+      a: 1572566400000
+      b: 1654041600000
 clone:
   - encoding.filter2
 min: 1572566400000
@@ -658,6 +674,7 @@ encoding:
     domain: ['male', 'female', 'unknown']
     range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
+
 labels:
   name: healthcare
   labels: 
@@ -673,13 +690,14 @@ labels:
 
 :::chunk
 
-In education, female authors dominated research on nursing training whereas male authors were more frequent in research on medical training.
+In education, female authors dominated research on nursing training;
+male authors were more frequent in research on medical training.
 
 ```api
 point_size: 1.4
 alpha: 100
 zoom:
-  bbox: {"x":[65.0, 135.0],"y":[150.0, 200.0]}
+  bbox: { "x": [65.0, 135.0], "y":[150.0, 200.0] }
 encoding:
   filter: 
     field: labels
@@ -693,10 +711,6 @@ encoding:
   y:
     field: y
     transform: literal
-  color:
-    field: GenderFirstAuthor
-    domain: ['male', 'female', 'unknown']
-    range: ["#1f77b4", "#ff7f0e", "#f5f5f5"]
   jitter_radius: null
 labels:
   name: education
@@ -719,7 +733,7 @@ In surgery, only 24\% of the first authors were female, but this fraction increa
 point_size: 1.4
 alpha: 100
 zoom:
-  bbox: '{"x":[137,173],"y":[-87,-59]}'
+  bbox: {"x":[137,173],"y":[-87,-59]}
 encoding:
   filter: 
     field: labels
@@ -761,6 +775,7 @@ We also produced a two-dimensional map based on the bag-of-words representation 
 Here you can switch between the PubMedBERT-based and the TF-IDF-based maps.
 
 ```api
+duration: 5000
 point_size: 1.2
 alpha: 45
 labels: null

@@ -40,7 +40,8 @@
 			for (let [key, value] of Object.entries(api)) {
 				set(call, key, value);
 			}
-			set(call, target, number);
+
+			console.log({ call });
 			plot.plotAPI(call);
 		}
 	}
@@ -48,6 +49,8 @@
 	const id = Math.random().toString(36).substring(2, 15);
 	let start = 0;
 	let end = 1;
+	$: console.log({ start, end });
+	window.alert('EHLL');
 </script>
 
 <div>
@@ -55,5 +58,6 @@
 	<input type="range" {id} bind:value min="0" max="1" step={0.001} on:input={update} />
 	{number}
 </div>
+YOOOHOOOO
 
 <DoubleSlider bind:start bind:end />
