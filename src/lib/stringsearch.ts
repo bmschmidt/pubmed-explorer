@@ -1,9 +1,11 @@
-export default async function apply_search(query, field, duration = 500, plot) {
-  await run_search(query, plot, field);
+import init, { count_regex_matches } from '$lib/wasm_regex/wasm_regex';
+
+
+export default async function apply_search(query, field, duration = 500, plot, on_find = (d: FindResults) => undefined) {
+  await run_search(query, plot, field, on_find);
   if (query === '') {
     return plot.plotAPI({
       duration,
-      alpha: 50,
       encoding: {
         filter: null,
         color: {
@@ -41,52 +43,31 @@ export default async function apply_search(query, field, duration = 500, plot) {
 
 }
 
-function encode_string(searchterm) {
-  const arr = new Uint8Array(128);
-  const encoder = new TextEncoder();
-  encoder.encodeInto(searchterm, arr);
-  return arr;
+export type FindResults = {
+  matches: any[],
+  tile: any,
+  hits: number
 }
 
-async function run_search(query, plot, field) {
+async function run_search(query, plot, field, on_find = (d : FindResults) => undefined) {
   if (query === '') {
     return;
   }
+  await init();
   plot._root.transformations[`search: (${field}) ${query}`] = async function (tile) {
-    // First ensure it exists in duckdb.
-    const encoded = encode_string(query);
-    await tile.promise;
     const data = tile.record_batch.getChild(field).data[0];
-    let match_start = 0;
-    let match_length = 0;
-    // The first zero in the buffer
-    const target_length = encoded.findIndex((d) => d === 0);
+    const values = data.values;
+    const offsets = data.valueOffsets;
+    const matches_in_batches = count_regex_matches(values, offsets, query, true);
     const matches = [];
-    for (let i = 0; i < data.values.length; i++) {
-      if (data.values[i] === encoded[match_length]) {
-        match_length += 1;
-        if (match_length === 1) {
-          match_start = i;
-        }
-        if (match_length === target_length) {
-          matches.push(match_start);
-          match_length = 0;
-        }
-      } else {
-        if (match_length > 0) {
-          match_length = 0;
-        }
+    let hits = 0;
+    for (let i = 0; i < matches_in_batches.length; i++) {
+      if (matches_in_batches[i] > 0) {
+        matches.push(tile.record_batch.get(i))
+        hits += 1
       }
     }
-    const output = new Float32Array(tile.record_batch.numRows);
-    let offsets_index = 0;
-    while (matches.length > 0) {
-      const searching = matches.shift();
-      while (data.valueOffsets[offsets_index + 1] < searching) {
-        offsets_index += 1;
-      }
-      output[offsets_index] = 1;
-    }
-    return output;
+    on_find({matches, tile, hits});
+    return matches_in_batches
   };
 }

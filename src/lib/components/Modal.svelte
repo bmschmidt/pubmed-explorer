@@ -27,8 +27,8 @@
 						This page is a collaboration between the <a href="http://www.eye-tuebingen.de/berenslab"
 							>Berens lab at the University of Tübingen</a
 						>
-						and <a href="http://nomic.ai">Nomic</a>
-						. It presents an online companion to the paper circulated as
+						and <a href="http://nomic.ai">Nomic</a>. It presents an online companion to the paper
+						circulated as
 						<a href="https://doi.org/10.1101/2023.04.10.536208"
 							>The landscape of biomedical research</a
 						>, by Rita Gonzalez-Marquez, Luca Schmidt, Benjamin M. Schmidt, Philipp Berens, and

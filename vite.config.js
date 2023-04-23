@@ -9,6 +9,11 @@ const config = {
 	optimizeDeps: {
     exclude: ['pandoc-svelte-components'],
   },
+	server: {	
+    fs: {
+            strict: false
+            }
+					}
 };
 
 export default config;

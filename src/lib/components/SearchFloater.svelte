@@ -2,25 +2,74 @@
 	export let deepscatter;
 	export let fields: string[];
 	import apply_search from '$lib/stringsearch';
+	import SearchResults from './SearchResults.svelte';
 	// Are we currently running a search?
-	$: previous_searches = ['brain', 'COVID', 'Coronavirus', 'visualization'];
-	$: searching = false;
 	$: field = fields[0];
 
 	const dispatched_searches = new Set();
 
 	let query = '';
-	let expanded = false;
+	let expanded = true;
 
 	function toggleSearchBar() {
 		expanded = !expanded;
 	}
 
+	$: tile_matches = [];
+	$: shown_matches = [];
+	$: hits = 0;
+	$: scanned = 0;
 	function handleKeyDown(event) {
 		if (event.key === 'Enter') {
-			apply_search(query, field, 1000, deepscatter);
+			tile_matches = [];
+			const loc_matches = apply_search(query, field, 1000, deepscatter, function (loc_matches) {
+				tile_matches = [...tile_matches, loc_matches];
+			});
 		}
 	}
+
+	function update_hits(tile_matches, bbox) {
+		hits = 0;
+		scanned = 0;
+		shown_matches = [];
+		last_corners = bbox;
+		for (let { hits: h, tile, matches } of tile_matches) {
+			const corners = bbox;
+			if (!tile.is_visible(corners)) {
+				continue;
+			}
+			hits += h;
+			scanned += tile._batch.numRows;
+
+			shown_matches = [
+				...shown_matches,
+				...matches.filter(
+					(d) =>
+						d.x > corners.x[0] && d.x < corners.x[1] && d.y > corners.y[0] && d.y < corners.y[1]
+				)
+			];
+		}
+	}
+	$: last_corners = { x: [0, 0], y: [0, 0] };
+	$: {
+		if (tile_matches.length) {
+			const last_corners = deepscatter._zoom.current_corners();
+			update_hits(tile_matches, last_corners);
+		}
+	}
+	$: setTimeout(() => {
+		const corners = deepscatter._zoom.current_corners();
+
+		const diff =
+			Math.abs(corners.x[1] - last_corners.x[1]) +
+			Math.abs(corners.y[1] - last_corners.y[1]) +
+			Math.abs(corners.x[0] - last_corners.x[0]) +
+			Math.abs(corners.y[0] - last_corners.y[0]);
+		if (diff > 0.0001) {
+			update_hits(tile_matches, corners);
+		}
+		last_corners = corners;
+	}, 333);
 
 	let handlePath = 'M0 0 L1 1';
 	let topCirclePath = 'M-1,-1 A 0.5 0.5 0 0 1 0 0 0,0';
@@ -34,6 +83,9 @@
 		handlePath = 'M0 0 L1 1';
 		topCirclePath = 'M-1,-1 A 0.5 0.5 0 0 1 0 0 0,0';
 		bottomCirclePath = 'M-1,-1 A 0.5 0.5 0 0 0 0 0 0,0';
+	}
+	function wheel(event) {
+		event.stopPropagation();
 	}
 </script>
 
@@ -107,3 +159,6 @@
 		</div>
 	{/if}
 </div>
+{#if expanded && shown_matches.length > 0}
+	<SearchResults {shown_matches} {deepscatter} {query} {hits} {scanned} />
+{/if}

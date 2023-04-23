@@ -174,6 +174,9 @@ values: ["anesthesiology","biochemistry","bioinformatics","cancer","cardiology",
 label: Clear
 api:
   point_size: 1.2
+  background_options:
+    opacity: [.2, 1]
+    size: [.5, 1]  
   encoding:
     foreground:
       lambda: d => d !== 'unlabeled'
@@ -188,6 +191,9 @@ While we use journal titles to assign labels, the actual data underlying this re
 Here we color the map by length of each abstract (darker color: shorter abstracts; lighter color: longer abstracts). This, too, shows regional patterns, with some disciplines preferring longer abstracts than others.
 
 ```api
+background_options:
+  opacity: [.2, 1]
+  size: [.5, 1]
 point_size: 1.2
 labels: null
 duration: 3000
