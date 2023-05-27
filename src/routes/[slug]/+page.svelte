@@ -17,8 +17,8 @@
 	import Controls from '$lib/components/Controls.svelte';
 	import ScrollershipCodeBlockWrapper from '$lib/components/ScrollershipCodeBlockWrapper.svelte';
 	import RangeSlider from '$lib/components/RangeSlider.svelte';
-	import AboutModal from '$lib/components/Modal.svelte';
-	import PubmedIdSearch from '$lib/components/pubmed/SelectIds.svelte';
+	import pmidsearch from '$lib/components/pubmed/SelectIds.svelte';
+
 	const controls = {
 		'codeblock.method': CallMethod,
 		'codeblock.dropdown': Dropdown,
@@ -27,8 +27,8 @@
 		'codeblock.slider': Slider,
 		'codeblock.double-slider': RangeSlider,
 		'codeblock.api': ScrollershipCodeBlockWrapper,
-		'div.pmidsearch': PubmedIdSearch,
 		'div.legend': Legend,
+		'div.pmidsearch': pmidsearch,
 		'div.barchartprep': SpecialCode,
 		'div.fancydiv': FancyDivs
 	};
@@ -39,19 +39,25 @@
 		promiser = resolve;
 	});
 	let about_modal = false;
-
-	function toggleModal() {
-		about_modal = !about_modal;
-	}
-
-	function closeModal() {
-		about_modal = false;
-	}
 </script>
 
 <div id="scrollershipwrapper" class="-mt-4">
 	<Scrollership {controls} {API} ast={document} position={'left'} {promiser}>
 		<div slot="custom-navbar" class="header">
+			<div id="about">
+				<!--Toggle for the about modal-->
+				<button
+					class="btn btn-primary"
+					data-bs-toggle="modal"
+					data-bs-target="#aboutModal"
+					on:click={() => {
+						about_modal = !about_modal;
+					}}
+				>
+					About
+				</button>
+			</div>
+
 			<div class="shrink" />
 			<div class="title">
 				{document.meta.title.c.map((d) => d.c).join(' ')}
@@ -66,26 +72,11 @@
 					<a href="http://nomic.ai/"><img src="nomic_with_transparent.png" alt="Nomic logo" /></a>
 				</div>
 			</div>
-
-			<div id="about">
-				<!--Toggle for the about modal-->
-				<button
-					class="btn btn-primary"
-					data-bs-toggle="modal"
-					data-bs-target="#aboutModal"
-					on:click={() => {
-						about_modal = !about_modal;
-					}}
-				>
-					<div class="about-icon">
-						<span>i</span>
-					</div>
-				</button>
-			</div>
 		</div>
-		{#if about_modal}
-			<AboutModal on:close={closeModal} />
-		{/if}
+
+		<div id="aboutModal">
+			<div class="modal-dialog modal-dialog-centered" />
+		</div>
 		<div slot="control-items" id="controls" class="pointer-events-none">
 			<Controls {scatterpromise} />
 		</div>
@@ -100,30 +91,6 @@
 		flex-grow: 4;
 		margin: auto;
 		font-size: 24pt;
-	}
-	.about-icon {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 32px;
-		height: 32px;
-		border-radius: 50%;
-		background-color: #ffff;
-		transition: background-color 0.2s;
-	}
-
-	.about-icon:hover {
-		background-color: #222222ff;
-	}
-
-	.about-icon span {
-		font-size: 24px;
-		font-weight: bold;
-		color: #222222ff;
-		transition: color 0.2s;
-	}
-	.about-icon:hover span {
-		color: #ffff;
 	}
 	.header {
 		display: flex;

@@ -16,6 +16,7 @@ Scroll down to read more!
 
 And see [our paper](https://www.biorxiv.org/content/10.1101/2023.04.10.536208v1) for more details.
 
+
 :::barchartprep
 Prep goes here to pre-allocate some deepscatter data.
 :::
@@ -187,6 +188,56 @@ api:
 
 :::chunk
 
+```api
+point_size: 1.3
+background_options:
+  opacity: [.05, 2]
+  size: [.1, 2]
+duration: 450
+alpha: 100
+encoding:
+  filter: null
+  foreground: null
+  color:
+    field: human
+    domain: [0, 1]
+    range: viridis
+```
+
+The global structure is well captured by categories assigned based 
+on subject headings by the [iCite project](https://nih.figshare.com/collections/iCite_Database_Snapshots_NIH_Open_Citation_Collection_/4586573/42). These measures
+look at all MeSH headings and classify each article by the share that is related 
+to humans, to molecular biology, or to animal studies. The right half of the chart is 
+human medicine, while the left half is split between animal and biochemical studies.
+
+```buttonset
+label: ""
+target: "encoding.color.field"
+clone:
+  - "encoding.color.field"
+api:
+  point_size: 1.3
+  background_options:
+    opacity: [.05, 2]
+    size: [1, 1]
+  duration: 450
+  alpha: 100
+  encoding:
+    filter: null
+    foreground: null
+    color:
+      field: human
+      domain: [0, 1]
+      range: viridis
+values: [ "molecular_cellular", "animal", "human"]
+
+```
+
+:::
+
+
+:::chunk
+
 While we use journal titles to assign labels, the actual data underlying this representation are **abstract texts**.
 Here we color the map by length of each abstract (darker color: shorter abstracts; lighter color: longer abstracts). This, too, shows regional patterns, with some disciplines preferring longer abstracts than others.
 
@@ -288,7 +339,6 @@ encoding:
     field: y
     transform: literal
 ```
-
 :::
 
 
@@ -775,6 +825,154 @@ labels:
 
 :::
 
+:::chunk
+
+## Retractions
+
+Text similarity metrics like these offer potentially useful methods for identifying
+large-scale patterns. 
+Several specific areas, in particular on top of the map, 
+covering research on cancer-related drugs, marker genes, and microRNA. These areas
+are known targets of paper mills, which
+are for-profit organizations that produce fraudulent 
+research papers and sell the authorship.
+
+
+```api
+background_options:
+  size: [.5, 3]
+  mouseover: true
+  opacity: [0.5, 1e10]
+encoding:
+  color:
+    field: retracted
+    domain: [.5, 1.2]
+    range: 'magma'
+  filter: null
+  foreground:
+    field: retracted
+    op: gt
+    a: 0
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-300, 300]
+```
+
+
+:::
+
+:::chunk
+
+In the paper we investigate this region with particularly high fraction (48/443) of retracted
+papers. Most other papers in this area have
+similar title format (variations of "MicroRNA-`X` does `Y`
+by targeting `Z` in osteosarcoma”), paper structure, and
+figure style, and 24/25 of them had authors affiliated with
+Chinese hospitals (some of which provide promotions or pay increases for publications
+without providing substantial laboratory support).
+
+Regions like this merit closer attention. 
+
+```api
+zoom:
+  bbox:
+    x: [-40.37718386886921,-39.037601592113646]
+    y: [-215.68617863463385,-214.18734531798427]
+
+```
+
+:::
+
+:::chunk
+
+## Linking data
+
+Pubmed IDs are universal identifiers that allow for various other integrations with our map.
+
+
+```api
+
+background_options:
+  size: [.8, 1]
+  mouseover: true
+  opacity: .8
+encoding: 
+  filter: null
+  filter2: null
+  foreground: null
+  color:
+    field: citation_count
+    range: viridis
+    domain: [0.1, 100]
+    transform: log
+
+```
+
+
+:::
+
+
+:::chunk
+
+## Search using PubMed APIs.
+
+If you have a specific list of pubmed ids separated by commas, spaces, or newlines (or any combination)
+you can enter them into the searchbox below to highlight them on the map. **Note that you may need to 
+zoom in to see all the points.**
+
+
+
+:::pmidsearch
+This div will display the pmidsearch module.
+:::
+
+```api
+duration: 5000
+point_size: 1.2
+alpha: 45
+labels: null
+encoding:
+  filter: null
+  filter2: null
+  x:
+    field: x
+    transform: literal
+  y:
+    field: y
+    transform: literal
+  foreground: null
+  color:
+    field: year
+    range: viridis
+    domain: [1975, 2023]
+
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-250, 250]
+```
+
+Alter point sizes for selected and unselected points.
+
+```double-slider
+api:
+  duration: 1
+  background_options:
+    size: [0.1, 15]
+    mouseover: true
+    opacity: [0.5, 1e10]
+clone:
+  - background_options
+min: 0.2
+max: 7
+step: 100
+target_min: background_options.size[0]
+target_max: background_options.size[1]
+label: alter point size for selected and unselected points.
+```
+
+:::
 
 :::chunk
 
@@ -783,6 +981,64 @@ labels:
 We also produced a two-dimensional map based on the bag-of-words representation of PubMed abstracts (known in the natural language processing literature as TF-IDF) instead of the PubMedBERT model. This resulted in worse separation between our journal-based labels, so used the PubMedBERT approach for all the visualizations above. Please see the paper for more detailed comparison. 
 
 Here you can switch between the PubMedBERT-based and the TF-IDF-based maps.
+
+```api
+duration: 5000
+point_size: 1.2
+alpha: 45
+labels: null
+encoding:
+  filter: null
+  filter2: null
+  x:
+    field: x
+    transform: literal
+  y:
+    field: y
+    transform: literal
+  foreground:
+    field: labels
+    lambda: d => d !== 'unlabeled'
+  color:
+    field: labels
+    range: ["lightgrey", "#B79762", "#009271", "#004D43", "#5B4534", "#E83000", "#008941", "#549E79", "black", "#6F0062", "#006FA6", "#b65141", "#A4E804", "#8FB0FF", "#6B002C", "#3B5DFF", "#1CE6FF", "#FF9408", "#BA0900", "#1B4400", "#D790FF", "#0089A3", "#4FC601", "#00FECF", "#5A0007", "#00C2A0", "#FFB500", "#BC23FF", "#7A4900", "#CC0744", "#C20078", "#0000A6", "#aeaa00", "#FF2F80", "#FF34FF", "#FF4A46", "#FF90C9", "#6508ba", "#C895C5"]
+    "domain": ["unlabeled", "microbiology", "neurology", "pediatric", "pharmacology", "physiology", "chemistry", "education", "cancer", "virology", "surgery", "biochemistry", "ophthalmology", "immunology", "rehabilitation", "veterinary", "cardiology", "pathology", "psychiatry", "genetics", "dermatology", "environment", "nutrition", "radiology", "psychology", "engineering", "gynecology", "physics", "infectious", "anesthesiology", "computation", "material", "neuroscience", "nursing", "ecology", "bioinformatics", "healthcare", "ethics", "optics"]
+zoom:
+  bbox:
+    x: [-250, 250]
+    y: [-250, 250]
+```
+
+```button
+label: "TF-IDF"
+api:
+  duration: 4000
+  encoding:
+    x:
+      field: tfidf.x
+      transform: literal
+    y:
+      field: tfidf.y
+      transform: literal
+```
+
+```button
+label: "PubMedBERT"
+api:
+  duration: 4000
+  encoding:
+    filter: null
+    x:
+      field: x
+      transform: literal
+    y:
+      field: y
+      transform: literal
+```
+
+:::
+
+:::chunk
 
 ```api
 duration: 5000
@@ -838,7 +1094,7 @@ api:
       transform: literal
 ```
 
-:::
 
+:::
 
 ::::

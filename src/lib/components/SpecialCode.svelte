@@ -6,10 +6,19 @@
 	import { browser } from '$app/environment';
 	import { scaleLinear } from 'd3-scale';
 	import { extent } from 'd3-array';
+	import plot_hamming_distance from '$lib/hammingsearch';
 	if (browser) {
 		function prepare(scatterplot) {
 			create_histogram('time', time, scatterplot);
 			create_histogram('abstract_length', lengths, scatterplot);
+			/*			scatterplot.click_function = async (datum) => {
+				const datum_with_bits = await scatterplot._root.applyTransformationToPoint(
+					'bits',
+					datum.ix
+				);
+				const bits = datum_with_bits['bits'].toArray();
+				plot_hamming_distance(bits, 'bits', scatterplot, 1000, datum.ix);
+			}; */
 		}
 		function setup() {
 			const scatterplot = settings.controls._plot;
